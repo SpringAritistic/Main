@@ -37,6 +37,7 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 		//  Regular DLL's resource chain, and serious problems will
 		//  result.
 
+
 		new CDynLinkLibrary(HMGridControlDLL);
 
 	}
