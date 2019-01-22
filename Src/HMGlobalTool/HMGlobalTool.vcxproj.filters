@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{77e1d7bc-7783-4074-9cba-0913f3fab7ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{b6b77ef0-5629-44b8-9a24-7bd576b00350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lite_3d_lib">
+      <UniqueIdentifier>{82fdd8f4-f3fe-42a2-aeed-d1dc39fa4033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail">
+      <UniqueIdentifier>{7845ba88-1e75-4443-b068-bbdc450fdb1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\jsoncpp">
+      <UniqueIdentifier>{3aeb3c29-0966-4f48-9811-5e7d270e4dd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser">
+      <UniqueIdentifier>{3672c79e-0f95-4ece-9d13-a8bd5f9a7673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\mysql">
+      <UniqueIdentifier>{fabcbd7f-e6bd-44c2-9622-a442853e6cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser\include">
+      <UniqueIdentifier>{8026d0aa-b784-4b7d-bee6-d7d9a2ebfa6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser\src">
+      <UniqueIdentifier>{dec9d6a5-2680-4441-b102-473a4f5b1c76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+    <Text Include="tools\muparser\Changes.txt">
+      <Filter>tools\muparser</Filter>
+    </Text>
+    <Text Include="tools\muparser\License.txt">
+      <Filter>tools\muparser</Filter>
+    </Text>
+    <Text Include="private_detail\___版本说明___.txt">
+      <Filter>private_detail</Filter>
+    </Text>
+    <Text Include="private_detail\___模块私用___.txt">
+      <Filter>private_detail</Filter>
+    </Text>
+    <Text Include="lite_3d_lib\___重要说明___.txt">
+      <Filter>lite_3d_lib</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HMGlobalTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\auto_load_module.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\base64_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\clipboard.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\common_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\compare_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\csv_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\file_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\global_parameters.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\math_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\md5_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\mini_file_log.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\path_object.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\process_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\scope_assemblage.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\string_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\tinyxml2.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xml_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xunzip.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xzip.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_reader.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_value.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_writer.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParser.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserBase.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserBytecode.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserCallback.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserDLL.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserError.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserInt.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserTest.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserTokenReader.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\app_ui_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\cmd_container_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\console_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\data_center_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\db_adapter_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\popup_menu_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\property_grid_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\serialize_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\window_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\x_string_to_time.cpp">
+      <Filter>private_detail</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_extrude.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_fuse.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_rotate.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_setting_out.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_arc.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ball.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_box.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_bspline.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_capsule.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_circle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_cone.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_cylinder.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_data_base.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_definition.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ellipse.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ellipsoid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_elliptic_ring.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_hemisphere.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_line.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_parabola.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_polygon.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_prismoid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_pyramid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_rectangle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ring.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_text.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle_fan.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle_strip.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HMGlobalTool.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\HMGlobalTool.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="tools\jsoncpp\json_valueiterator.inl">
+      <Filter>tools\jsoncpp</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HMGlobalToolInc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HMGlobalToolMacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\auto_load_module.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\base64_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\clipboard.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\common_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\compare_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\csv_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\file_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\global_parameters.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\json.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\math_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\md5_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\mini_file_log.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\path_object.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\process_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\scope_assemblage.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\string_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\tinyxml2.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xml_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xunzip.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xzip.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\allocator.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\assertions.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\autolink.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\config.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\features.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\forwards.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\json_tool.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\reader.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\value.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\version.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\writer.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParser.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserBase.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserBytecode.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserCallback.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserDef.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserDLL.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserError.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserFixes.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserInt.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserStack.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTemplateMagic.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTest.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserToken.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTokenReader.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\app_ui_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\cmd_container_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\console_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\data_center_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\db_adapter_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\popup_menu_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\property_grid_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\serialize_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\window_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\x_string_to_time.h">
+      <Filter>private_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_extrude.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_fuse.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_rotate.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_setting_out.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_arc.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ball.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_box.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_bspline.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_capsule.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_circle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_cone.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_cylinder.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_data_base.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_definition.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ellipse.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ellipsoid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_elliptic_ring.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_hemisphere.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_line.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_parabola.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_polygon.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_prismoid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_pyramid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_rectangle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ring.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_text.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle_fan.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle_strip.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HMGlobalTool.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

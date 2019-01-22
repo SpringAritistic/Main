@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="resource files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ui_frame">
+      <UniqueIdentifier>{5f6c684c-9104-4015-8438-04017e84f73a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="commands">
+      <UniqueIdentifier>{e2f48896-e278-4558-a58e-7d8f7f67a1b2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ui_manager.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="commands\project_commands.cpp">
+      <Filter>commands</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\graph_tree_view.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\dialog_create_graph_object.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\graph_editor_wnd.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\graph_graphic_ui_observer_base.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\graph_grid_ui_observer_base.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\dialog_create_folder.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\dialog_rename.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_frame\graph_drawing_strategy_base.cpp">
+      <Filter>ui_frame</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ui_manager.rc2">
+      <Filter>resource files</Filter>
+    </None>
+    <None Include="res\graph_tree_icons.psd">
+      <Filter>resource files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="macro.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="commands\project_commands.h">
+      <Filter>commands</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\graph_tree_view.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\dialog_create_graph_object.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\graph_editor_wnd.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\graph_graphic_ui_observer_base.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\graph_grid_ui_observer_base.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\dialog_create_folder.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\dialog_rename.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_frame\graph_drawing_strategy_base.h">
+      <Filter>ui_frame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ui_manager.rc">
+      <Filter>resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\graph_tree_icons.bmp">
+      <Filter>resource files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

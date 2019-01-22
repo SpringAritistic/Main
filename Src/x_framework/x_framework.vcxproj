@@ -1,0 +1,2007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{48AF984D-57D5-4FA3-9E48-CA74B7AD6BC3}</ProjectGuid>
+    <RootNamespace>main_frame</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <ProjectName>x_framework</ProjectName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\bin\frame\</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\$(Configuration)\Bin\</OutDir>
+    <IntDir>$(OutDir)\..\MidOutput\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;X_FRAMEWORK_DLL;TINYXML2_EXPORT;JSON_DLL_BUILD;MYSQLPP_MAKING_DLL;ENABLED_DEBUG_SYNC;SAFE_MUTEX;HAVE_YASSL;YASSL_PREFIX;HAVE_OPENSSL;MULTI_THREADED;_WIN32_WINNT=0x0601;WIN32_LEAN_AND_MEAN;HAVE_CONFIG_H;get_tty_password_ext=yassl_mysql_get_tty_password_ext;get_tty_password=yassl_mysql_get_tty_password;USE_SYS_STL;SECURITY_WIN32;CLIENT_PROTOCOL_TRACING;AUTHENTICATION_WIN;libmysql_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251;4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\..\include\CommonModules;$(OutDir)\..\..\..\include\;$(OutDir)\..\..\..\3rd\include;$(OutDir)\..\..\..\3rd/include/XTToolkit;private_detail\mysql\connector-c\include\</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ImportLibrary>$(OutDir)\..\..\lib\frame\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(OutDir)\..\..\lib\frame\;$(OutDir)\..\..\lib\CommonModules\;$(OutDir)\..\..\lib\;$(OutDir)\..\..\..\main\3rd\$(Configuration)\bin\;$(OutDir)\..\..\..\main\3rd\$(Configuration)\lib\;$(SolutionDir)3rd\$(Configuration)\lib\;$(SolutionDir)3rd\$(Configuration)\bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalOptions>/nodefaultlib:THGridControlD %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>del /f /q /s ..\..\..\include\frame\x_framework\
+xcopy /s /c /q /r /y *.h ..\..\..\include\frame\x_framework\
+xcopy /s /c /q /r /y private_detail\___模块私用___.txt ..\..\..\include\frame\x_framework\private_detail\
+
+del /f /s /q ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.tab ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.tof ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.dat ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.tab ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.tof ..\..\..\debug\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.dat ..\..\..\debug\bin\frame\gui_tables\x_framework\</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;X_FRAMEWORK_DLL;TINYXML2_EXPORT;JSON_DLL_BUILD;MYSQLPP_MAKING_DLL;::DBUG_OFF;HAVE_YASSL;YASSL_PREFIX;HAVE_OPENSSL;MULTI_THREADED;_WIN32_WINNT=0x0601;WIN32_LEAN_AND_MEAN;HAVE_CONFIG_H;get_tty_password_ext=yassl_mysql_get_tty_password_ext;get_tty_password=yassl_mysql_get_tty_password;USE_SYS_STL;SECURITY_WIN32;CLIENT_PROTOCOL_TRACING;AUTHENTICATION_WIN;libmysql_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251;4996</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\include\CommonModules;$(OutDir)\..\..\include\;$(OutDir)\..\..\3rd\include;$(OutDir)\..\..\3rd/include/XTToolkit;private_detail\mysql\connector-c\include\</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ImportLibrary>$(OutDir)\..\lib\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(OutDir)\..\lib\;$(OutDir)\..\..\3rd\$(Configuration)\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>THGridControl.lib</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>del /f /q /s ..\..\..\include\frame\x_framework\
+xcopy /s /c /q /r /y *.h ..\..\..\include\frame\x_framework\
+xcopy /s /c /q /r /y private_detail\___模块私用___.txt ..\..\..\include\frame\x_framework\private_detail\
+
+del /f /s /q ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.tab ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.tof ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y tendon_tools\templates\*.dat ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.tab ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.tof ..\..\..\release\bin\frame\gui_tables\x_framework\
+xcopy /s /c /i /r /y frame_steel_tools\templates\*.dat ..\..\..\release\bin\frame\gui_tables\x_framework\
+</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="frame_steel_tools\frame_data.cpp" />
+    <ClCompile Include="frame_steel_tools\frame_grid_tools.cpp" />
+    <ClCompile Include="frame_steel_tools\hook_setting_data.cpp" />
+    <ClCompile Include="frame_steel_tools\hook_setting_dialog.cpp" />
+    <ClCompile Include="interface\app_ui_interface.cpp" />
+    <ClCompile Include="interface\cmd_container_interface.cpp" />
+    <ClCompile Include="interface\console_interface.cpp" />
+    <ClCompile Include="interface\data_center_interface.cpp" />
+    <ClCompile Include="interface\db_adapter_interface.cpp" />
+    <ClCompile Include="interface\popup_menu_interface.cpp" />
+    <ClCompile Include="interface\property_grid_interface.cpp" />
+    <ClCompile Include="interface\serialize_interface.cpp" />
+    <ClCompile Include="interface\window_interface.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_extrude.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_fuse.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_rotate.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_setting_out.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_arc.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ball.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_box.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_bspline.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_capsule.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_circle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_cone.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_cylinder.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ellipse.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ellipsoid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_elliptic_ring.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_data_base.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_hemisphere.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_parabola.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_polygon.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_definition.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_line.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_prismoid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_pyramid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_rectangle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ring.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_text.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle_fan.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle_strip.cpp" />
+    <ClCompile Include="steel_tools\steel_data.cpp" />
+    <ClCompile Include="steel_tools\steel_grid_condition.cpp" />
+    <ClCompile Include="steel_tools\steel_grid_format.cpp" />
+    <ClCompile Include="steel_tools\steel_grid_tools.cpp" />
+    <ClCompile Include="tendon_tools\dialog_tendon_random_curves.cpp" />
+    <ClCompile Include="tendon_tools\tendon_data.cpp" />
+    <ClCompile Include="tendon_tools\tendon_grid_tools.cpp" />
+    <ClCompile Include="tools\base64_tools.cpp" />
+    <ClCompile Include="tools\clipboard.cpp" />
+    <ClCompile Include="tools\common_tools.cpp" />
+    <ClCompile Include="tools\global_parameters.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_reader.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_value.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_writer.cpp" />
+    <ClCompile Include="tools\math_tools.cpp" />
+    <ClCompile Include="tools\md5_tools.cpp" />
+    <ClCompile Include="tools\mini_file_log.cpp" />
+    <ClCompile Include="tools\muparser\src\muParser.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserBase.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserBytecode.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserCallback.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserDLL.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserError.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserInt.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserTest.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserTokenReader.cpp" />
+    <ClCompile Include="private_detail\mysql\connector-c\dbug\dbug.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\dbug\factorial.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_iocache.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_gethwaddr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_memmem.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\queues.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_lock.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client_authentication.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client_plugin.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\my_time.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\pack.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\sql_string.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql\auth\password.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql\net_serv.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-utf8.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\buffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\cert_wrapper.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\crypto_wrapper.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\get_password.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\handshake_yassl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\lock.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\log.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\socket_wrapper.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\ssl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\timer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_error.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_imp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_int.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\aes.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\aestables.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\algebra.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\arc4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\asn.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\coding.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\des.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\dh.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\dsa.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\file.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\hash_yassl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\hc128.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\integer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md4.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md5.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\misc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\rabbit.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\random.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\ripemd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\rsa.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\sha.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\common.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake_libmysql.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake_client.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\log_client.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\plugin_client.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\errmsg.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\libmysql.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\mysql_trace.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\test_trace_plugin.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\array.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\base64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\charset-def.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\charset.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\checksum.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\errors.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\hash_mysys.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_alloc-pin.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_dynarray.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_hash.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\list.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_arr_appstr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_cache.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_dirname.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_fn_ext.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_format.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_getdate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_iocache2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_keycache.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_keycaches.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_loadpath.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_pack.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_path.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_qsort.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_qsort2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_radix.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_same.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_soundex.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_tempfile.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_unixpath.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_wcomp.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mulalloc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_access.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_alloc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_bit.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_bitmap.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_chmod.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_chsize.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_compare.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_compress.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_conio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_copy.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_crc32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_create.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_delete.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_div.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_error.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_file.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_fopen.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_fstream.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_getsystime.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_getwd.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_init.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_lib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_lock.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_malloc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mess.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mkdir.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mmap.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_once.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_open.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_pread.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_rdtsc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_read.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_redel.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_rename.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_seek.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_static.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_symlink.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_symlink2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_sync.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_syslog.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_thread.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_thr_init.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_windac.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_winerr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_winfile.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_write.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\psi_noop.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\ptr_cmp.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\sql_chars.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\stacktrace.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\string.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_cond.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_mutex.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_rwlock.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\tree.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\typelib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\win_timers.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\crypt_genhash_impl.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\mf_tempdir.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_aes.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_aes_yassl.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_default.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_getopt.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_md5.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_murmur3.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_rnd.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_sha1.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_sha2.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\bchange.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-big5.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-bin.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-cp932.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-czech.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-eucjpms.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-euc_kr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-extra.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gb18030.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gb2312.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gbk.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-latin1.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-mb.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-simple.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-sjis.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-tis620.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-uca.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-ucs2.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-ujis.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-win1250ch.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\decimal.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\dtoa.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\int2str.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\is_prefix.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\llstr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\longlong2str.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_stpmov.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_stpnmov.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_strchr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_strtoll10.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_vsnprintf.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\str2int.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strappend.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strcend.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strcont.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strend.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strfill.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strmake.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strnlen.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strxmov.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strxnmov.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\str_alloc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\xml.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\vio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viopipe.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\vioshm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viosocket.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viossl.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viosslfactories.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\adler32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\compress.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\crc32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\deflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\gzio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\infback.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inffast.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inflate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inftrees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\trees.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\uncompr.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\zutil.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql_db_adapter.cpp" />
+    <ClCompile Include="private_detail\mysql\mysqlpp\beemutex.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\cmdline.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\connection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\cpool.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\datetime.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\dbdriver.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\field_names.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\field_types.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\manip.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\myset.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\mysql++.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\mystring.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\null.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\options.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\qparms.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\query.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\result.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\row.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\scopedconnection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\sqlstream.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\sql_buffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\ssqls2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\stadapter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\tcp_connection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\transaction.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\type_info.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\uds_connection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\utility.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\vallist.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\wnp_connection.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="tools\path_object.cpp" />
+    <ClCompile Include="tools\process_tools.cpp" />
+    <ClCompile Include="tools\scope_assemblage.cpp" />
+    <ClCompile Include="tools\xunzip.cpp" />
+    <ClCompile Include="tools\xzip.cpp" />
+    <ClCompile Include="ui_observer_tools\no_tab_multi_grid_editor.cpp" />
+    <ClCompile Include="ui_observer_tools\no_tab_multi_grid_observer.cpp" />
+    <ClCompile Include="ui_observer_tools\no_tab_single_gird_editor.cpp" />
+    <ClCompile Include="ui_observer_tools\no_tab_single_grid_observer.cpp" />
+    <ClCompile Include="ui_observer_tools\tabed_multi_grid_editor.cpp" />
+    <ClCompile Include="ui_observer_tools\tab_multi_grid_observer.cpp" />
+    <ClCompile Include="ui_observer_tools\tab_single_gird_editor.cpp" />
+    <ClCompile Include="ui_observer_tools\tab_single_grid_observer.cpp" />
+    <ClCompile Include="ui_observer_tools\x_mvc_editor_base.cpp" />
+    <ClCompile Include="ui_observer_tools\x_observer_base.cpp" />
+    <ClCompile Include="windows_helper\app_dialog_base.cpp" />
+    <ClCompile Include="windows_helper\app_dialog_input.cpp" />
+    <ClCompile Include="windows_helper\dialog_sub_grid.cpp" />
+    <ClCompile Include="windows_helper\dialog_tabbed_grids.cpp" />
+    <ClCompile Include="windows_helper\local_resource.cpp" />
+    <ClCompile Include="x3d_control_item.cpp" />
+    <ClCompile Include="x_framework.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="tools\auto_load_module.cpp" />
+    <ClCompile Include="tools\compare_tools.cpp" />
+    <ClCompile Include="tools\csv_tools.cpp" />
+    <ClCompile Include="tools\file_tools.cpp" />
+    <ClCompile Include="tools\string_tools.cpp" />
+    <ClCompile Include="tools\table_templates.cpp" />
+    <ClCompile Include="windows_helper\multi_grid_view.cpp" />
+    <ClCompile Include="tools\tinyxml2.cpp" />
+    <ClCompile Include="tools\xml_tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="frame_steel_tools\templates\x_framework_table_steel_frame.TAB" />
+    <None Include="frame_steel_tools\templates\x_framework_table_steel_frame.TDFX" />
+    <None Include="res\x_framework.rc2" />
+    <None Include="tendon_tools\templates\x_framework_table_tendon.TAB" />
+    <None Include="tendon_tools\templates\x_framework_table_tendon.TDFX" />
+    <None Include="tools\jsoncpp\json_valueiterator.inl" />
+    <None Include="private_detail\mysql\connector-c\connector-c-gpl-en.pdf" />
+    <None Include="private_detail\mysql\connector-c\dbug\monty.doc" />
+    <None Include="private_detail\mysql\connector-c\include\mysql\client_plugin.h.pp" />
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v0.h.pp" />
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v1.h.pp" />
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v2.h.pp" />
+    <None Include="private_detail\mysql\connector-c\sql\share\charsets\languages.html" />
+    <None Include="private_detail\mysql\connector-c\sql\share\charsets\README" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\ca-cert.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\ca-key.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-cert.der" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-cert.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-key.der" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-key.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-keyEnc.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-keyEnc3.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dh1024.dat" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa-cert.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa1024.der" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa1024.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-cert.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-key.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-keyEnc.pem" />
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\dh1024.der" />
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\dsa1024.der" />
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\rsa1024.der" />
+    <None Include="private_detail\mysql\connector-c\mysys\ChangeLog" />
+    <None Include="private_detail\mysql\connector-c\mysys\my_timer_cycles.il" />
+    <None Include="private_detail\mysql\connector-c\zlib\ChangeLog" />
+    <None Include="private_detail\mysql\connector-c\zlib\FAQ" />
+    <None Include="private_detail\mysql\connector-c\zlib\INDEX" />
+    <None Include="private_detail\mysql\connector-c\zlib\README" />
+    <None Include="private_detail\mysql\connector-c\zlib\README.MySQL" />
+    <None Include="private_detail\mysql\connector-c\zlib\zlib.3" />
+    <None Include="private_detail\mysql\mysqlpp\userman.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="frame_steel_tools\frame_data.h" />
+    <ClInclude Include="frame_steel_tools\frame_grid_tools.h" />
+    <ClInclude Include="frame_steel_tools\hook_setting_data.h" />
+    <ClInclude Include="frame_steel_tools\hook_setting_dialog.h" />
+    <ClInclude Include="interface\app_ui_interface.h" />
+    <ClInclude Include="interface\cmd_container_interface.h" />
+    <ClInclude Include="interface\console_interface.h" />
+    <ClInclude Include="interface\data_center_interface.h" />
+    <ClInclude Include="interface\db_adapter_interface.h" />
+    <ClInclude Include="interface\popup_menu_interface.h" />
+    <ClInclude Include="interface\property_grid_interface.h" />
+    <ClInclude Include="interface\serialize_interface.h" />
+    <ClInclude Include="interface\window_interface.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_extrude.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_fuse.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_rotate.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_setting_out.h" />
+    <ClInclude Include="lite_3d_lib\x3d_arc.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ball.h" />
+    <ClInclude Include="lite_3d_lib\x3d_box.h" />
+    <ClInclude Include="lite_3d_lib\x3d_bspline.h" />
+    <ClInclude Include="lite_3d_lib\x3d_capsule.h" />
+    <ClInclude Include="lite_3d_lib\x3d_circle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_cone.h" />
+    <ClInclude Include="lite_3d_lib\x3d_cylinder.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ellipse.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ellipsoid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_elliptic_ring.h" />
+    <ClInclude Include="lite_3d_lib\x3d_data_base.h" />
+    <ClInclude Include="lite_3d_lib\x3d_hemisphere.h" />
+    <ClInclude Include="lite_3d_lib\x3d_parabola.h" />
+    <ClInclude Include="lite_3d_lib\x3d_polygon.h" />
+    <ClInclude Include="lite_3d_lib\x3d_definition.h" />
+    <ClInclude Include="lite_3d_lib\x3d_line.h" />
+    <ClInclude Include="lite_3d_lib\x3d_prismoid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_pyramid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_rectangle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ring.h" />
+    <ClInclude Include="lite_3d_lib\x3d_text.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle_fan.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle_strip.h" />
+    <ClInclude Include="macro.h" />
+    <ClCompile Include="private_detail\x_string_to_time.cpp">
+      <FileType>CppHeader</FileType>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="private_detail\x_string_to_time.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="steel_tools\steel_data.h" />
+    <ClInclude Include="steel_tools\steel_grid_condition.h" />
+    <ClInclude Include="steel_tools\steel_grid_format.h" />
+    <ClInclude Include="steel_tools\steel_grid_tools.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tendon_tools\dialog_tendon_random_curves.h" />
+    <ClInclude Include="tendon_tools\tendon_data.h" />
+    <ClInclude Include="tendon_tools\tendon_grid_tools.h" />
+    <ClInclude Include="tools\auto_load_module.h" />
+    <ClInclude Include="tools\base64_tools.h" />
+    <ClInclude Include="tools\clipboard.h" />
+    <ClInclude Include="tools\common_tools.h" />
+    <ClInclude Include="tools\compare_tools.h" />
+    <ClInclude Include="tools\csv_tools.h" />
+    <ClInclude Include="tools\file_tools.h" />
+    <ClInclude Include="tools\global_parameters.h" />
+    <ClInclude Include="tools\jsoncpp\allocator.h" />
+    <ClInclude Include="tools\jsoncpp\assertions.h" />
+    <ClInclude Include="tools\jsoncpp\autolink.h" />
+    <ClInclude Include="tools\jsoncpp\config.h" />
+    <ClInclude Include="tools\jsoncpp\features.h" />
+    <ClInclude Include="tools\jsoncpp\forwards.h" />
+    <ClInclude Include="tools\json.h" />
+    <ClInclude Include="tools\jsoncpp\json_tool.h" />
+    <ClInclude Include="tools\jsoncpp\reader.h" />
+    <ClInclude Include="tools\jsoncpp\value.h" />
+    <ClInclude Include="tools\jsoncpp\version.h" />
+    <ClInclude Include="tools\jsoncpp\writer.h" />
+    <ClInclude Include="tools\math_tools.h" />
+    <ClInclude Include="tools\md5_tools.h" />
+    <ClInclude Include="tools\mini_file_log.h" />
+    <ClInclude Include="tools\muparser\include\muParser.h" />
+    <ClInclude Include="tools\muparser\include\muParserBase.h" />
+    <ClInclude Include="tools\muparser\include\muParserBytecode.h" />
+    <ClInclude Include="tools\muparser\include\muParserCallback.h" />
+    <ClInclude Include="tools\muparser\include\muParserDef.h" />
+    <ClInclude Include="tools\muparser\include\muParserDLL.h" />
+    <ClInclude Include="tools\muparser\include\muParserError.h" />
+    <ClInclude Include="tools\muparser\include\muParserFixes.h" />
+    <ClInclude Include="tools\muparser\include\muParserInt.h" />
+    <ClInclude Include="tools\muparser\include\muParserStack.h" />
+    <ClInclude Include="tools\muparser\include\muParserTemplateMagic.h" />
+    <ClInclude Include="tools\muparser\include\muParserTest.h" />
+    <ClInclude Include="tools\muparser\include\muParserToken.h" />
+    <ClInclude Include="tools\muparser\include\muParserTokenReader.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\gcc_atomic.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\gcc_sync.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\generic-msvc.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\solaris.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\base64.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\big_endian.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\binary_log_types.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\byte_order_generic.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\byte_order_generic_x86.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\config.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\crypt_genhash_impl.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\decimal.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\dur_prop.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\errmsg.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\hash.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\heap.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\instance_callback.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\i_callable.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\keycache.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\lf.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\little_endian.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mutex_lock.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\myisampack.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysqld_ername.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysqld_error.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\client_authentication.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\client_plugin.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\get_password.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\mysql_lex_string.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\plugin_auth_common.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\plugin_trace.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_file.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_idle.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_mdl.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_memory.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_ps.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_socket.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_sp.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_stage.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_statement.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_table.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_thread.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_transaction.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v0.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v1.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v2.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_base.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_memory.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\service_mysql_alloc.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\service_my_snprintf.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_com.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_com_server.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_embed.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_time.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_version.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysys_err.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_aes.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_alloc.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_atomic.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_base.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_bit.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_bitmap.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_byteorder.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_check_opt.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_command.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_compare.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_compiler.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_config.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_dbug.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_default.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_dir.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_getopt.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_global.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_icp.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_list.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_md5.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_md5_size.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_murmur3.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_rdtsc.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_rnd.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_sqlcommand.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_stacktrace.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_sys.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread_local.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread_os_id.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_time.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_timer.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_tree.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_uctype.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_xml.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\m_ctype.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\m_string.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\nullable.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\password.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\prealloced_array.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\priority_queue.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\probes_mysql.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\probes_mysql_nodtrace.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\queues.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sha1.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sha2.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_chars.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_common.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_state.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_string.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-case.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-longopts.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-vars.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\template_utils.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_cond.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_lock.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_mutex.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_rwlock.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\typelib.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\violite.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\include\welcome_copyright_notice.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\buffer.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\cert_wrapper.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\crypto_wrapper.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\err.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\factory.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\handshake.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\helpers.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\lock.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\log.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\memory.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\memory_array.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\opensslv.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\prefix_ssl.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rsa.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\socket_wrapper.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\ssl.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\timer.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\transport_types.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\types.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\type_traits.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_error.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_imp.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_int.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\aes.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\algebra.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\arc4.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\asn.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\block.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\coding.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\des.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\dh.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\dsa.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\error.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\file.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hash.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hc128.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hmac.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\integer.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md2.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md4.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md5.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\misc.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\modarith.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\modes.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rabbit.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\random.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\ripemd.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rsa.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\runtime.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\sha.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\authentication_win\common.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\client_settings.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\mysql_trace.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\mysys_priv.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\my_handler_errors.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\my_static.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\mysys_ssl\my_aes_impl.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\mysys_ssl\my_default_priv.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\strings\t_ctype.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\vio\vio_priv.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_types.hpp" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\crc32.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\deflate.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inffast.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inffixed.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inflate.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inftrees.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\trees.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zconf.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zlib.h" />
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zutil.h" />
+    <ClInclude Include="private_detail\mysql_db_adapter.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\autoflag.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\beemutex.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\cmdline.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\common.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\comparable.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\config.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\connection.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\cpool.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\datetime.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\dbdriver.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\exceptions.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\field.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\field_names.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\field_types.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\insertpolicy.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\manip.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\myset.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\mysql++.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\mystring.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\noexceptions.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\null.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\options.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\qparms.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\query.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\querydef.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\refcounted.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\result.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\row.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\scopedconnection.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\sqlstream.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\sql_buffer.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\sql_types.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\ssqls.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\ssqls2.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\stadapter.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\stream2string.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\tcp_connection.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\tiny_int.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\transaction.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\type_info.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\uds_connection.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\utility.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\vallist.h" />
+    <ClInclude Include="private_detail\mysql\mysqlpp\wnp_connection.h" />
+    <ClInclude Include="tools\path_object.h" />
+    <ClInclude Include="tools\process_tools.h" />
+    <ClInclude Include="tools\scope_assemblage.h" />
+    <ClInclude Include="tools\string_tools.h" />
+    <ClInclude Include="tools\table_templates.h" />
+    <ClInclude Include="tools\xunzip.h" />
+    <ClInclude Include="tools\xzip.h" />
+    <ClInclude Include="ui_observer_tools\no_tab_multi_grid_editor.h" />
+    <ClInclude Include="ui_observer_tools\no_tab_multi_grid_observer.h" />
+    <ClInclude Include="ui_observer_tools\no_tab_single_gird_editor.h" />
+    <ClInclude Include="ui_observer_tools\no_tab_single_grid_observer.h" />
+    <ClInclude Include="ui_observer_tools\tabed_multi_grid_editor.h" />
+    <ClInclude Include="ui_observer_tools\tab_multi_grid_observer.h" />
+    <ClInclude Include="ui_observer_tools\tab_single_gird_editor.h" />
+    <ClInclude Include="ui_observer_tools\tab_single_grid_observer.h" />
+    <ClInclude Include="ui_observer_tools\x_mvc_editor_base.h" />
+    <ClInclude Include="ui_observer_tools\x_observer_base.h" />
+    <ClInclude Include="windows_helper\app_dialog_base.h" />
+    <ClInclude Include="windows_helper\app_dialog_input.h" />
+    <ClInclude Include="windows_helper\dialog_sub_grid.h" />
+    <ClInclude Include="windows_helper\dialog_tabbed_grids.h" />
+    <ClInclude Include="windows_helper\local_resource.h" />
+    <ClInclude Include="windows_helper\multi_grid_view.h" />
+    <ClInclude Include="tools\tinyxml2.h" />
+    <ClInclude Include="tools\xml_tools.h" />
+    <ClInclude Include="x3d_control_item.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="x_framework.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="lite_3d_lib\___重要说明___.txt" />
+    <Text Include="private_detail\___模块私用___.txt" />
+    <Text Include="private_detail\___版本说明___.txt" />
+    <Text Include="tools\muparser\Changes.txt" />
+    <Text Include="tools\muparser\License.txt" />
+    <Text Include="private_detail\mysql\connector-c\sql\share\dictionary.txt" />
+    <Text Include="private_detail\mysql\connector-c\sql\share\errmsg-utf8.txt" />
+    <Text Include="private_detail\mysql\connector-c\yassl\certs\taoCert.txt" />
+    <Text Include="private_detail\mysql\connector-c\strings\CHARSET_INFO.txt" />
+    <Text Include="private_detail\mysql\connector-c\zlib\algorithm.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\application_dialog_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\armscii8.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\ascii.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1250.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1251.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1256.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1257.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp850.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp852.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp866.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\dec8.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\geostd8.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\greek.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\hebrew.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\hp8.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\Index.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\keybcs2.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\koi8r.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\koi8u.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin1.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin2.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin5.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin7.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\macce.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\macroman.xml" />
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\swe7.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="x_framework.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

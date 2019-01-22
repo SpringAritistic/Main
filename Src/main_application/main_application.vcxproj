@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA09A745-954F-41EB-A525-F59C176E21DA}</ProjectGuid>
+    <RootNamespace>main_app</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\bin\frame\</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\..\$(Configuration)\Bin\</OutDir>
+    <IntDir>$(OutDir)\..\MidOutput\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\..\include\CommonModules;$(OutDir)\..\..\..\include\frame;$(OutDir)\..\..\..\include;$(OutDir)\..\..\..\3rd\include;$(OutDir)\..\..\..\3rd/include/XTToolkit</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir)\..\..\lib\CommonModules\;$(OutDir)\..\..\lib\frame;$(OutDir)\..\..\lib\;$(OutDir)\..\..\..\3rd\$(Configuration)\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>dbghelp.lib;GdiPlus.lib;THGridControlD.lib;htmlhelp.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\..\3rd/include/XTToolkit;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>del /f /s /q ..\..\..\debug\bin\frame\styles\
+xcopy /s /c /i /r /y styles\*.* ..\..\..\debug\bin\frame\styles\
+</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\include\CommonModules;$(OutDir)\..\..\include\frame;$(OutDir)\..\..\include\;$(OutDir)\..\..\3rd\include;$(OutDir)\..\..\3rd/include/XTToolkit</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>
+      </ForcedIncludeFiles>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OutDir)\..\lib\CommonModules\;$(OutDir)\..\lib\frame;$(OutDir)\..\lib\;$(OutDir)\..\..\..\3rd\$(Configuration)\lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>dbghelp.lib;GdiPlus.lib;THGridControl.lib;htmlhelp.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)\..\..\..\3rd/include/XTToolkit;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>del /f /s /q ..\..\..\release\bin\frame\styles\
+xcopy /s /c /i /r /y styles\*.* ..\..\..\release\bin\frame\styles\
+</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="app_about_dialog.h" />
+    <ClInclude Include="app_configs.h" />
+    <ClInclude Include="app_console_wnd.h" />
+    <ClInclude Include="app_property_wnd.h" />
+    <ClInclude Include="app_skin_manager.h" />
+    <ClInclude Include="client_tab_view.h" />
+    <ClInclude Include="accelerator_map.h" />
+    <ClInclude Include="docking_pane.h" />
+    <ClInclude Include="app_ribbon_bar.h" />
+    <ClInclude Include="app_size_config_helper.h" />
+    <ClInclude Include="help_configs.h" />
+    <ClInclude Include="main_frame.h" />
+    <ClInclude Include="mini_dump.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="splash_window.h" />
+    <ClInclude Include="start_page.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="main_application.h" />
+    <ClInclude Include="workspace_view.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app_about_dialog.cpp" />
+    <ClCompile Include="app_configs.cpp" />
+    <ClCompile Include="app_console_wnd.cpp" />
+    <ClCompile Include="app_property_wnd.cpp" />
+    <ClCompile Include="app_skin_manager.cpp" />
+    <ClCompile Include="client_tab_view.cpp" />
+    <ClCompile Include="accelerator_map.cpp" />
+    <ClCompile Include="docking_pane.cpp" />
+    <ClCompile Include="app_ribbon_bar.cpp" />
+    <ClCompile Include="app_size_config_helper.cpp" />
+    <ClCompile Include="help_configs.cpp" />
+    <ClCompile Include="main_frame.cpp" />
+    <ClCompile Include="mini_dump.cpp" />
+    <ClCompile Include="splash_window.cpp" />
+    <ClCompile Include="start_page.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="main_application.cpp" />
+    <ClCompile Include="workspace_view.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main_application.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\main_application.ico" />
+    <Image Include="res\RibbonMenu.png" />
+    <Image Include="res\ribbon_options.png" />
+    <Image Include="res\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\main_application.rc2" />
+    <None Include="styles\black_grid_settings.ini" />
+    <None Include="styles\blue_grid_settings.ini" />
+    <None Include="styles\dark_grid_settings.ini" />
+    <None Include="styles\Office2007.cjstyles" />
+    <None Include="styles\Office2007.dll" />
+    <None Include="styles\Office2010.cjstyles" />
+    <None Include="styles\Office2010.dll" />
+    <None Include="styles\Office2013.cjstyles" />
+    <None Include="styles\Office2013.dll" />
+    <None Include="styles\white_grid_settings.ini" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="main_app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

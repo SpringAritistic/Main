@@ -1,0 +1,9 @@
+LIBRARY      "HMMathTool"
+EXPORTS
+isDoubleEqual @1
+isDoubleGreat @2
+isDoubleLess @3
+isDoubleGreatEqual @4
+isDoubleLessEqual @5
+
+    ; Explicit exports can go here

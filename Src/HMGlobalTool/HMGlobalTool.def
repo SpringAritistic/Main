@@ -1,0 +1,6 @@
+; HMGlobalTool.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HMGlobalTool"
+
+EXPORTS
+    ; Explicit exports can go here

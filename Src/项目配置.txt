@@ -1,0 +1,20 @@
+$(SolutionDir)\..\$(Configuration)\Bin\
+$(OutDir)\..\MidOutput\$(ProjectName)\
+
+
+$(SolutionDir)\..\include\;$(SolutionDir)\..\3rd\include\
+
+$(SolutionDir)\..\$(Configuration)\Lib;$(SolutionDir)\..\3rd\include\Lib
+
+
+md  $(SolutionDir)\..\include\$(ProjectName)\
+md  $(SolutionDir)\..\include\$(ProjectName)\Upgrades\
+del  $(SolutionDir)\..\include\$(ProjectName)\*.h  /s /q
+copy *.h $(SolutionDir)\..\include\$(ProjectName)\
+copy  Upgrades\*.h  $(SolutionDir)\..\include\$(ProjectName)\Upgrades\
+
+del /f /q /s $(SolutionDir)\..\include\$(ProjectName)\
+xcopy /s /c /q /r /y *.h $(SolutionDir)\..\include\$(ProjectName)\
+
+
+git config --global commit.template C:\Users\Flourish\GitTemplate.txt

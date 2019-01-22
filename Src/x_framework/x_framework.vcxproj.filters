@@ -1,0 +1,2512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="resource files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{ace970c7-05d6-42b5-b59a-bb5c32816446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows_helper">
+      <UniqueIdentifier>{720103c6-5a00-4f9d-b347-61c0b1fa2951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser">
+      <UniqueIdentifier>{6c86f9d4-5b7f-4a13-8769-b02eb6975cb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser\src">
+      <UniqueIdentifier>{b915a8da-1cf7-455d-91d1-71a6126de206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\muparser\include">
+      <UniqueIdentifier>{e4eeb851-56d0-4f50-a259-a94a4e823a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="steel_tools">
+      <UniqueIdentifier>{eacf26e0-1aa5-42f8-8b68-f07a177c6d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tendon_tools">
+      <UniqueIdentifier>{2ad5eb87-7e3e-4909-858f-25277a71e567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="frame_steel_tools">
+      <UniqueIdentifier>{9f210634-25f8-403b-8d2f-99928a34d786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\jsoncpp">
+      <UniqueIdentifier>{f793c7e9-4423-4b76-9ca4-0a59196f2520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tendon_tools\templates">
+      <UniqueIdentifier>{18dec902-4e2c-41e1-ac37-cab52dc556e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui_observer_tools">
+      <UniqueIdentifier>{3229aad7-2cc6-48b0-8ee5-7fd031dd3dd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{555091a5-1e3f-45b2-a891-de48ccc2b3f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail">
+      <UniqueIdentifier>{34ebbdd4-4000-44c9-af15-5353b16c6296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql">
+      <UniqueIdentifier>{14a8122e-bfb9-4074-a0d6-dbcc35900ccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c">
+      <UniqueIdentifier>{017fccfd-f923-4bf3-b6d3-75b335f9bf2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\dbug">
+      <UniqueIdentifier>{5d14ca07-28d6-4a8c-9c7a-83dc61c78447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\mysys">
+      <UniqueIdentifier>{900ad314-932a-4655-89b8-eb1bc18d6d45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\mysys_ssl">
+      <UniqueIdentifier>{199bc6a4-f6a0-418f-b636-3c223b448c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\yassl">
+      <UniqueIdentifier>{b0f59034-ca3e-40d0-827c-b1e4673b8def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\yassl\certs">
+      <UniqueIdentifier>{dee9fdd6-40f8-4de2-babc-784e2a6f82cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\yassl\src">
+      <UniqueIdentifier>{6e0f2ecc-aff0-4a7c-b0e6-18b174413ab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\yassl\benchmark">
+      <UniqueIdentifier>{94ea6124-033f-42e9-8f6b-e9cc089a3778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\zlib">
+      <UniqueIdentifier>{c8c4d35e-a5c4-40e3-a933-9a6cb07b4aaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\vio">
+      <UniqueIdentifier>{da86fa40-3775-4bfb-9977-61f9c7c29537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\strings">
+      <UniqueIdentifier>{9a7b4ff5-becd-4ecb-a6b6-26a596f9be6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\include">
+      <UniqueIdentifier>{5ff3c66b-c137-4af7-975a-1ccd91894e87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\include\atomic">
+      <UniqueIdentifier>{94205d28-ba54-49bd-922d-0fd3c005cfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\include\mysql">
+      <UniqueIdentifier>{70d62447-2f4d-41d4-98a3-65614f259207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\include\mysql\psi">
+      <UniqueIdentifier>{884f04a7-918a-4eac-9dcb-93dc92671d9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\libmysql">
+      <UniqueIdentifier>{8b8955e3-904e-4439-8a3d-99f2584626cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\libmysql\authentication_win">
+      <UniqueIdentifier>{d7c85500-1b6f-4d5c-a270-ad99d50768a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\sql">
+      <UniqueIdentifier>{be205672-49d9-4cf4-b4dc-d6ed504b4bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\sql\auth">
+      <UniqueIdentifier>{49c1d6b7-e1c1-4446-89a9-11f8fe8dbbd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\sql\share">
+      <UniqueIdentifier>{fc921228-7497-4fca-be47-82dc15c2e191}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\sql\share\charsets">
+      <UniqueIdentifier>{2a20da5a-f1ad-434c-b036-038e36c75072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\connector-c\sql-common">
+      <UniqueIdentifier>{e07d38c3-818d-41ab-83f7-7277129ddf8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private_detail\mysql\mysqlpp">
+      <UniqueIdentifier>{464f8763-1f49-40ae-b57a-6151ffff2bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="frame_steel_tools\templates">
+      <UniqueIdentifier>{8671e0a5-97c2-4e6f-b6cf-99c406f9c691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lite_3d_lib">
+      <UniqueIdentifier>{14590b6f-f353-48c7-98e0-b96dd18dc36f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\compare_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\csv_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\string_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\auto_load_module.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\file_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\table_templates.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\multi_grid_view.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="x_framework.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\mini_file_log.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\tinyxml2.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xml_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\common_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\math_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\scope_assemblage.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParser.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserBase.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserBytecode.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserCallback.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserDLL.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserError.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserInt.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserTest.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\muparser\src\muParserTokenReader.cpp">
+      <Filter>tools\muparser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\global_parameters.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\app_dialog_base.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\local_resource.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="steel_tools\steel_data.cpp">
+      <Filter>steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="steel_tools\steel_grid_condition.cpp">
+      <Filter>steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="steel_tools\steel_grid_tools.cpp">
+      <Filter>steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="steel_tools\steel_grid_format.cpp">
+      <Filter>steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xunzip.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\xzip.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="frame_steel_tools\frame_data.cpp">
+      <Filter>frame_steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="frame_steel_tools\frame_grid_tools.cpp">
+      <Filter>frame_steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="frame_steel_tools\hook_setting_data.cpp">
+      <Filter>frame_steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="frame_steel_tools\hook_setting_dialog.cpp">
+      <Filter>frame_steel_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_reader.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_value.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\jsoncpp\json_writer.cpp">
+      <Filter>tools\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\path_object.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\md5_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\base64_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\dialog_sub_grid.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\dialog_tabbed_grids.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="windows_helper\app_dialog_input.cpp">
+      <Filter>windows_helper</Filter>
+    </ClCompile>
+    <ClCompile Include="tendon_tools\tendon_data.cpp">
+      <Filter>tendon_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tendon_tools\tendon_grid_tools.cpp">
+      <Filter>tendon_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="tendon_tools\dialog_tendon_random_curves.cpp">
+      <Filter>tendon_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\x_mvc_editor_base.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\tab_multi_grid_observer.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\x_observer_base.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\no_tab_multi_grid_editor.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\no_tab_multi_grid_observer.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\no_tab_single_gird_editor.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\no_tab_single_grid_observer.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\tab_single_gird_editor.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\tab_single_grid_observer.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="ui_observer_tools\tabed_multi_grid_editor.cpp">
+      <Filter>ui_observer_tools</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\app_ui_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\cmd_container_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\console_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\data_center_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\db_adapter_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\popup_menu_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\property_grid_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\serialize_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="interface\window_interface.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\dbug\dbug.c">
+      <Filter>private_detail\mysql\connector-c\dbug</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\dbug\factorial.c">
+      <Filter>private_detail\mysql\connector-c\dbug</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\common.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake_client.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake_libmysql.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\log_client.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\authentication_win\plugin_client.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\errmsg.c">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\libmysql.c">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\mysql_trace.c">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\libmysql\test_trace_plugin.cc">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\array.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\base64.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\charset.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\charset-def.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\checksum.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\errors.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\hash_mysys.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_alloc-pin.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_dynarray.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\lf_hash.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\list.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_arr_appstr.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_cache.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_dirname.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_fn_ext.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_format.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_getdate.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_iocache.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_iocache2.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_keycache.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_keycaches.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_loadpath.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_pack.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_path.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_qsort.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_qsort2.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_radix.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_same.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_soundex.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_tempfile.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_unixpath.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mf_wcomp.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\mulalloc.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_access.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_alloc.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_bit.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_bitmap.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_chmod.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_chsize.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_compare.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_compress.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_conio.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_copy.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_crc32.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_create.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_delete.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_div.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_error.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_file.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_fopen.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_fstream.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_gethwaddr.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_getsystime.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_getwd.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_init.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_lib.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_lock.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_malloc.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_memmem.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mess.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mkdir.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_mmap.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_once.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_open.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_pread.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_rdtsc.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_read.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_redel.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_rename.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_seek.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_static.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_symlink.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_symlink2.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_sync.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_syslog.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_thr_init.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_thread.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_windac.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_winerr.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_winfile.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\my_write.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\psi_noop.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\ptr_cmp.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\queues.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\sql_chars.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\stacktrace.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\string.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_cond.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_lock.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_mutex.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\thr_rwlock.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\tree.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\typelib.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys\win_timers.c">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\crypt_genhash_impl.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\mf_tempdir.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_aes.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_aes_yassl.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_default.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_getopt.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_md5.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_murmur3.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_rnd.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_sha1.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\mysys_ssl\my_sha2.cc">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql\auth\password.c">
+      <Filter>private_detail\mysql\connector-c\sql\auth</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql\net_serv.cc">
+      <Filter>private_detail\mysql\connector-c\sql</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client.c">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client_authentication.cc">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\client_plugin.c">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\my_time.c">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\pack.c">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\sql-common\sql_string.cc">
+      <Filter>private_detail\mysql\connector-c\sql-common</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\bchange.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-big5.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-bin.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-cp932.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-czech.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-euc_kr.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-eucjpms.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-extra.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gb2312.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gb18030.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-gbk.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-latin1.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-mb.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-simple.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-sjis.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-tis620.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-uca.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-ucs2.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-ujis.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-utf8.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\ctype-win1250ch.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\decimal.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\dtoa.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\int2str.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\is_prefix.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\llstr.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\longlong2str.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_stpmov.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_stpnmov.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_strchr.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_strtoll10.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\my_vsnprintf.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\str_alloc.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\str2int.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strappend.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strcend.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strcont.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strend.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strfill.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strmake.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strnlen.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strxmov.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\strxnmov.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\strings\xml.c">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\vio.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viopipe.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\vioshm.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viosocket.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viossl.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\vio\viosslfactories.c">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\aes.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\aestables.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\algebra.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\arc4.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\asn.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\buffer.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\cert_wrapper.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\coding.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\crypto_wrapper.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\des.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\dh.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\dsa.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\file.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\get_password.c">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\handshake_yassl.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\hash_yassl.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\hc128.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\integer.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\lock.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\log.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md2.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md4.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\md5.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\misc.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\rabbit.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\random.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\ripemd.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\rsa.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\sha.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\socket_wrapper.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\ssl.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\timer.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_error.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_imp.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\yassl\src\yassl_int.cpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\adler32.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\compress.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\crc32.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\deflate.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\gzio.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\infback.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inffast.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inflate.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\inftrees.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\trees.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\uncompr.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\connector-c\zlib\zutil.c">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\beemutex.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\cmdline.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\connection.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\cpool.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\datetime.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\dbdriver.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\field_names.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\field_types.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\manip.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\myset.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\mysql++.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\mystring.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\null.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\options.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\qparms.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\query.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\result.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\row.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\scopedconnection.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\sql_buffer.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\sqlstream.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\ssqls2.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\stadapter.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\tcp_connection.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\transaction.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\type_info.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\uds_connection.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\utility.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\vallist.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql\mysqlpp\wnp_connection.cpp">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\mysql_db_adapter.cpp">
+      <Filter>private_detail</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\process_tools.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="private_detail\x_string_to_time.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_arc.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_definition.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_line.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle_fan.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_triangle_strip.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_circle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ring.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ball.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_box.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_cone.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_cylinder.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ellipse.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_ellipsoid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_elliptic_ring.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_hemisphere.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_prismoid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_pyramid.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_rectangle.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_text.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_bspline.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_capsule.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_data_base.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_polygon.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_extrude.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_setting_out.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="x3d_control_item.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_rotate.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="tools\clipboard.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_action_fuse.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lite_3d_lib\x3d_parabola.cpp">
+      <Filter>lite_3d_lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\compare_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\csv_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\string_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="macro.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\auto_load_module.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\file_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\table_templates.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\multi_grid_view.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\mini_file_log.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\tinyxml2.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xml_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\common_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\math_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\scope_assemblage.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParser.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserBase.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserBytecode.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserCallback.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserDef.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserDLL.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserError.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserFixes.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserInt.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserStack.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTemplateMagic.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTest.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserToken.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\muparser\include\muParserTokenReader.h">
+      <Filter>tools\muparser\include</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\global_parameters.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\app_dialog_base.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\local_resource.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="steel_tools\steel_data.h">
+      <Filter>steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="steel_tools\steel_grid_condition.h">
+      <Filter>steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="steel_tools\steel_grid_tools.h">
+      <Filter>steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="steel_tools\steel_grid_format.h">
+      <Filter>steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xunzip.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\xzip.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_steel_tools\frame_data.h">
+      <Filter>frame_steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_steel_tools\frame_grid_tools.h">
+      <Filter>frame_steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_steel_tools\hook_setting_data.h">
+      <Filter>frame_steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="frame_steel_tools\hook_setting_dialog.h">
+      <Filter>frame_steel_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\allocator.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\assertions.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\config.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\features.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\forwards.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\json_tool.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\reader.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\value.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\version.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\writer.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\json.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\jsoncpp\autolink.h">
+      <Filter>tools\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\path_object.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\md5_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\base64_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\dialog_sub_grid.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\dialog_tabbed_grids.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="windows_helper\app_dialog_input.h">
+      <Filter>windows_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="tendon_tools\tendon_data.h">
+      <Filter>tendon_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tendon_tools\tendon_grid_tools.h">
+      <Filter>tendon_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tendon_tools\dialog_tendon_random_curves.h">
+      <Filter>tendon_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\tab_multi_grid_observer.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\x_mvc_editor_base.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\x_observer_base.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\no_tab_multi_grid_editor.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\no_tab_multi_grid_observer.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\no_tab_single_gird_editor.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\no_tab_single_grid_observer.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\tab_single_gird_editor.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\tab_single_grid_observer.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_observer_tools\tabed_multi_grid_editor.h">
+      <Filter>ui_observer_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\app_ui_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\cmd_container_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\console_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\data_center_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\db_adapter_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\popup_menu_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\property_grid_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\serialize_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\window_interface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\gcc_atomic.h">
+      <Filter>private_detail\mysql\connector-c\include\atomic</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\gcc_sync.h">
+      <Filter>private_detail\mysql\connector-c\include\atomic</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\generic-msvc.h">
+      <Filter>private_detail\mysql\connector-c\include\atomic</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\atomic\solaris.h">
+      <Filter>private_detail\mysql\connector-c\include\atomic</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_file.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_idle.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_mdl.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_memory.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_ps.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_socket.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_sp.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_stage.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_statement.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_table.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_thread.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\mysql_transaction.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v0.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v1.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v2.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_base.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\psi\psi_memory.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\client_authentication.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\client_plugin.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\get_password.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\mysql_lex_string.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\plugin_auth_common.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\plugin_trace.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\service_my_snprintf.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql\service_mysql_alloc.h">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\base64.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\big_endian.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\binary_log_types.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\byte_order_generic.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\byte_order_generic_x86.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\config.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\crypt_genhash_impl.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\decimal.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\dur_prop.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\errmsg.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\hash.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\heap.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\i_callable.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\instance_callback.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\keycache.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\lf.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\little_endian.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\m_ctype.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\m_string.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mutex_lock.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_aes.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_alloc.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_atomic.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_base.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_bit.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_bitmap.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_byteorder.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_check_opt.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_command.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_compare.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_compiler.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_config.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_dbug.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_default.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_dir.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_getopt.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_global.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_icp.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_list.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_md5.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_md5_size.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_murmur3.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_rdtsc.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_rnd.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_sqlcommand.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_stacktrace.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_sys.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread_local.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_thread_os_id.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_time.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_timer.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_tree.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_uctype.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\my_xml.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\myisampack.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_com.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_com_server.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_embed.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_time.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysql_version.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysqld_ername.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysqld_error.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\mysys_err.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\nullable.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\password.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\prealloced_array.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\priority_queue.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\probes_mysql.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\probes_mysql_nodtrace.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\queues.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sha1.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sha2.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_chars.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_common.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_state.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sql_string.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-case.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-longopts.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\sslopt-vars.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\template_utils.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_cond.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_lock.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_mutex.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\thr_rwlock.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\typelib.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\violite.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\include\welcome_copyright_notice.h">
+      <Filter>private_detail\mysql\connector-c\include</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\authentication_win\common.h">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\authentication_win\handshake.h">
+      <Filter>private_detail\mysql\connector-c\libmysql\authentication_win</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\client_settings.h">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\libmysql\mysql_trace.h">
+      <Filter>private_detail\mysql\connector-c\libmysql</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\my_handler_errors.h">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\my_static.h">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys\mysys_priv.h">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys_ssl\my_aes_impl.h">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\mysys_ssl\my_default_priv.h">
+      <Filter>private_detail\mysql\connector-c\mysys_ssl</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\strings\t_ctype.h">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\vio\vio_priv.h">
+      <Filter>private_detail\mysql\connector-c\vio</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\aes.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\algebra.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\arc4.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\asn.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\block.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\buffer.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\cert_wrapper.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\coding.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\crypto_wrapper.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\des.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\dh.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\dsa.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\err.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\error.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\factory.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\file.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\handshake.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hash.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hc128.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\helpers.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\hmac.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\integer.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\lock.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\log.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md2.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md4.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\md5.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\memory.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\memory_array.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\misc.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\modarith.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\modes.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\opensslv.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\prefix_ssl.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rabbit.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\random.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\ripemd.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rsa.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\rsa.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\runtime.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\sha.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\socket_wrapper.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\ssl.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\timer.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\transport_types.h">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\type_traits.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\types.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_error.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_imp.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_int.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\yassl\src\yassl_types.hpp">
+      <Filter>private_detail\mysql\connector-c\yassl\src</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\crc32.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\deflate.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inffast.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inffixed.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inflate.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\inftrees.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\trees.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zconf.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zlib.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\connector-c\zlib\zutil.h">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\autoflag.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\beemutex.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\cmdline.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\common.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\comparable.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\config.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\connection.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\cpool.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\datetime.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\dbdriver.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\exceptions.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\field.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\field_names.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\field_types.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\insertpolicy.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\manip.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\myset.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\mysql++.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\mystring.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\noexceptions.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\null.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\options.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\qparms.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\query.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\querydef.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\refcounted.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\result.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\row.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\scopedconnection.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\sql_buffer.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\sql_types.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\sqlstream.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\ssqls.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\ssqls2.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\stadapter.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\stream2string.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\tcp_connection.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\tiny_int.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\transaction.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\type_info.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\uds_connection.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\utility.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\vallist.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql\mysqlpp\wnp_connection.h">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\mysql_db_adapter.h">
+      <Filter>private_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\process_tools.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="private_detail\x_string_to_time.h">
+      <Filter>private_detail</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_arc.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_definition.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_line.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle_fan.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_triangle_strip.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_circle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ring.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ball.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_box.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_cone.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_cylinder.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ellipse.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_ellipsoid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_elliptic_ring.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_hemisphere.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_prismoid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_pyramid.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_rectangle.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_text.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_bspline.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_capsule.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_data_base.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_polygon.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_extrude.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_setting_out.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="x3d_control_item.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_rotate.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\clipboard.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_action_fuse.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lite_3d_lib\x3d_parabola.h">
+      <Filter>lite_3d_lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="x_framework.rc">
+      <Filter>resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\x_framework.rc2">
+      <Filter>resource files</Filter>
+    </None>
+    <None Include="tools\jsoncpp\json_valueiterator.inl">
+      <Filter>tools\jsoncpp</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\dbug\monty.doc">
+      <Filter>private_detail\mysql\connector-c\dbug</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v0.h.pp">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v1.h.pp">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\include\mysql\psi\psi_abi_v2.h.pp">
+      <Filter>private_detail\mysql\connector-c\include\mysql\psi</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\include\mysql\client_plugin.h.pp">
+      <Filter>private_detail\mysql\connector-c\include\mysql</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\mysys\ChangeLog">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\mysys\my_timer_cycles.il">
+      <Filter>private_detail\mysql\connector-c\mysys</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\sql\share\charsets\languages.html">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\sql\share\charsets\README">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\dh1024.der">
+      <Filter>private_detail\mysql\connector-c\yassl\benchmark</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\dsa1024.der">
+      <Filter>private_detail\mysql\connector-c\yassl\benchmark</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\benchmark\rsa1024.der">
+      <Filter>private_detail\mysql\connector-c\yassl\benchmark</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\ca-cert.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\ca-key.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-cert.der">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-cert.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-key.der">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-key.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-keyEnc.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\client-keyEnc3.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dh1024.dat">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa1024.der">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa1024.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\dsa-cert.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-cert.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-key.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\yassl\certs\server-keyEnc.pem">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\ChangeLog">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\FAQ">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\INDEX">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\README">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\README.MySQL">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\zlib\zlib.3">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </None>
+    <None Include="private_detail\mysql\connector-c\connector-c-gpl-en.pdf">
+      <Filter>private_detail\mysql\connector-c</Filter>
+    </None>
+    <None Include="private_detail\mysql\mysqlpp\userman.pdf">
+      <Filter>private_detail\mysql\mysqlpp</Filter>
+    </None>
+    <None Include="frame_steel_tools\templates\x_framework_table_steel_frame.TDFX">
+      <Filter>frame_steel_tools\templates</Filter>
+    </None>
+    <None Include="frame_steel_tools\templates\x_framework_table_steel_frame.TAB">
+      <Filter>frame_steel_tools\templates</Filter>
+    </None>
+    <None Include="tendon_tools\templates\x_framework_table_tendon.TDFX">
+      <Filter>tendon_tools\templates</Filter>
+    </None>
+    <None Include="tendon_tools\templates\x_framework_table_tendon.TAB">
+      <Filter>tendon_tools\templates</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="tools\muparser\Changes.txt">
+      <Filter>tools\muparser</Filter>
+    </Text>
+    <Text Include="tools\muparser\License.txt">
+      <Filter>tools\muparser</Filter>
+    </Text>
+    <Text Include="private_detail\mysql\connector-c\sql\share\dictionary.txt">
+      <Filter>private_detail\mysql\connector-c\sql\share</Filter>
+    </Text>
+    <Text Include="private_detail\mysql\connector-c\sql\share\errmsg-utf8.txt">
+      <Filter>private_detail\mysql\connector-c\sql\share</Filter>
+    </Text>
+    <Text Include="private_detail\mysql\connector-c\strings\CHARSET_INFO.txt">
+      <Filter>private_detail\mysql\connector-c\strings</Filter>
+    </Text>
+    <Text Include="private_detail\mysql\connector-c\yassl\certs\taoCert.txt">
+      <Filter>private_detail\mysql\connector-c\yassl\certs</Filter>
+    </Text>
+    <Text Include="private_detail\mysql\connector-c\zlib\algorithm.txt">
+      <Filter>private_detail\mysql\connector-c\zlib</Filter>
+    </Text>
+    <Text Include="private_detail\___模块私用___.txt">
+      <Filter>private_detail</Filter>
+    </Text>
+    <Text Include="private_detail\___版本说明___.txt">
+      <Filter>private_detail</Filter>
+    </Text>
+    <Text Include="lite_3d_lib\___重要说明___.txt">
+      <Filter>lite_3d_lib</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\application_dialog_icon.ico">
+      <Filter>resource files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\armscii8.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\ascii.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp850.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp852.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp866.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1250.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1251.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1256.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\cp1257.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\dec8.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\geostd8.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\greek.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\hebrew.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\hp8.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\Index.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\keybcs2.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\koi8r.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\koi8u.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin1.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin2.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin5.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\latin7.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\macce.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\macroman.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+    <Xml Include="private_detail\mysql\connector-c\sql\share\charsets\swe7.xml">
+      <Filter>private_detail\mysql\connector-c\sql\share\charsets</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

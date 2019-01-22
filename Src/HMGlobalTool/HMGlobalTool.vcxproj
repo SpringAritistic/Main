@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FD654308-09D0-433D-B43A-746F7216D212}</ProjectGuid>
+    <RootNamespace>HMGlobalTool</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\Bin\</OutDir>
+    <IntDir>$(OutDir)..\MidOutput\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>.\HMGlobalTool.def</ModuleDefinitionFile>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;__HMGlobalTool__;NO_WARN_MBCS_MFC_DEPRECATION;TINYXML2_EXPORT;JSON_DLL_BUILD;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>private_detail\mysql\connector-c\include\;$(SolutionDir)\include\;$(SolutionDir)\3rd\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>.\HMGlobalTool.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\Lib;$(SolutionDir)3rd\$(Configuration)\Lib</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(ProjectName).lib</ImportLibrary>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreBuildEvent>
+      <Command>md  $(SolutionDir)include
+md  $(SolutionDir)include\$(ProjectName)\
+del /f /q /s $(SolutionDir)include\$(ProjectName)\
+
+
+xcopy /s /c /q /r /y *.h $(SolutionDir)include\$(ProjectName)\</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="lite_3d_lib\___重要说明___.txt" />
+    <Text Include="private_detail\___模块私用___.txt" />
+    <Text Include="private_detail\___版本说明___.txt" />
+    <Text Include="ReadMe.txt" />
+    <Text Include="tools\muparser\Changes.txt" />
+    <Text Include="tools\muparser\License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HMGlobalTool.cpp" />
+    <ClCompile Include="interface\app_ui_interface.cpp" />
+    <ClCompile Include="interface\cmd_container_interface.cpp" />
+    <ClCompile Include="interface\console_interface.cpp" />
+    <ClCompile Include="interface\data_center_interface.cpp" />
+    <ClCompile Include="interface\db_adapter_interface.cpp" />
+    <ClCompile Include="interface\popup_menu_interface.cpp" />
+    <ClCompile Include="interface\property_grid_interface.cpp" />
+    <ClCompile Include="interface\serialize_interface.cpp" />
+    <ClCompile Include="interface\window_interface.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_extrude.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_fuse.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_rotate.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_action_setting_out.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_arc.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ball.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_box.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_bspline.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_capsule.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_circle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_cone.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_cylinder.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_data_base.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_definition.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ellipse.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ellipsoid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_elliptic_ring.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_hemisphere.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_line.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_parabola.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_polygon.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_prismoid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_pyramid.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_rectangle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_ring.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_text.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle_fan.cpp" />
+    <ClCompile Include="lite_3d_lib\x3d_triangle_strip.cpp" />
+    <ClCompile Include="private_detail\x_string_to_time.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="tools\auto_load_module.cpp" />
+    <ClCompile Include="tools\base64_tools.cpp" />
+    <ClCompile Include="tools\clipboard.cpp" />
+    <ClCompile Include="tools\common_tools.cpp" />
+    <ClCompile Include="tools\compare_tools.cpp" />
+    <ClCompile Include="tools\csv_tools.cpp" />
+    <ClCompile Include="tools\file_tools.cpp" />
+    <ClCompile Include="tools\global_parameters.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_reader.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_value.cpp" />
+    <ClCompile Include="tools\jsoncpp\json_writer.cpp" />
+    <ClCompile Include="tools\math_tools.cpp" />
+    <ClCompile Include="tools\md5_tools.cpp" />
+    <ClCompile Include="tools\mini_file_log.cpp" />
+    <ClCompile Include="tools\muparser\src\muParser.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserBase.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserBytecode.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserCallback.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserDLL.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserError.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserInt.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserTest.cpp" />
+    <ClCompile Include="tools\muparser\src\muParserTokenReader.cpp" />
+    <ClCompile Include="tools\path_object.cpp" />
+    <ClCompile Include="tools\process_tools.cpp" />
+    <ClCompile Include="tools\scope_assemblage.cpp" />
+    <ClCompile Include="tools\string_tools.cpp" />
+    <ClCompile Include="tools\tinyxml2.cpp" />
+    <ClCompile Include="tools\xml_tools.cpp" />
+    <ClCompile Include="tools\xunzip.cpp" />
+    <ClCompile Include="tools\xzip.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HMGlobalTool.def" />
+    <None Include="res\HMGlobalTool.rc2" />
+    <None Include="tools\jsoncpp\json_valueiterator.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HMGlobalToolInc.h" />
+    <ClInclude Include="HMGlobalToolMacro.h" />
+    <ClInclude Include="interface\app_ui_interface.h" />
+    <ClInclude Include="interface\cmd_container_interface.h" />
+    <ClInclude Include="interface\console_interface.h" />
+    <ClInclude Include="interface\data_center_interface.h" />
+    <ClInclude Include="interface\db_adapter_interface.h" />
+    <ClInclude Include="interface\popup_menu_interface.h" />
+    <ClInclude Include="interface\property_grid_interface.h" />
+    <ClInclude Include="interface\serialize_interface.h" />
+    <ClInclude Include="interface\window_interface.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_extrude.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_fuse.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_rotate.h" />
+    <ClInclude Include="lite_3d_lib\x3d_action_setting_out.h" />
+    <ClInclude Include="lite_3d_lib\x3d_arc.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ball.h" />
+    <ClInclude Include="lite_3d_lib\x3d_box.h" />
+    <ClInclude Include="lite_3d_lib\x3d_bspline.h" />
+    <ClInclude Include="lite_3d_lib\x3d_capsule.h" />
+    <ClInclude Include="lite_3d_lib\x3d_circle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_cone.h" />
+    <ClInclude Include="lite_3d_lib\x3d_cylinder.h" />
+    <ClInclude Include="lite_3d_lib\x3d_data_base.h" />
+    <ClInclude Include="lite_3d_lib\x3d_definition.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ellipse.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ellipsoid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_elliptic_ring.h" />
+    <ClInclude Include="lite_3d_lib\x3d_hemisphere.h" />
+    <ClInclude Include="lite_3d_lib\x3d_line.h" />
+    <ClInclude Include="lite_3d_lib\x3d_parabola.h" />
+    <ClInclude Include="lite_3d_lib\x3d_polygon.h" />
+    <ClInclude Include="lite_3d_lib\x3d_prismoid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_pyramid.h" />
+    <ClInclude Include="lite_3d_lib\x3d_rectangle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_ring.h" />
+    <ClInclude Include="lite_3d_lib\x3d_text.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle_fan.h" />
+    <ClInclude Include="lite_3d_lib\x3d_triangle_strip.h" />
+    <ClInclude Include="private_detail\x_string_to_time.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="tools\auto_load_module.h" />
+    <ClInclude Include="tools\base64_tools.h" />
+    <ClInclude Include="tools\clipboard.h" />
+    <ClInclude Include="tools\common_tools.h" />
+    <ClInclude Include="tools\compare_tools.h" />
+    <ClInclude Include="tools\csv_tools.h" />
+    <ClInclude Include="tools\file_tools.h" />
+    <ClInclude Include="tools\global_parameters.h" />
+    <ClInclude Include="tools\json.h" />
+    <ClInclude Include="tools\jsoncpp\allocator.h" />
+    <ClInclude Include="tools\jsoncpp\assertions.h" />
+    <ClInclude Include="tools\jsoncpp\autolink.h" />
+    <ClInclude Include="tools\jsoncpp\config.h" />
+    <ClInclude Include="tools\jsoncpp\features.h" />
+    <ClInclude Include="tools\jsoncpp\forwards.h" />
+    <ClInclude Include="tools\jsoncpp\json_tool.h" />
+    <ClInclude Include="tools\jsoncpp\reader.h" />
+    <ClInclude Include="tools\jsoncpp\value.h" />
+    <ClInclude Include="tools\jsoncpp\version.h" />
+    <ClInclude Include="tools\jsoncpp\writer.h" />
+    <ClInclude Include="tools\math_tools.h" />
+    <ClInclude Include="tools\md5_tools.h" />
+    <ClInclude Include="tools\mini_file_log.h" />
+    <ClInclude Include="tools\muparser\include\muParser.h" />
+    <ClInclude Include="tools\muparser\include\muParserBase.h" />
+    <ClInclude Include="tools\muparser\include\muParserBytecode.h" />
+    <ClInclude Include="tools\muparser\include\muParserCallback.h" />
+    <ClInclude Include="tools\muparser\include\muParserDef.h" />
+    <ClInclude Include="tools\muparser\include\muParserDLL.h" />
+    <ClInclude Include="tools\muparser\include\muParserError.h" />
+    <ClInclude Include="tools\muparser\include\muParserFixes.h" />
+    <ClInclude Include="tools\muparser\include\muParserInt.h" />
+    <ClInclude Include="tools\muparser\include\muParserStack.h" />
+    <ClInclude Include="tools\muparser\include\muParserTemplateMagic.h" />
+    <ClInclude Include="tools\muparser\include\muParserTest.h" />
+    <ClInclude Include="tools\muparser\include\muParserToken.h" />
+    <ClInclude Include="tools\muparser\include\muParserTokenReader.h" />
+    <ClInclude Include="tools\path_object.h" />
+    <ClInclude Include="tools\process_tools.h" />
+    <ClInclude Include="tools\scope_assemblage.h" />
+    <ClInclude Include="tools\string_tools.h" />
+    <ClInclude Include="tools\tinyxml2.h" />
+    <ClInclude Include="tools\xml_tools.h" />
+    <ClInclude Include="tools\xunzip.h" />
+    <ClInclude Include="tools\xzip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HMGlobalTool.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

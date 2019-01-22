@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="resource files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="styles">
+      <UniqueIdentifier>{443c7ded-1d05-4247-b41e-7796f72a6709}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_frame.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="help_configs.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="splash_window.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="mini_dump.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_ribbon_bar.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="main_application.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="accelerator_map.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="docking_pane.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="workspace_view.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="client_tab_view.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_size_config_helper.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="start_page.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_console_wnd.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_configs.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_property_wnd.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_skin_manager.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app_about_dialog.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_frame.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="help_configs.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="splash_window.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="mini_dump.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_ribbon_bar.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_application.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="accelerator_map.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="docking_pane.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="workspace_view.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="client_tab_view.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_size_config_helper.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="start_page.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_console_wnd.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_configs.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_property_wnd.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_skin_manager.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app_about_dialog.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\RibbonMenu.png">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="res\main_application.ico">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="res\ribbon_options.png">
+      <Filter>resource files</Filter>
+    </Image>
+    <Image Include="res\splash.png">
+      <Filter>resource files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\main_application.rc2">
+      <Filter>resource files</Filter>
+    </None>
+    <None Include="styles\black_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\blue_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\dark_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2007.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2007.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2010.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2010.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2013.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2013.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\white_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main_application.rc">
+      <Filter>resource files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
