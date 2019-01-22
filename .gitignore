@@ -12,6 +12,7 @@
 /debug/*
 /release/*
 /ipch/*
+/Src/*.rar
 [Dd]ebug/
 [Rr]elease/
 x64/
