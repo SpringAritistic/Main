@@ -156,6 +156,8 @@ HMGridCtrl::HMGridCtrl(int nRows, int nCols, int nFixedRows, int nFixedCols)
 	m_bDragRowMode = TRUE; // allow to drop a line over another one to change row order
 	m_pRtcDefault = RUNTIME_CLASS(HMGridCell);
 
+
+
 	SetupDefaultCells();
 	SetGridBkColor(m_crShadow);
 
