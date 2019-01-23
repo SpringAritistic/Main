@@ -186,7 +186,12 @@ CWnd* HMGridCell::GetEditWnd() const             { return m_pEditWnd; }
 void  HMGridCell::SetCoords(int /*nRow*/, int /*nCol*/) {}  // don't need to know the row and
 // column for base implementation
 
-LPCTSTR     HMGridCell::GetText() const             { return (m_strText.IsEmpty()) ? _T("") : LPCTSTR(m_strText); }
+LPCTSTR     HMGridCell::GetText() const           
+{ 
+	//if (m_strText.IsEmpty())
+	//	return  _T("");
+	return  LPCTSTR(m_strText); 
+}
 int         HMGridCell::GetImage() const            { return m_nImage; }
 LPARAM      HMGridCell::GetData() const             { return m_lParam; }
 HMGridCtrl* HMGridCell:: GetGrid() const             { return m_pGrid; }

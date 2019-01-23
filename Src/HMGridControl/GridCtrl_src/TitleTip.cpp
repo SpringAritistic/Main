@@ -171,7 +171,7 @@ void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, int xoffset /*=0*/
 		    dc.PatBlt(rect.left, rect.top, rect.Width(), rect.Height(),  PATCOPY);
 		    dc.SelectObject(pOldBrush);
 	    }
-        // Set color
+        // Reset color
         if (crTextClr != CLR_DEFAULT)//FNA
             dc.SetTextColor(crTextClr);//FA
 

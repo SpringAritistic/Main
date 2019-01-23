@@ -41,6 +41,8 @@
 #include "HMGridControlMacro.h"
 #include "GridResource.h"
 #pragma warning(disable: 4996) 
+#pragma warning(disable: 4800) 
 #include "GridCtrl_src\CellRange.h"
 #include "GridCtrl_src\GridCellBase.h"
 
+#include <iterator>

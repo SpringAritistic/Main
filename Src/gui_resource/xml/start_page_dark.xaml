@@ -1,0 +1,425 @@
+<Page xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'>
+    <!-- 此文件在读取时按utf-8编码处理，否则中文无法解析，2016-7-28号把xtp从15.3.1升级到17.2.0时发现xtp的脚本引擎不再支持 -->
+    <!-- 多字节，粗略看了一下源码，应该只支持utf-8,utf-16,utf-32，（ucs-16,ucs-32也不再支持），特作此注释并更改文件编码 -->
+    <!-- 为简化文件读取的逻辑，代码中按无BOM标志读取（即小端无BOM方式），编辑时请注意不得存为带BOM的编码 -->
+    <!-- 桥博目前起始页只关联了Hyperlink的单击事件，其它控件未关联，事件处理时会读取Tab属性，Tag中的字符串分 -->
+    <!-- 为三部分，各部分之间用"|"分隔，第一部分为要进行的操作，其余部分为参数，不同的操作参数个数不一样多，操 -->
+    <!-- 作不分大小写，参数是否支持大写由具体的操作决定，支持的操作如下(如果操作为空则不响应任何事件，若有其它需求的操作再加)： -->
+    <!--   command 表示执行指定的命令（直接通过命令中心启动，而不是通过命令行，如command|sys.new）-->
+    <!--   url 表示用默认的浏览器打开指定链接地址，（直接通过命令中心启动，而不是通过命令行，如url|http://www.baidu.com）-->
+    <!--   file 表示用默认程序打开指定的文件，（直接通过命令中心启动，而不是通过命令行，如file|d:\tmp.txt）-->
+
+    <Grid Background="#f3f3f3">
+        <!--分成1行3列-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 总体第1列：左边 -->
+        <Grid Grid.Row="0" Grid.Column="0" Background="#dedede">
+
+            <!--分为3行1列-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="110"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--第1行：“起始页”-->
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+                <TextBlock FontSize="20px" Height="40" Foreground="#672179">起始页</TextBlock>
+            </StackPanel>
+
+            <!--第2行：“开始”-->
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="20,20,20,10">
+                <TextBlock FontSize="14px" Height="30">开始</TextBlock>
+                <TextBlock FontSize="11px" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.new">新建...</Hyperlink>
+                </TextBlock>
+                <TextBlock FontSize="11px" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.open">打开...</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+            <!--第3行：“最近打开”-->
+            <StackPanel Grid.Row="2" Grid.Column="0" Margin="20">
+                <TextBlock FontSize="14" Height="30">最近打开</TextBlock>
+                <StackPanel Name="recent_list_items" Height="auto">
+                    <!-- 最近列表示例样式，占位
+                    <TextBlock FontSize="11px" Height="20">
+                        <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.open">最近打开01</Hyperlink>
+                    </TextBlock>
+                    -->
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!-- 总体第1列：中间部分 -->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10" Width="Auto">
+
+            <!-- 第1行：“桥梁设计师新特征” -->
+            <StackPanel Margin="10,5,10,0" Height="30">
+                <TextBlock FontSize="16">桥梁设计师V2.0体验版新特征</TextBlock>
+            </StackPanel>
+
+            <!--第2行：“桥梁设计师新特征”中的内容-->
+            <StackPanel Margin="20,5,10,0" Height="auto">
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\000.htm">新版本功能简介</Hyperlink>
+                </TextBlock>
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\001.htm">图形交互建模方式（构造、预应力、钢筋、施工模拟和运营）</Hyperlink>
+                </TextBlock>
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\002.htm">使用"块"提高建模效率</Hyperlink>
+                </TextBlock>
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\003.htm">已支持我国新规范</Hyperlink>
+                </TextBlock>
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\004.htm">使用计算书模板形成Word报告</Hyperlink>
+                </TextBlock>
+                <TextBlock Height="20" FontSize="11">
+					<Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="file|gui_xml\\start_page\\005.htm">梁格自动划分</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+            <!-- 占位区 -->
+            <StackPanel Height="5" />
+
+            <!-- 第3行：“最新消息” -->
+            <Grid Margin="10">
+
+                <!-- 1.1.左边内容主体 -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 1.1.1.内容主体标题 -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16" >示例项目</TextBlock>
+
+                    <!-- 1.1.2.内容主体信息 -->
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 1.1.2.1.内容栏 -->
+                        <StackPanel Grid.Row="0" Grid.Column="0">
+                            <StackPanel>
+
+                                <!-- 单个示例条目块 -->
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="95"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Height="100" Margin="10,0,0,0">
+									    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.open|sample_projects/001.dbr">
+										    <Image Width = "150" Height="90" Source="file://sample_projects/001.bmp"/>
+									    </Hyperlink>
+                                    </TextBlock>
+                                    <StackPanel Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
+                                        <TextBlock FontSize="11" Height="30">
+									        <Hyperlink Foreground="#15428B" TextDecorations="" Tag="command|sys.open|sample_projects/001.dbr">悬浇变高度箱梁</Hyperlink>
+                                        </TextBlock>
+                                        <TextBlock FontSize="11" Height="70" TextWrapping="Wrap">
+									        <Hyperlink Foreground="#303030" TextDecorations="" Tag="command|sys.open|sample_projects/001.dbr">
+										        <Run>三跨悬臂浇筑施工变高度预应力箱梁（静力结构模型）</Run>
+									        </Hyperlink>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- 单个示例条目块 -->
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="95"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Height="100" Margin="10,0,0,0">
+									    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.open|sample_projects/002.dbr">
+										    <Image Width = "150" Height="90" Source="file://sample_projects/002.bmp"/>
+									    </Hyperlink>
+                                    </TextBlock>
+                                    <StackPanel Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
+                                        <TextBlock FontSize="11" Height="30">
+									        <Hyperlink Foreground="#15428B" TextDecorations="" Tag="command|sys.open|sample_projects/002.dbr">空心板通用图</Hyperlink>
+                                        </TextBlock>
+                                        <TextBlock FontSize="11" Height="70" TextWrapping="Wrap">
+									        <Hyperlink Foreground="#303030" TextDecorations="" Tag="command|sys.open|sample_projects/002.dbr">
+										        <Run>交通部部颁20m空心板（静力结构模型）</Run>
+									        </Hyperlink>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- 单个示例条目块 -->
+                                <Grid Grid.Row="1" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="95"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Height="100" Margin="10,0,0,0">
+									    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="command|sys.open|sample_projects/003.dbr">
+										    <Image Width = "150" Height="90" Source="file://sample_projects/003.bmp"/>
+									    </Hyperlink>
+                                    </TextBlock>
+                                    <StackPanel Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
+                                        <TextBlock FontSize="11" Height="30">
+									        <Hyperlink Foreground="#15428B" TextDecorations="" Tag="command|sys.open|sample_projects/003.dbr">简支变连续小箱梁</Hyperlink>
+                                        </TextBlock>
+                                        <TextBlock FontSize="11" Height="70" TextWrapping="Wrap">
+									        <Hyperlink Foreground="#303030" TextDecorations="" Tag="command|sys.open|sample_projects/003.dbr">
+										        <Run>交通部部颁3×30m预制拼装预应力箱梁（静力结构模型）</Run>
+									        </Hyperlink>
+                                        </TextBlock>
+                                    </StackPanel>
+                                </Grid>
+
+                            </StackPanel>
+                            <StackPanel Margin="10,10,0,0">
+                                <TextBlock Foreground="#707070" FontSize="11" TextWrapping="Wrap" Height="20">欢迎体验桥梁设计师V2</TextBlock>
+                                <TextBlock Foreground="#707070" FontSize="11" TextWrapping="Wrap" Height="20">桥梁设计师V2体验交流QQ群：450424062</TextBlock>
+                                <TextBlock Foreground="#900015" FontSize="11" TextWrapping="Wrap" Height="20">联系我们：021-65975398　021-65980387</TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+
+        <!-- 总体第3列：右边 -->
+        <Grid Grid.Row="0" Grid.Column="2" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 标题：新产品链接 -->
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16">同豪其它产品</TextBlock>
+
+            <!-- 内容：新产品链接 -->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <TextBlock FontSize="12" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="url|http://www.doctorbridge.com:8080/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/%E6%A1%A5%E6%A2%81%E5%8D%9A%E5%A3%AB.aspx">桥博 V3.x</Hyperlink>
+                </TextBlock>
+                <TextBlock FontSize="12" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="url|http://www.doctorbridge.com:8080/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/%E6%A1%A5%E5%8D%9A%E5%9F%BA%E7%A1%80%E7%89%88.aspx">桥博基础版 V1.0</Hyperlink>
+                </TextBlock>
+                <TextBlock FontSize="12" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="url|http://www.doctorbridge.com:8080/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/%E6%A1%A5%E6%A2%81%E8%AE%BE%E8%AE%A1%E5%B8%88.aspx">桥梁设计师 V1.x</Hyperlink>
+                </TextBlock>
+                <TextBlock FontSize="12" Height="20">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="url|http://www.doctorbridge.com:8080/%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1%E5%B8%88.aspx">方案设计师</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+            <!-- 标题：演示视频-->
+            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="16">最新教程</TextBlock>
+
+            <!-- 内容：演示视频 -->
+            <StackPanel Grid.Row="3" Grid.Column="0">
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/模拟性_斜拉桥挂篮施工.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/模拟性_斜拉桥挂篮施工.mp4">
+						    <Run>模拟斜拉桥挂篮施工</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/可视性_变高梁梁高.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/可视性_变高梁梁高.mp4">
+						    <Run>可视化变高梁梁高操作</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/可视性_斜拉桥连接器.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/可视性_斜拉桥连接器.mp4">
+						    <Run>可视化斜拉桥连接器操作</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/协调性_匝道建模.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/协调性_匝道建模.mp4">
+						    <Run>协调匝道建模</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/优化性_拱轴线调整（不含风撑平移）.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/优化性_拱轴线调整（不含风撑平移）.mp4">
+						    <Run>拱轴线优化调整（不含风撑平移）</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/优化性_拱轴线调整（含风撑平移）.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/优化性_拱轴线调整（含风撑平移）.mp4">
+						    <Run>拱轴线优化调整（含风撑平移）</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Height="40"  Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,5,0,5">
+						<Hyperlink TextDecorations="" Tag="file|sample_videos/匝道建模.mp4">
+                            <Image Width="40" Height="30" Source="file://gui_xml/video_icon.png"/>
+						</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="11" Margin="10,5,0,5" TextWrapping="Wrap">
+						<Hyperlink Foreground="#505050" TextDecorations="" Tag="file|sample_videos/匝道建模.mp4">
+						    <Run>匝道建模</Run>
+						</Hyperlink>
+                    </TextBlock>
+                </Grid>
+
+                <!-- 1.2.4.1.更多链接 -->
+                <TextBlock FontSize="12" Height="36">
+                    <Hyperlink Foreground="#FF15428B" TextDecorations="" Tag="url|http://www.doctorbridge.com:8080/%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD/%E6%A1%A5%E6%A2%81%E5%8D%9A%E5%A3%AB%E8%B5%84%E6%96%99%E4%B8%8B%E8%BD%BD.aspx">更多视频教程</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

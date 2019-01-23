@@ -9,8 +9,6 @@
 # Build results
 /3rd/*
 /include/*
-/debug/*
-/release/*
 /ipch/*
 /Src/*.rar
 [Dd]ebug/

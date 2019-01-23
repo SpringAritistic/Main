@@ -1,4 +1,4 @@
-// HMCAD.cpp : 定义 DLL 的初始化例程。
+// HMCAD.cpp : Defines the initialization routines for the DLL.
 //
 
 #include "stdafx.h"

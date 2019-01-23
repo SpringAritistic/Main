@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{744D77A0-1F9E-4A15-87F0-E9629AD52903}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <RootNamespace>UIResource</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\SkinPackTool\</OutDir>
+    <TargetName>SkinPack</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>.\SkinPackTool\</OutDir>
+    <TargetName>SkinPack</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\..\$(Configuration)\Bin\</OutDir>
+    <TargetName>SkinPack</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <IntDir>$(OutDir)\..\MidOutput\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>.\SkinPackTool\</OutDir>
+    <TargetName>SkinPack</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PreBuildEvent>
+      <Command>del /f /s /q ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.xml ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.bmp ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.jpg ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.png ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.xaml ..\..\debug\bin\gui_xml\
+xcopy /s /c /i /r /y xml\start_page\*.* ..\..\debug\bin\gui_xml\start_page\
+
+del /f /s /q ..\..\debug\bin\styles\
+xcopy /s /c /i /r /y styles\*.* ..\..\debug\bin\styles\
+
+del /f /s /q ..\..\debug\bin\help\
+xcopy /s /c /i /r /y help\*.* ..\..\debug\bin\help\
+
+del /f /s /q ..\..\bin\sample_videos\
+xcopy /s /c /i /r /y sample_videos\*.* ..\..\debug\bin\sample_videos\
+
+del /f /s /q ..\..\bin\sample_projects\
+xcopy /s /c /i /r /y sample_projects\*.* ..\..\debug\bin\sample_projects\
+
+
+
+
+</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <PreprocessorDefinitions>_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\lib64</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>SkinPackTool\SkinPack.exe ..\..\bin64</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(ProjectName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\lib;$(SolutionDir)\3rd\$(Configuration)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>del /f /s /q ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.xml ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.bmp ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.jpg ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.png ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\*.xaml ..\..\release\bin\gui_xml\
+xcopy /s /c /i /r /y xml\start_page\*.* ..\..\release\bin\gui_xml\start_page\
+
+del /f /s /q ..\..\release\bin\styles\
+xcopy /s /c /i /r /y styles\*.* ..\..\release\bin\styles\
+
+del /f /s /q ..\..\release\bin\help\
+xcopy /s /c /i /r /y help\*.* ..\..\release\bin\help\
+
+del /f /s /q ..\..\bin\sample_videos\
+xcopy /s /c /i /r /y sample_videos\*.* ..\..\release\bin\sample_videos\
+
+del /f /s /q ..\..\bin\sample_projects\
+xcopy /s /c /i /r /y sample_projects\*.* ..\..\release\bin\sample_projects\
+</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\..\release\lib64</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>SkinPackTool\SkinPack.exe ..\..\release\bin64</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="gui_resource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="help\app_help_config.xml" />
+    <Xml Include="xml\app_accelerator_map.xml" />
+    <Xml Include="xml\app_auto_load_module.xml" />
+    <Xml Include="xml\app_graph_register_info.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="xml\app_docking_panes.xml" />
+    <Xml Include="xml\app_ribbon.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="xml\start_page_black.xaml" />
+    <Page Include="xml\start_page_blue.xaml" />
+    <Page Include="xml\start_page_dark.xaml" />
+    <Page Include="xml\start_page_white.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sample_projects\001.bmp" />
+    <Image Include="sample_projects\002.bmp" />
+    <Image Include="sample_projects\003.bmp" />
+    <Image Include="xml\start_page\000_files\image001.jpg" />
+    <Image Include="xml\start_page\000_files\image002.png" />
+    <Image Include="xml\start_page\000_files\image003.jpg" />
+    <Image Include="xml\start_page\000_files\image004.jpg" />
+    <Image Include="xml\start_page\000_files\image005.png" />
+    <Image Include="xml\start_page\001_files\image001.jpg" />
+    <Image Include="xml\start_page\001_files\image002.gif" />
+    <Image Include="xml\start_page\001_files\image003.jpg" />
+    <Image Include="xml\start_page\001_files\image004.jpg" />
+    <Image Include="xml\start_page\001_files\image005.jpg" />
+    <Image Include="xml\start_page\001_files\image006.jpg" />
+    <Image Include="xml\start_page\001_files\image007.jpg" />
+    <Image Include="xml\start_page\001_files\image008.jpg" />
+    <Image Include="xml\start_page\002_files\image001.jpg" />
+    <Image Include="xml\start_page\002_files\image002.jpg" />
+    <Image Include="xml\start_page\002_files\image003.jpg" />
+    <Image Include="xml\start_page\002_files\image004.jpg" />
+    <Image Include="xml\start_page\004_files\image001.jpg" />
+    <Image Include="xml\start_page\004_files\image002.jpg" />
+    <Image Include="xml\start_page\005_files\image001.gif" />
+    <Image Include="xml\start_page\005_files\image002.gif" />
+    <Image Include="xml\start_page\005_files\image003.jpg" />
+    <Image Include="xml\start_page\005_files\image004.jpg" />
+    <Image Include="xml\start_page\005_files\image005.jpg" />
+    <Image Include="xml\start_page\005_files\image006.jpg" />
+    <Image Include="xml\start_page\005_files\image007.jpg" />
+    <Image Include="xml\start_page\005_files\image008.jpg" />
+    <Image Include="xml\video_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="help\app_help.chm" />
+    <None Include="styles\black_grid_settings.ini" />
+    <None Include="styles\blue_grid_settings.ini" />
+    <None Include="styles\dark_grid_settings.ini" />
+    <None Include="styles\Office2007.cjstyles" />
+    <None Include="styles\Office2007.dll" />
+    <None Include="styles\Office2010.cjstyles" />
+    <None Include="styles\Office2010.dll" />
+    <None Include="styles\Office2013.cjstyles" />
+    <None Include="styles\Office2013.dll" />
+    <None Include="styles\white_grid_settings.ini" />
+    <None Include="xml\start_page\000.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="xml\start_page\001.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="xml\start_page\002.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="xml\start_page\003.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="xml\start_page\004.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="xml\start_page\005.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

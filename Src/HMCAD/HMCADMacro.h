@@ -1,11 +1,9 @@
 #pragma once
 #ifdef   __HMCAD__
 #define  HM_CAD_EXT   __declspec(dllexport)
-#pragma message("已经定义__HMCAD__")
 #else
 #define  HM_CAD_EXT   __declspec(dllimport)
 #ifdef _DEBUG
-#pragma message("没有定义__HMCAD__")
 #pragma comment(lib,"HMCADD.lib")
 #pragma message("Automatically linking with HMCADD.dll")
 #else

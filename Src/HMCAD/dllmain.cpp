@@ -1,4 +1,4 @@
-// dllmain.cpp : 定义 DLL 的初始化例程。
+// dllmain.cpp : Defines the initialization routines for the DLL.
 //
 
 #include "stdafx.h"
@@ -14,38 +14,38 @@ static AFX_EXTENSION_MODULE HMCADDLL = { NULL, NULL };
 extern "C" int APIENTRY
 DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 {
-	// 如果使用 lpReserved，请将此移除
+	// Remove this if you use lpReserved
 	UNREFERENCED_PARAMETER(lpReserved);
 
 	if (dwReason == DLL_PROCESS_ATTACH)
 	{
-		TRACE0("HMCAD.DLL 正在初始化!\n");
+		TRACE0("HMCAD.DLL Initializing!\n");
 		
-		// 扩展 DLL 一次性初始化
+		// Extension DLL one-time initialization
 		if (!AfxInitExtensionModule(HMCADDLL, hInstance))
 			return 0;
 
-		// 将此 DLL 插入到资源链中
-		// 注意:  如果此扩展 DLL 由
-		//  MFC 规则 DLL (如 ActiveX 控件)隐式链接到，
-		//  而不是由 MFC 应用程序链接到，则需要
-		//  将此行从 DllMain 中移除并将其放置在一个
-		//  从此扩展 DLL 导出的单独的函数中。  使用此扩展 DLL 的
-		//  规则 DLL 然后应显式
-		//  调用该函数以初始化此扩展 DLL。  否则，
-		//  CDynLinkLibrary 对象不会附加到
-		//  规则 DLL 的资源链，并将导致严重的
-		//  问题。
+		// Insert this DLL into the resource chain
+		// NOTE: If this Extension DLL is being implicitly linked to by
+		//  an MFC Regular DLL (such as an ActiveX Control)
+		//  instead of an MFC application, then you will want to
+		//  remove this line from DllMain and put it in a separate
+		//  function exported from this Extension DLL.  The Regular DLL
+		//  that uses this Extension DLL should then explicitly call that
+		//  function to initialize this Extension DLL.  Otherwise,
+		//  the CDynLinkLibrary object will not be attached to the
+		//  Regular DLL's resource chain, and serious problems will
+		//  result.
 
 		new CDynLinkLibrary(HMCADDLL);
 
 	}
 	else if (dwReason == DLL_PROCESS_DETACH)
 	{
-		TRACE0("HMCAD.DLL 正在终止!\n");
+		TRACE0("HMCAD.DLL Terminating!\n");
 
-		// 在调用析构函数之前终止该库
+		// Terminate the library before destructors are called
 		AfxTermExtensionModule(HMCADDLL);
 	}
-	return 1;   // 确定
+	return 1;   // ok
 }

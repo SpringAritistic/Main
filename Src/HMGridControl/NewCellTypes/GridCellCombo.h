@@ -27,14 +27,14 @@ public:
 
 // HMGridCellCombo specific calls
 public:
-    void  SetOptions(const CStringArray& ar);
+    void  SetOptions(const std::vector<CString>& ar);
 	void  SetStyle(DWORD dwStyle);
 	DWORD GetStyle();
 
 protected:
     virtual BOOL Draw(CDC* pDC, int nRow, int nCol, CRect rect, BOOL bEraseBkgnd = TRUE);
 
-    CStringArray m_Strings;
+    std::vector<CString> m_strOpts;
     DWORD        m_dwStyle;
 };
 
@@ -92,7 +92,7 @@ public:
                  UINT nID,              // control ID
                  int nRow, int nColumn, // row and column
                  COLORREF crFore, COLORREF crBack,  // Foreground, background colour
-				 CStringArray& Items,   // Items in list
+				 std::vector<CString>& Items,   // Items in list
                  CString sInitText,     // initial selection
 				 UINT nFirstChar);      // first character to pass to control
 

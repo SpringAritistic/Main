@@ -39,7 +39,7 @@ void excelDlg::initGrid()
 
 void excelDlg::init(HMGridCtrl& grid)
 {
-	grid.SetEditable(true);
+	grid.EnsureEditable(true);
 	grid.SetTextBkColor(RGB(0xFF, 0xFF, 0xE0));//黄色背景
 	grid.SetRowCount(30); //初始为10行
 	grid.SetColumnCount(8); //初始化为11列

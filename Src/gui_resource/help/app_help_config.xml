@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 求助文档必须放在主程序目录下的help文件夹中，且名称必须为 "app_help.chm" -->
+<!-- 文件中的关联求助页面为chm文件内的相对路径（不含chm文件本身的路径，但必须包含文件页面后缀，如.html等） -->
+<!-- default节点为未指定的窗口中求助时定位到的页面 -->
+<!-- window_by_class_name节点表示指定类名的窗口求助时定位到的页面 -->
+<!-- 按其它条件来定位求助页面的需求暂时没有，如有需要再加 -->
+
+<app_help_config>
+  <default page_path_name="html/4_21_设计方法管理.htm" />
+  <window_by_class_name window_class_name="construction_analysis_editor" page_path_name="html/4_25_桩位坐标表.htm" />
+</app_help_config>

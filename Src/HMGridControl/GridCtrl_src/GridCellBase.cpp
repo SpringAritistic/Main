@@ -31,8 +31,8 @@ void HMGridCellBase::Reset()
 {
 	m_Hide=false;
     m_nState  = 0;
-	m_MergeRange.Set();
-	m_IsMergeWithOthers=false;
+	m_MergeRange.Init();
+	//m_IsMergeWithOthers=false;
 	m_MergeCellID.row=-1;
 	m_MergeCellID.col=-1;
 
@@ -115,7 +115,7 @@ BOOL HMGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bErase
     if (!pDefaultCell)
         return FALSE;
 
-    // Set up text and background colours
+    // Reset up text and background colours
     COLORREF TextClr, TextBkClr;
 
     TextClr = (GetTextClr() == CLR_DEFAULT)? pDefaultCell->GetTextClr() : GetTextClr();
@@ -162,7 +162,7 @@ BOOL HMGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bErase
             rect.bottom--;
         }
 
-        if (pGrid->GetFrameFocusCell())
+        if (pGrid->IsFrameFocus())
         {
                 // Use same color as text to outline the cell so that it shows
                 // up if the background is black.
@@ -214,7 +214,7 @@ BOOL HMGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bErase
 
         // As above, always show current location even in list mode so
         // that we know where the cursor is at.
-        BOOL bHiliteFixed = pGrid->GetTrackFocusCell() && pGrid->IsValid(FocusCell) &&
+        BOOL bHiliteFixed = pGrid->IsTrackFocusCell() && pGrid->IsValid(FocusCell) &&
                             (FocusCell.row == nRow || FocusCell.col == nCol);
 
         // If this fixed cell is on the same row/col as the focus cell,
@@ -335,7 +335,7 @@ BOOL HMGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bErase
 
             CPen penShadow(PS_SOLID, 0, ::GetSysColor(COLOR_3DSHADOW));
             CPen penLight(PS_SOLID, 0, ::GetSysColor(COLOR_3DHILIGHT));
-            if (pGrid->GetSortAscending())
+            if (pGrid->IsSortAscend())
             {
                 // Draw triangle pointing upwards
                 CPen *pOldPen = (CPen*) pDC->SelectObject(&penLight);
@@ -397,6 +397,8 @@ void HMGridCellBase::OnMouseEnter()
 void HMGridCellBase::OnMouseOver()
 {
     //TRACE0("Mouse over cell\n");
+	SetCursor(AfxGetApp()->LoadStandardCursor(IDC_SIZEALL));
+
 }
 
 // Not Yet Implemented
@@ -433,7 +435,9 @@ void HMGridCellBase::OnDblClick( CPoint PointCellRelative)
 BOOL HMGridCellBase::OnSetCursor()
 {
 #ifndef _WIN32_WCE_NO_CURSOR
-    SetCursor(AfxGetApp()->LoadStandardCursor(IDC_ARROW));
+	SetCursor(AfxGetApp()->LoadStandardCursor(IDC_ARROW));
+	//SetCursor(AfxGetApp()->LoadStandardCursor(IDC_SIZEALL));
+	
 #endif
     return TRUE;
 }
@@ -624,7 +628,7 @@ BOOL HMGridCellBase::PrintCell(CDC* pDC, int /*nRow*/, int /*nCol*/, CRect rect)
 	pDC->Rectangle(rect);
 	rect.DeflateRect(1,1);
 
-    if (pGrid->GetShadedPrintOut())
+    if (pGrid->IsShadedPrintOut())
     {
         // Get the default cell implementation for this kind of cell. We use it if this cell
         // has anything marked as "default"
@@ -686,7 +690,7 @@ BOOL HMGridCellBase::PrintCell(CDC* pDC, int /*nRow*/, int /*nCol*/, CRect rect)
     // Bold the fixed cells if not shading the print out.  Use italic
     // font it it is enabled.
     const LOGFONT* plfFont = GetFont();
-    if(IsFixed() && !pGrid->GetShadedPrintOut())
+    if(IsFixed() && !pGrid->IsShadedPrintOut())
     {
         Font.CreateFont(plfFont->lfHeight, 0, 0, 0, FW_BOLD, plfFont->lfItalic, 0, 0,
             ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
@@ -786,39 +790,44 @@ void HMGridCellBase::SetMergeRange(HMCellRange range)
 }
 //Used for merge cells
 //by Huang Wei
-HMCellRange HMGridCellBase::GetMergeRange()
+HMCellRange HMGridCellBase::GetMergeRange()const
 {
 	return m_MergeRange;
 }
 //Used for merge cells
 //by Huang Wei
-bool HMGridCellBase::IsMerged()
+bool HMGridCellBase::IsMerged()const
 {
-	return m_MergeRange.Count()>1;
+	return IsMergeOrg() || IsMergeSub();
 }
 //Used for merge cells
 //by Huang Wei
 void HMGridCellBase::SetMergeCellID(HMCellID cell)
 {
 	m_MergeCellID=cell;
-	if(cell.row!=-1)
-		m_IsMergeWithOthers=true;
-	else
-		m_IsMergeWithOthers=false;
+	//if(cell.row!=-1)
+	//	m_IsMergeWithOthers=true;
+	//else
+	//	m_IsMergeWithOthers=false;
 
 }
 //Used for merge cells
 //by Huang Wei
-HMCellID HMGridCellBase::GetMergeCellID()
+HMCellID HMGridCellBase::GetMergeCellID()const
 {
 	return m_MergeCellID;
 }
 //Used for merge cells
 //by Huang Wei
-bool HMGridCellBase::IsMergeWithOthers()
+bool HMGridCellBase::IsMergeSub()const
 {
-	return m_IsMergeWithOthers;
+	return m_MergeCellID.IsValid();
 }
+bool HMGridCellBase::IsMergeOrg()const
+{
+	return m_MergeRange.Count()>1;
+}
+
 //Used for merge cells
 //by Huang Wei
 bool HMGridCellBase::IsShow()
@@ -830,10 +839,11 @@ bool HMGridCellBase::IsShow()
 void HMGridCellBase::UnMerge()
 {
 	m_Hide=false;
-	m_MergeRange.Set();
-	m_IsMergeWithOthers=false;
-	m_MergeCellID.row=-1;
-	m_MergeCellID.col=-1;
+	m_MergeRange.Init();
+	m_MergeCellID.Init();
+	//m_IsMergeWithOthers=false;
+	//m_MergeCellID.row=-1;
+	//m_MergeCellID.col=-1;
 }
 void HMGridCellBase::SetState(DWORD nState)                     { m_nState = nState; }
 LPCTSTR    HMGridCellBase::GetTipText()    const                { return GetText(); } // may override TitleTip return

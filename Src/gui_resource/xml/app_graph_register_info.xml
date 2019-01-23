@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<app_graph_register_info_type>
+  <graph_register_info_item type_name="矩形盖梁柱式墩一般构造图" data_class_name="cap_beam_data" common_grid_class_name="cap_beam_common_grid_ui_data" advance_grid_class_name="cap_beam_advance_grid_ui_data" graphic_editor_class_name="cap_beam_graphic_ui_data" drawing_strategy_class_name="cap_beam_drawing_strategy"/>
+  <graph_register_info_item type_name="承台钢筋图" data_class_name="cheng_tai_data" common_grid_class_name="cheng_tai_common_grid_ui_data" advance_grid_class_name="cheng_tai_advance_grid_ui_data" graphic_editor_class_name="cheng_tai_graphic_ui_data" drawing_strategy_class_name="cheng_tai_drawing_strategy"/>
+  <graph_register_info_item type_name="矩形盖梁钢筋图" data_class_name="GaiLiang_GJ_data" common_grid_class_name="GaiLiang_GJ_common_grid_ui_data" advance_grid_class_name="GaiLiang_GJ_advance_grid_ui_data" graphic_editor_class_name="GaiLiang_GJ_graphic_ui_data" drawing_strategy_class_name="GaiLiang_GJ_drawing_strategy"/>
+  <graph_register_info_item type_name="墩柱钢筋图" data_class_name="Pier_GJ_data" common_grid_class_name="Pier_GJ_common_grid_ui_data" advance_grid_class_name="Pier_GJ_advance_grid_ui_data" graphic_editor_class_name="Pier_GJ_graphic_ui_data" drawing_strategy_class_name="Pier_GJ_drawing_strategy"/>
+  <graph_register_info_item type_name="桩基钢筋图" data_class_name="Found_GJ_data" common_grid_class_name="Found_GJ_common_grid_ui_data" advance_grid_class_name="Found_GJ_advance_grid_ui_data" graphic_editor_class_name="Found_GJ_graphic_ui_data" drawing_strategy_class_name="Found_GJ_drawing_strategy"/>
+  <!--<graph_register_info_item type_name="系梁钢筋图" data_class_name="XiLiang_GJ_data" common_grid_class_name="XiLiang_GJ_common_grid_ui_data" advance_grid_class_name="XiLiang_GJ_advance_grid_ui_data" graphic_editor_class_name="XiLiang_GJ_graphic_ui_data" drawing_strategy_class_name="XiLiang_GJ_drawing_strategy"/>-->
+  <graph_register_info_item type_name="耳墙钢筋图" data_class_name="eq_gj_data" common_grid_class_name="QT_EQGJ_common_grid_ui_data" advance_grid_class_name="QT_EQGJ_advance_grid_ui_data" graphic_editor_class_name="QT_EQGJ_graphic_ui_data" drawing_strategy_class_name="QT_EQGJ_drawing_strategy"/>
+  <graph_register_info_item type_name="钢箱梁" data_class_name="steel_box_data" common_grid_class_name="steel_box_common_grid_ui_data" advance_grid_class_name="steel_box_advance_grid_ui_data" graphic_editor_class_name="steel_box_graphic_ui_data" drawing_strategy_class_name="steel_box_drawing_strategy"/>
+  <graph_register_info_item type_name="扩大基础钢筋图" data_class_name="rectBaseGJ_data" common_grid_class_name="RectBase_GJ_common_grid_ui_data" advance_grid_class_name="RectBase_GJ_advance_grid_ui_data" graphic_editor_class_name="RectBase_GJ_graphic_ui_data" drawing_strategy_class_name="RectBase_GJ_drawing_strategy"/>
+
+</app_graph_register_info_type>

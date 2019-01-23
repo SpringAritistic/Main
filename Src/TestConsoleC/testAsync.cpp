@@ -53,6 +53,7 @@ void testSharedFature()
 		auto f2 = async(launch::async, doSomething, '+',  ref(f));
 		auto f3 = async(launch::async, doSomething, '-',  ref(f));
 
+
 		f1.get();
 		f2.get();
 		f3.get();

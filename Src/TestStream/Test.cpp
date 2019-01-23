@@ -30,7 +30,8 @@ void test()
 	cin >> b;
 	cout << "--------------------------------------" << endl;
 	//cout.setf(ios::showbase|ios::showpos|ios::uppercase|ios::scientific|ios::fixed);
-	cout << setw(20) << setfill('_') << left << internal << dec << b << endl;
+	string str1("sa");
+	cout << setw(20) << setfill('_') << left << internal << dec << b << setw(20) << setfill('*') << uppercase << internal << str1 << endl;
 	//
 	int x;
 	float y;
@@ -60,6 +61,7 @@ void testFlush()
 	file << "hello" << endl;
 	cout << "kitty" << endl;
 	cout.rdbuf(buf);
+	cout << "Welcome" << endl;
 	//locale a;
 	//string str((istreambuf_iterator<char>(cin)), istreambuf_iterator<char>());
 	//cout << str << endl;
@@ -77,7 +79,8 @@ void testTime()
 	stringstream myStream;
 	string formatStr = "%c";
 	tpC.put(myStream, cout, ' ', nowTM, formatStr.c_str(), formatStr.c_str() + formatStr.size());
-	string myStr;
-	myStream >> myStr;
+
+	string myStr=myStream.str();
+	//myStream >> myStr;
 	cout << myStr << endl;
 }

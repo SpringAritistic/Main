@@ -102,7 +102,7 @@ void HMComboEdit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
                            int nRow, int nColumn, 
                            COLORREF crFore, COLORREF crBack,
-						   CStringArray& Items, CString sInitText, 
+						   std::vector<CString>& Items, CString sInitText, 
 						   UINT nFirstChar)
 {
     m_crForeClr = crFore;
@@ -123,8 +123,8 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	if (!Create(dwComboStyle, rect, pParent, nID)) return;
 
 	// Add the strings
-	for (int i = 0; i < Items.GetSize(); i++) 
-		AddString(Items[i]);
+	for (auto &item: Items) 
+		AddString(item);
 
 	SetFont(pParent->GetFont());
 	SetItemHeight(-1, nHeight);
@@ -141,7 +141,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 
 	SetHorizontalExtent(0); // no horz scrolling
 
-	// Set the initial text to m_sInitText
+	// Reset the initial text to m_sInitText
     if (::IsWindow(m_hWnd) && SelectString(-1, m_sInitText) == CB_ERR) 
 		SetWindowText(m_sInitText);		// No text selected, so restore what was there before
 
@@ -366,7 +366,7 @@ BOOL HMGridCellCombo::Edit(int nRow, int nCol, CRect rect, CPoint /* point */, U
     
     // CInPlaceList auto-deletes itself
     m_pEditWnd = new CInPlaceList(GetGrid(), rect, GetStyle(), nID, nRow, nCol, 
-                                  GetTextClr(), GetBackClr(), m_Strings, GetText(), nChar);
+                                  GetTextClr(), GetBackClr(), m_strOpts, GetText(), nChar);
 
     return TRUE;
 }
@@ -440,11 +440,9 @@ BOOL HMGridCellCombo::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bEras
 }
 
 // For setting the strings that will be displayed in the drop list
-void HMGridCellCombo::SetOptions(const CStringArray& ar)
+void HMGridCellCombo::SetOptions(const std::vector<CString>& ar)
 { 
-    m_Strings.RemoveAll();
-    for (int i = 0; i < ar.GetSize(); i++)
-        m_Strings.Add(ar[i]);
+	m_strOpts = ar;
 }
 void  HMGridCellCombo::SetStyle(DWORD dwStyle)           { m_dwStyle = dwStyle; }
 DWORD HMGridCellCombo::GetStyle()                        { return m_dwStyle; }

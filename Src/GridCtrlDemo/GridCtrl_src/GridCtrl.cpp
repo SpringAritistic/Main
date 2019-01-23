@@ -132,7 +132,6 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-
 // Spit out some messages as a sanity check for programmers
 #ifdef GRIDCONTROL_NO_TITLETIPS
 #pragma message(" -- CGridCtrl: No titletips for cells with large data")

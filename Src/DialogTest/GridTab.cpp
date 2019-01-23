@@ -12,7 +12,7 @@
 IMPLEMENT_DYNAMIC(GridTab, CDialogEx)
 
 GridTab::GridTab(CWnd* pParent /*=NULL*/)
-: CDialogEx(GridTab::IDD, pParent), m_count(20), m_RowCount(20), m_ColCount(10), m_RowHeight(50), m_ColWidth(300)
+: CDialogEx(GridTab::IDD, pParent), m_count(20), m_RowCount(20), m_ColCount(10), m_RowHeight(25), m_ColWidth(100)
 {
 	generate_n(back_inserter(m_vecGrid), m_count, [&](){return this->CreateTab(); });
 }
@@ -121,7 +121,7 @@ void GridTab::InitTab(size_t index)
 	grid.DeleteAllItems();
 	//grid.SetDefaultCellType(RUNTIME_CLASS(HMGridCellCombo));//组合框
 
-	grid.EnsureEditable(true);
+	grid.SetEditable(true);
 	grid.SetTextBkColor(RGB(0xFF, 0xFF, 0xE0));//黄色背景
 	grid.SetBkColor(RGB(255, 255, 255));
 	grid.SetRowCount(m_RowCount); //初始为10行
@@ -130,15 +130,6 @@ void GridTab::InitTab(size_t index)
 	grid.SetFixedColumnCount(1); //表头为一列
 	CString title;
 	title.Format("第%d个", i);
-
-	vector<CString> options;
-	for (size_t i = 0; i < 50; ++i)
-	{
-		CString str;
-
-		str.Format("Option%d", i + 1);
-		options.push_back(str);
-	}
 	for (int row = 0; row < grid.GetRowCount(); row++)
 	{
 		grid.SetRowHeight(row, m_RowHeight); //设置各行高          
@@ -146,9 +137,9 @@ void GridTab::InitTab(size_t index)
 		{
 			//grid.SetColumnWidth(0, 64); //设置0列宽 
 			//if (col==0)
-			grid.SetColumnWidth(col, m_ColWidth); //设置各列宽
+			grid.SetColumnWidth(col, 64); //设置各列宽
 
-										  //设置表格显示属性
+			//设置表格显示属性
 			GV_ITEM Item;
 			Item.mask = GVIF_TEXT | GVIF_FORMAT;
 			Item.row = row;
@@ -173,107 +164,22 @@ void GridTab::InitTab(size_t index)
 					Item.strText.Format(_T("第%d次"), row);
 				}
 			}
-			else if (col == 1)
-			{
-				Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
-				switch (row)
-				{
-				case 1:
-				{
-					Item.strText = "组合框";
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridCellCombo));
-
-
-					HMGridCellCombo *pCell = (HMGridCellCombo*)grid.GetCell(row, col);
-					if (pCell)
-					{
-						pCell->SetOptions(options);
-						Item.mask |= CBS_DROPDOWN;
-						//pCell->SetStyle(CBS_DROPDOWN);
-					}
-					break;
-				}
-				case 2:
-				{
-					Item.strText = "2019";
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridCellNumeric));
-					break;
-				}
-				case 3:
-				{
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridCellDateTime));
-					HMGridCellDateTime* pCell = (HMGridCellDateTime*)grid.GetCell(row, col);
-					if (pCell)
-					{
-						pCell->SetTime(CTime::GetCurrentTime());
-						Item.strText = pCell->GetText();
-					}
-
-					break;
-				}
-				case 4:
-				{
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridCellDateTime));
-					HMGridCellDateTime* pCell = (HMGridCellDateTime*)grid.GetCell(row, col);
-					if (pCell)
-					{
-						pCell->Init(DTS_TIMEFORMAT);
-						Item.strText = pCell->GetText();
-					}
-
-					break;
-				}
-				
-				case 5:
-				{
-					Item.strText = "选择";
-					grid.SetCellType(row, col, RUNTIME_CLASS(CGridCellCheck));
-					break;
-				}
-				case 6:
-				{
-					Item.strText = "http://www.baidu.com";
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridURLCell));
-					break;
-				}
-				case 7:
-				{
-					Item.strText = "Option1,Option2,Option5";
-					grid.SetCellType(row, col, RUNTIME_CLASS(HMGridCellCheckCombo));
-					HMGridCellCheckCombo* pCell = (HMGridCellCheckCombo*)grid.GetCell(row, col);
-					if (pCell)
-					{
-
-						pCell->SetOptions(options);
-					}
-					break;
-				}
-				default:
-				{
-					Item.strText.Format(_T("%d行%d列"), row, col);
-					break;
-				}
-				}
-
-
-			}
 			else
 			{
 				Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
+				CString str;
 
 				Item.strText.Format(_T("%d行%d列"), row, col);
 			}
 			grid.SetItem(&Item);
-
-
 		}
 	}
 	//grid.SetRowResize(TRUE);
-	grid.EnsureColumnResize(TRUE);
+	grid.SetColumnResize(TRUE);
 	//grid.AutoSize(GVS_BOTH);
-	grid.MergeCells(1, 5, 1, 9);
+	grid.MergeCells(1, 1, 1, 5);
 	grid.MergeCells(1, 4, 5, 5);
-	grid.EnsureRowHide(TRUE);
+	grid.EnableRowHide(TRUE);
 	//
 	HMGridCellBase*cell= grid.GetCell(2,5);
 	CString str(cell->GetText());

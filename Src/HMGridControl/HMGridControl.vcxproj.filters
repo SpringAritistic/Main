@@ -130,12 +130,6 @@
     <ClInclude Include="NewCellTypes\GridURLCell.h">
       <Filter>GridControl</Filter>
     </ClInclude>
-    <ClInclude Include="HMGridControlInc.h">
-      <Filter>GridControl</Filter>
-    </ClInclude>
-    <ClInclude Include="HMGridControlMacro.h">
-      <Filter>GridControl</Filter>
-    </ClInclude>
     <ClInclude Include="GridCtrl_src\InPlaceEdit.h">
       <Filter>GridControl</Filter>
     </ClInclude>
@@ -146,6 +140,12 @@
       <Filter>GridControl</Filter>
     </ClInclude>
     <ClInclude Include="GridResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HMGridControlMacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HMGridControlInc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

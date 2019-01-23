@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app_accelerator_map>
+  <!-- cmd为命令字符串，注意不是命令处理类的类名，详情参考db_command_map.xml文件 -->
+  <!-- key为字母键（大小写不限）或数字键，以及上(up)、下(down)、左(left)、右(right)键，或为F1-F24其它键暂不支持 -->
+  <!-- 部分键已由系统占用（如F1表示求助,F11风格切换,F12打开起始页），使用这类快捷键时为防冲突，请先咨询界面开发负责人员 -->
+  
+  <accelerator cmd="app.save" ctrl="true" alt="false" shift="false" key="s" /> <!-- Ctrl + S -->
+  <accelerator cmd="app.undo" ctrl="true" alt="false" shift="false" key="z" /> <!-- Ctrl + Z -->
+  <accelerator cmd="app.redo" ctrl="true" alt="false" shift="false" key="y" /> <!-- Ctrl + Y -->
+</app_accelerator_map>

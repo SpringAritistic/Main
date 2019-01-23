@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<app_ribbon>
+  <!-- Ribbon -->
+  <!-- tab中指定的icons_file路径不得使用绝对路径或者带目录的路径，且后缀只能为png，否则可有不正确，图像的高为32个像素，宽度不限，但要求为32的倍数，图像中的图标为32*32 -->
+  <!-- tab中不指定context或者指定为空字符串，表示标签为固定的，否则表示标签是上下文相关的，且上下文相同的标签会归为一个标签组，以便动态的显示或隐藏 -->
+  <!-- 上下文标签的context_auto_active为true表示此标签会随关联窗口自动激活或隐藏，为false表示不激活，而是由用户手动调用相关接口激活，未指定默认取false -->
+  <!-- tab中当上下文字符串不为空时，context_color表示上下文的标签颜色，目前支持的值仅为： -->
+  <!--   0: Default color -->
+  <!--   1: Blue context color -->
+  <!--   2: Yellow context color -->
+  <!--   3: Green context color -->
+  <!--   4: Red context color -->
+  <!--   5: Purple context color -->
+  <!--   6: Cyan context color -->
+  <!--   7: Orange context color -->
+  <!-- tab中active_view_class用于指定活动标签所关联的窗口类名，只要工作区当前活动窗口的类名与之匹配就会自动激活，否则自动隐藏，如果有多个view关联到一个选项卡上，类名之间用半角分号相隔-->
+  <!-- control的icon_index从0开始，type为db_ribbon_bar_data_check_box 和 db_ribbon_bar_data_combo 时无效，如果要两个命令的图标一样，必须保证id和icon_index均相同才行，或者在图标文件中的不同位置制作相同样子的图标也可以 -->
+  <!-- control的style取值只能为 0-5 包含0和5，type为db_ribbon_bar_data_check_box时无效，对应的含义分别为：-->
+  <!--   0: Automatic style. -->
+  <!--   1: Button draw only caption. -->
+  <!--   2: Button draw only icon. -->
+  <!--   3: Button draw icon and caption. -->
+  <!--   4: Button draw icon and draw caption below icon. -->
+  <!--   5: Button draw icon, caption and description for button bar. -->
+  <!-- control的checked取值只能为0或1，且该属性仅当type为db_ribbon_bar_data_check_box时有效 -->
+  <!-- control的caption为控件显示的标题文字，部分控件此值无效，目前无效的有 ribbon_bar_data_check_box -->
+  <!-- control的type为构件对应的类名，具体参照头文件，目前支持类型有: -->
+  <!--   ribbon_bar_data_button -->
+  <!--   ribbon_bar_data_check_box -->
+  <!--   ribbon_bar_data_combo -->
+  <!--   ribbon_bar_data_whole_popup_button 内部子按钮类型为popup_item -->
+  <!--   ribbon_bar_data_split_popup_button 内部子按钮类型为popup_item -->
+  <!-- tab和control中的key值最好只用英文，长度不限，一般tab只用一个字母,control只用一个字母或数字，表示不下时control可以用两个字母或数字的组合，具体参考Office的Ribbon界面key值 -->
+  <!-- cmd为要执行的命令，如果命令有参数，则使用"|"符号隔开（目前只支持一个参数，且为固定的死参数），示例如下： -->
+  <!--   cmd="app.close|open_start_page" -->
+
+
+  <!-- 项目 -->
+  <tab caption="项目" key="G" icons_file="TabLarge_General.png" image_has_alpha='true'>
+    <group caption="常规">
+      <control type="ribbon_bar_data_button" caption="新建" style='4' icon_index='0' tooltip="新建项目" key="OP" cmd="sys.new"/>
+      <control type="ribbon_bar_data_button" caption="打开" style='4' icon_index='1' tooltip="打开项目" key="OP" cmd="sys.open"/>
+      <control type="ribbon_bar_data_button" caption="保存" style='4' icon_index='2' tooltip="保存项目" key="OP" cmd="sys.save"/>
+      <control type="ribbon_bar_data_button" caption="另存" style='4' icon_index='3' tooltip="另存项目" key="OP" cmd="sys.save_as"/>
+      <control type="ribbon_bar_data_button" caption="关闭" style='4' icon_index='4' tooltip="关闭项目" key="OP" cmd="sys.close_project|open_start_page"/>
+    </group>
+    <group caption="计算">
+      <control type="ribbon_bar_data_button" caption="全部计算" style='4' icon_index='5' tooltip="计算当前项目中的所有模型" key="OP" cmd="app.calculate_all"/>
+      <control type="ribbon_bar_data_button" caption="计算当前" style='4' icon_index='6' tooltip="计算工作区活动窗口对应的模型" key="OP" cmd="app.calculate_current"/>
+      <control type="ribbon_bar_data_button" caption="取消计算" style='4' icon_index='7' tooltip="取消当前进行的计算任务" key="OP" cmd="app.stopcalc"/>
+    </group>
+  </tab>
+
+</app_ribbon>

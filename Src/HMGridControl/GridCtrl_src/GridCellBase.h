@@ -82,7 +82,7 @@ public:
 
 // Operations
 public:
-	bool IsMerged();
+	bool IsMerged() const ;
 	void SetMergeRange(HMCellRange range);
 	void Show(bool IsShow);
     virtual void Reset();
@@ -119,17 +119,17 @@ protected:
 public:
 	void UnMerge();
 	virtual bool IsShow() ;
-	virtual HMCellRange GetMergeRange();
-	virtual bool IsMergeWithOthers();
-	virtual HMCellID GetMergeCellID();
+	virtual HMCellRange GetMergeRange()const;
+	virtual bool IsMergeSub()const;
+	virtual bool IsMergeOrg()const;
+	virtual HMCellID GetMergeCellID()const;
 	virtual void SetMergeCellID(HMCellID cell);
 protected:
     DWORD    m_nState;      // Cell state (selected/focus etc)
 private:
-
-	HMCellRange m_MergeRange;
-	bool m_IsMergeWithOthers;
-	HMCellID m_MergeCellID;
+	HMCellRange m_MergeRange;//针对 合并中的 第一个单元格来说，也就是 合并其他的单元格
+	//bool m_IsMergeWithOthers; //废掉
+	HMCellID m_MergeCellID;//针对 合并中的 不是第一个单元格来说，也就是 被合并的单元格
 	bool m_Hide;
 };
 

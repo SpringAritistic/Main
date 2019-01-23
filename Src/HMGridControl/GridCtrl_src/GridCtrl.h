@@ -63,8 +63,16 @@ struct HM_GridControl_EXT GV_DISPINFO {
     HMCellRange range;
 } ;
 
+ //
+ // This is sent to the Grid from child in-place edit controls
+ struct HM_GridControl_EXT GV_GRIDSEL {
+	 NMHDR      hdr;
+	 HMExcle cells;
+ };
+
 // storage typedef for each row in the grid
-typedef CTypedPtrArray<CObArray, HMGridCellBase*> GRID_ROW;
+ //typedef CTypedPtrArray<CObArray, HMGridCellBase*> GRID_ROW;
+ typedef std::vector<HMGridCellBase*> GRID_ROW;
 
 // For virtual mode callback
 typedef BOOL (CALLBACK* GRIDCALLBACK)(GV_DISPINFO *, LPARAM);
@@ -108,15 +116,19 @@ public:
     int  GetColumnWidth(int nCol) const;
     BOOL SetColumnWidth(int col, int width);
 
-    BOOL GetCellOrigin(int nRow, int nCol, LPPOINT p);
-    BOOL GetCellOrigin(const HMCellID& cell, LPPOINT p);
-    BOOL GetCellRect(int nRow, int nCol, LPRECT pRect);
-    BOOL GetCellRect(const HMCellID& cell, LPRECT pRect);
+	BOOL GetCellOrigin(int nRow, int nCol, LPPOINT p)const;
+	BOOL GetCellOrigin(const HMCellID& cell, LPPOINT p)const;
+	BOOL GetCellRect(int nRow, int nCol, LPRECT pRect)const;
+	BOOL GetCellRect(const HMCellID& cell, LPRECT pRect)const;
+	CRect GetCellRect(int nRow, int nCol)const;
+	CRect GetCellRect(const HMCellID& cell)const;
 
-    BOOL GetTextRect(const HMCellID& cell, LPRECT pRect);
-    BOOL GetTextRect(int nRow, int nCol, LPRECT pRect);
+	BOOL GetTextRect(const HMCellID& cell, LPRECT pRect)const;
+	BOOL GetTextRect(int nRow, int nCol, LPRECT pRect)const;
 
-    HMCellID GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck = TRUE);
+	HMCellID GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck = TRUE) const;
+	CRect GetCellRectFromPt(CPoint point, BOOL bAllowFixedCellCheck = TRUE)const;
+
 
     int  GetFixedRowHeight() const;
     int  GetFixedColumnWidth() const;
@@ -176,8 +188,6 @@ public:
 	HMCellID GetFocusCell() const;
 
 
-    void SetVirtualMode(BOOL bVirtual);
-	BOOL GetVirtualMode() const;
 	void SetCallbackFunc(GRIDCALLBACK pCallback,LPARAM lParam);
 	GRIDCALLBACK GetCallbackFunc();
 
@@ -187,54 +197,21 @@ public:
 												  ;
     void SetGridLines(int nWhichLines = GVL_BOTH);;
     int  GetGridLines() const                     ;
-    void SetEditable(BOOL bEditable = TRUE)       ;
-    BOOL IsEditable() const                       ;
-    void SetListMode(BOOL bEnableListMode = TRUE);;
-    BOOL GetListMode() const                      ;
-    void SetSingleRowSelection(BOOL bSing = TRUE) ;
-    BOOL GetSingleRowSelection()                  ;
-    void SetSingleColSelection(BOOL bSing = TRUE) ;
-    BOOL GetSingleColSelection()                  ;
-    void EnableSelection(BOOL bEnable = TRUE)     ;
-    BOOL IsSelectable() const                     ;
-    void SetFixedColumnSelection(BOOL bSelect)    ;
-    BOOL GetFixedColumnSelection()                ;
-    void SetFixedRowSelection(BOOL bSelect)       ;
-    BOOL GetFixedRowSelection()                   ;
-    void EnableDragAndDrop(BOOL bAllow = TRUE)    ;
-    BOOL GetDragAndDrop() const                   ;
-    void SetRowResize(BOOL bResize = TRUE)        ;
-    BOOL GetRowResize() const                     ;
-    void SetColumnResize(BOOL bResize = TRUE)     ;
-    BOOL GetColumnResize() const                  ;
-    void SetHeaderSort(BOOL bSortOnClick = TRUE)  ;
-    BOOL GetHeaderSort() const                    ;
-    void SetHandleTabKey(BOOL bHandleTab = TRUE)  ;
-    BOOL GetHandleTabKey() const                  ;
-    void SetDoubleBuffering(BOOL bBuffer = TRUE)  ;
-    BOOL GetDoubleBuffering() const               ;
-    void EnableTitleTips(BOOL bEnable = TRUE)     ;
-    BOOL GetTitleTips()                           ;
+
+
+
     void SetSortColumn(int nCol);				  ;
     int  GetSortColumn() const                    ;
-    void SetSortAscending(BOOL bAscending)        ;
-    BOOL GetSortAscending() const                 ;
-    void SetTrackFocusCell(BOOL bTrack)           ;
-    BOOL GetTrackFocusCell()                      ;
-    void SetFrameFocusCell(BOOL bFrame)           ;
-    BOOL GetFrameFocusCell()                      ;
+
+
+
     void SetAutoSizeStyle(int nStyle = GVS_BOTH)  ;
     int  GetAutoSizeStyle()                       ;
 												  ;
-    void EnableHiddenColUnhide(BOOL bEnable = TRUE);
-    BOOL GetHiddenColUnhide()                     ;
-    void EnableHiddenRowUnhide(BOOL bEnable = TRUE);
-    BOOL GetHiddenRowUnhide()                     ;
+
 												  ;
-    void EnableColumnHide(BOOL bEnable = TRUE)    ;
-    BOOL GetColumnHide()                          ;
-    void EnableRowHide(BOOL bEnable = TRUE)       ;
-    BOOL GetRowHide()                             ;
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 // default Grid cells. Use these for setting default values such as colors and fonts
@@ -246,10 +223,10 @@ public:
 // Grid cell Attributes
 ///////////////////////////////////////////////////////////////////////////////////
 public:
-    HMGridCellBase* GetCell(int nRow, int nCol) const;   // Get the actual cell!
+	HMGridCellBase* GetCell(int nRow, int nCol, bool isReal = true) const;   // Get the actual cell!
 
-    void SetModified(BOOL bModified = TRUE, int nRow = -1, int nCol = -1);
-    BOOL GetModified(int nRow = -1, int nCol = -1);
+    void SetModified(bool bModified = true, int nRow = -1, int nCol = -1);
+    bool IsModified(int nRow = -1, int nCol = -1);
     BOOL IsCellFixed(int nRow, int nCol);
 
     BOOL   SetItem(const GV_ITEM* pItem);
@@ -341,13 +318,29 @@ public:
  public:
     HMCellRange GetCellRange() const;
     HMCellRange GetSelectedCellRange() const;
+
+	//获取不连续的单元格
+	HMExcle GetSelectCells(bool isPre=false) const;
+	//
     void SetSelectedRange(const HMCellRange& Range, BOOL bForceRepaint = FALSE, BOOL bSelectCells = TRUE);
     void SetSelectedRange(int nMinRow, int nMinCol, int nMaxRow, int nMaxCol,
                           BOOL bForceRepaint = FALSE, BOOL bSelectCells = TRUE);
+	//
+	std::vector< HMGridCellBase*> GetMergeCellsInRange(int nMinRow, int nMinCol, int nMaxRow, int nMaxCol) const;
+	std::vector< HMGridCellBase*> GetMergeCellsInRange(const HMCellRange&range) const;
+
+	std::vector< HMCellID> GetMergeIDsInRange(const HMCellRange&range) const;
+	std::vector< HMCellID> GetMergeIDsInRange(int nMinRow, int nMinCol, int nMaxRow, int nMaxCol) const;
+
+	HMCellRange  GetCellRange(int nMinRow, int nMinCol, int nMaxRow, int nMaxCol) const;
+	HMCellRange  GetCellRange(const HMCellRange&range) const;
+
+
     BOOL IsValid(int nRow, int nCol) const;
     BOOL IsValid(const HMCellID& cell) const;
     BOOL IsValid(const HMCellRange& range) const;
-
+	bool  IsRowValid(int nRow) const;
+	bool  IsColValid(int nCol) const;
 ///////////////////////////////////////////////////////////////////////////////////
 // Clipboard, drag and drop, and cut n' paste operations
 ///////////////////////////////////////////////////////////////////////////////////
@@ -396,12 +389,8 @@ public:
 public:
     void Print(CPrintDialog* pPrntDialog = NULL);
 
-    // EFW - New printing support functions
-    void EnableWysiwygPrinting(BOOL bEnable = TRUE);
-    BOOL GetWysiwygPrinting()                      ;
 												   ;
-    void SetShadedPrintOut(BOOL bEnable = TRUE)    ;
-    BOOL GetShadedPrintOut(void)                   ;
+
 
     // Use -1 to have it keep the existing value
     void SetPrintMarginInfo(int nHeaderHeight, int nFooterHeight,
@@ -426,8 +415,9 @@ public:
 public:
 	//Merge the selected cells 
 	//by Huang Wei
-	HMGridCellBase* GetCell(HMCellID cell);
-	HMCellID GetMergeCellID(HMCellID cell);
+	HMGridCellBase* GetCell(HMCellID cell,bool isReal=true) const;
+	HMCellID GetMergeCellID(HMCellID cell)const;
+	HMCellID GetMergeCellID(int nRow, int nCol)const;
 	void UnMergeSelectedCells();
 	void MergeSelectedCells();
 	void UnMergeCells(int nStartRow, int nStartCol, int nEndRow, int nEndCol);
@@ -455,7 +445,7 @@ protected:
     BOOL InvalidateCellRect(const HMCellRange& cellRange);
     void EraseBkgnd(CDC* pDC);
 
-    BOOL GetCellRangeRect(const HMCellRange& cellRange, LPRECT lpRect);
+	BOOL GetCellRangeRect(const HMCellRange& cellRange, LPRECT lpRect)const;
 
     BOOL SetCell(int nRow, int nCol, HMGridCellBase* pCell);
 
@@ -465,10 +455,10 @@ protected:
     BOOL MouseOverRowResizeArea(CPoint& point);
     BOOL MouseOverColumnResizeArea(CPoint& point);
 
-    HMCellID GetTopleftNonFixedCell(BOOL bForceRecalculation = FALSE);
-    HMCellRange GetUnobstructedNonFixedCellRange(BOOL bForceRecalculation = FALSE);
-    HMCellRange GetVisibleNonFixedCellRange(LPRECT pRect = NULL, BOOL bForceRecalculation = FALSE);
-    HMCellRange GetVisibleFixedCellRange(LPRECT pRect = NULL, BOOL bForceRecalculation = FALSE);
+	HMCellID GetTopleftNonFixedCell(BOOL bForceRecalculation = FALSE)const;
+	HMCellRange GetUnobstructedNonFixedCellRange(BOOL bForceRecalculation = FALSE)const;
+	HMCellRange GetVisibleNonFixedCellRange(LPRECT pRect = NULL, BOOL bForceRecalculation = FALSE)const;
+	HMCellRange GetVisibleFixedCellRange(LPRECT pRect = NULL, BOOL bForceRecalculation = FALSE)const;
 
     BOOL IsVisibleVScroll() ;
     BOOL IsVisibleHScroll() ;
@@ -535,36 +525,18 @@ protected:
                 m_crShadow;
     COLORREF    m_crTTipBackClr, m_crTTipTextClr;                 // Titletip colours - FNA
     
-    BOOL        m_bVirtualMode;
     LPARAM      m_lParam;                                           // lParam for callback
     GRIDCALLBACK m_pfnCallback;                                     // The callback function
 
     int         m_nGridLines;
-    BOOL        m_bEditable;
-    BOOL        m_bModified;
-    BOOL        m_bAllowDragAndDrop;
-    BOOL        m_bListMode;
-    BOOL        m_bSingleRowSelection;
-    BOOL        m_bSingleColSelection;
-    BOOL        m_bAllowDraw;
-    BOOL        m_bEnableSelection;
-    BOOL        m_bFixedRowSelection, m_bFixedColumnSelection;
-    BOOL        m_bSortOnClick;
-    BOOL        m_bHandleTabKey;
-    BOOL        m_bDoubleBuffer;
-    BOOL        m_bTitleTips;
-    int         m_nBarState;
-    BOOL        m_bWysiwygPrinting;
-    BOOL        m_bHiddenColUnhide, m_bHiddenRowUnhide;
-    BOOL        m_bAllowColHide, m_bAllowRowHide;
-    BOOL        m_bAutoSizeSkipColHdr;
-    BOOL        m_bTrackFocusCell;
-    BOOL        m_bFrameFocus;
-    UINT        m_nAutoSizeColumnStyle;
+	int         m_nBarState;
+
+
+
 
     // Cell size details
-    int         m_nRows, m_nFixedRows, m_nCols, m_nFixedCols;
-    CUIntArray  m_arRowHeights, m_arColWidths;
+	int         m_nRows, m_nFixedRows, m_nCols, m_nFixedCols;
+    std::vector<int>  m_arRowHeights, m_arColWidths;
     int         m_nVScrollMax, m_nHScrollMax;
 
     // Fonts and images
@@ -575,18 +547,17 @@ protected:
     CImageList* m_pImageList;
 
     // Cell data
-    CTypedPtrArray<CObArray, GRID_ROW*> m_RowData;
+    //CTypedPtrArray<CObArray, GRID_ROW*> m_RowData;
+	std::vector<GRID_ROW*>m_RowData;
 
     // Mouse operations such as cell selection
     int         m_MouseMode;
-    BOOL        m_bLMouseButtonDown, m_bRMouseButtonDown;
     CPoint      m_LeftClickDownPoint, m_LastMousePoint;
     HMCellID     m_LeftClickDownCell, m_SelectionStartCell;
-    HMCellID     m_idCurrentCell, m_idTopLeftCell;
+   mutable  HMCellID     m_idCurrentCell, m_idTopLeftCell;
     INT_PTR     m_nTimerID;
     int         m_nTimerInterval;
     int         m_nResizeCaptureRange;
-    BOOL        m_bAllowRowResize, m_bAllowColumnResize;
     int         m_nRowsPerWheelNotch;
     CMap<DWORD,DWORD, HMCellID, HMCellID&> m_SelectedCellMap, m_PrevSelectedCellMap;
 
@@ -613,13 +584,10 @@ protected:
     int         m_nPageMultiplier;
 
     // sorting
-    int          m_bAscending;
     int          m_nSortColumn;
 	PFNLVCOMPARE m_pfnCompare;
 
-    // EFW - Added to support shaded/unshaded printout.  If true, colored
-    // cells will print as-is.  If false, all text prints as black on white.
-    BOOL        m_bShadedPrintOut;
+
 
     // EFW - Added support for user-definable margins.  Top and bottom are in 
     // lines.  Left, right, and gap are in characters (avg width is used).
@@ -680,13 +648,16 @@ protected:
     afx_msg void OnEndInPlaceEdit(NMHDR* pNMHDR, LRESULT* pResult);
     DECLARE_MESSAGE_MAP()
 
-    enum eMouseModes { MOUSE_NOTHING, MOUSE_SELECT_ALL, MOUSE_SELECT_COL, MOUSE_SELECT_ROW,
-                       MOUSE_SELECT_CELLS, MOUSE_SCROLLING_CELLS,
-                       MOUSE_OVER_ROW_DIVIDE, MOUSE_SIZING_ROW,
-                       MOUSE_OVER_COL_DIVIDE, MOUSE_SIZING_COL,
-                       MOUSE_PREPARE_EDIT,
+	enum eMouseModes {
+		MOUSE_NOTHING, MOUSE_SELECT_ALL, MOUSE_SELECT_COL, MOUSE_SELECT_ROW,
+		MOUSE_SELECT_CELLS, MOUSE_SCROLLING_CELLS,
+		MOUSE_OVER_ROW_DIVIDE, MOUSE_SIZING_ROW,
+		MOUSE_OVER_COL_DIVIDE, MOUSE_SIZING_COL,
+		MOUSE_PREPARE_EDIT,
 #ifndef GRIDCONTROL_NO_DRAGDROP
-                       MOUSE_PREPARE_DRAG, MOUSE_DRAGGING
+		MOUSE_PREPARE_DRAG, MOUSE_DRAGGING
+		//格式填充
+
 #endif
     };
 //      for sort in virtual mode, and column order, save and load layer
@@ -695,27 +666,147 @@ public:
 	void Reorder(int From, int To);
 	void SetVirtualCompare(PVIRTUALCOMPARE VirtualCompare);
 	int m_CurCol;
-	void AllowReorderColumn(bool b = true);
-	void EnableDragRowMode(bool b = true); // to change row order
 	int GetLayer(int** pLayer); //  gives back the number of ints of the area (do not forget to delete *pLayer)
 	void SetLayer(int* pLayer); // coming from a previous GetLayer (ignored if not same number of column, or the same revision number)
-	void ForceQuitFocusOnTab(bool b = true);// use only if GetParent() is a CDialog
-	void AllowSelectRowInFixedCol(bool b = true); // 
 //    allow acces?
 	intlist m_arRowOrder, m_arColOrder;
 	static HMGridCtrl* m_This;
 protected:
 	virtual void AddSubVirtualRow(int Num, int Nb);
-	bool m_bDragRowMode;
 	int m_CurRow;
 private:
 	void ResetVirtualOrder();
 	PVIRTUALCOMPARE m_pfnVirtualCompare;
 	static bool NotVirtualCompare(int c1, int c2);
-	bool m_InDestructor;
-	bool m_AllowReorderColumn;
-	bool m_QuitFocusOnTab;
-	bool m_AllowSelectRowInFixedCol;
+	UINT        m_nAutoSizeColumnStyle;
+
+	//
+
+
+	enum /*class*/ GRIDSTATE:unsigned long long
+	{
+		ALLOWROWRESIZE = 1,
+		ALLOWCOLUMNRESIZE = ALLOWROWRESIZE << 1,
+		ALLOWDRAGANDDROP = ALLOWCOLUMNRESIZE << 1,
+		ALLOWDRAW = ALLOWDRAGANDDROP << 1,
+		ALLOWREORDERCOLUMN = ALLOWDRAW << 1,
+		ALLOWCOLHIDE = ALLOWREORDERCOLUMN << 1,
+		ALLOWROWHIDE = ALLOWCOLHIDE << 1,
+		ALLOWSELECTROWINFIXEDCOL = ALLOWROWHIDE << 1,
+		ASCEND = ALLOWSELECTROWINFIXEDCOL << 1,
+		AUTOSIZESKIPCOLHDR = ASCEND << 1,
+		DOUBLEBUFFER = AUTOSIZESKIPCOLHDR << 1,
+		DROPCOPY = DOUBLEBUFFER << 1,
+		EDITABLE = DROPCOPY << 1,
+		ENABLESELECTION = EDITABLE << 1,
+		FIXEDROWSELECTION = ENABLESELECTION << 1,
+		FIXEDCOLUMNSELECTION = FIXEDROWSELECTION << 1,
+		FRAMEFOCUS = FIXEDCOLUMNSELECTION << 1,
+		HANDLETABKEY = FRAMEFOCUS << 1,
+		HIDDENCOLUNHIDE = HANDLETABKEY << 1,
+		HIDDENROWUNHIDE = HIDDENCOLUNHIDE << 1,
+		INDESTRUCTOR = HIDDENROWUNHIDE << 1,
+		LISTMODE = INDESTRUCTOR << 1,
+		MODIFIED = LISTMODE << 1,
+		QUITFOCUSONTAB = MODIFIED << 1,
+		LMOUSEBUTTONDOWN = QUITFOCUSONTAB << 1,
+		RMOUSEBUTTONDOWN = LMOUSEBUTTONDOWN << 1,
+		// EFW - Added to support shaded/unshaded printout.  If true, colored
+		// cells will print as-is.  If false, all text prints as black on white.
+		SHADEDPRINTOUT = RMOUSEBUTTONDOWN << 1,
+		SINGLECOLSELECTION = SHADEDPRINTOUT << 1,
+		SINGLEROWSELECTION = SINGLECOLSELECTION << 1,
+		SORTONCLICK = SINGLEROWSELECTION << 1,
+		STARTCUT = SORTONCLICK << 1,
+		TITLETIPS = STARTCUT << 1,
+		TRACKFOCUSCELL = TITLETIPS << 1,
+		VIRTUALMODE = TRACKFOCUSCELL << 1,
+		// EFW - New printing support functions
+		WYSIWYGPRINTING = VIRTUALMODE << 1,
+		DRAGROWMODE = WYSIWYGPRINTING << 1,
+
+
+
+	};
+	unsigned long long m_state;
+	public:
+		bool IsRowResize() const;
+		bool IsColumnResize() const;
+		bool IsDragAndDrop() const;
+		bool IsDraw() const;
+		bool IsReorderColumn() const;
+		bool IsRowHide() const;
+		bool IsSelectRowInFixedCol() const;
+		bool IsSortAscend() const;
+		bool IsAutoSizeSkipColHdr() const;
+		bool IsDoubleBuffer() const;
+		bool IsDropCopy() const;
+		bool IsEditable() const;
+		bool IsEnableSelection() const;
+		bool IsFixedColumnSelection() const;
+		bool IsFrameFocus() const;
+		bool IsHandleTabKey() const;
+		bool IsHiddenRowUnhide() const;
+		bool IsInDestructor() const;
+		bool IsListMode() const;
+		bool IsGridModified() const;
+		bool IsQuitFocusOnTab() const;
+		bool IsRMouseButtonDown() const;
+		bool IsShadedPrintOut() const;
+		bool IsSingleColSelection() const;
+		bool IsSingleRowSelection() const;
+		bool IsHeaderSort() const;
+		bool IsStartCut() const;
+		bool IsTitleTips() const;
+		bool IsTrackFocusCell() const;
+		bool IsVirtualMode() const;
+		bool IsWysiwygPrinting() const;
+		bool IsAllowColHide() const;
+		bool IsFixedRowSelection() const;
+		bool IsHiddenColUnhide() const;
+		bool IsLMouseButtonDown() const;
+		bool IsDragRowMode() const;
+
+		//返回 m_state所指属性值 是否 改变，是否和  val 不同
+		bool EnsureProChange(GRIDSTATE pro, bool val);
+		//
+		void EnsureRowResize(bool val);
+		void EnsureColumnResize(bool val);
+		void EnsureDragAndDrop(bool val=true);
+		void EnsureDraw(bool val);
+		void EnsureReorderColumn(bool val);
+		void EnsureRowHide(bool val);
+		void EnsureSelectRowInFixedCol(bool val=true);
+		void EnsureSortAscend(bool val);
+		void EnsureAutoSizeSkipColHdr(bool val);
+		void EnsureDoubleBuffer(bool val);
+		void EnsureDropCopy(bool val);
+		void EnsureEditable(bool val=true);
+		void EnsureSelection(bool val=true);
+		void EnsureFixedColumnSelection(bool val);
+		void EnsureFrameFocus(bool val);
+		void EnsureHandleTabKey(bool val);
+		void EnsureHiddenRowUnhide(bool val);
+		void EnsureInDestructor(bool val);
+		void EnsureListMode(bool val);
+		void EnsureGridModified(bool val);
+		void EnsureQuitFocusOnTab(bool val);// use only if GetParent() is a CDialog
+		void EnsureRMouseButtonDown(bool val);
+		void EnsureShadedPrintOut(bool val);
+		void EnsureSingleColSelection(bool val=true);
+		void EnsureSingleRowSelection(bool val=true);
+		void EnsureHeaderSort(bool val);
+		void EnsureStartCut(bool val);
+		void EnsureTitleTips(bool val);
+		void EnsureTrackFocusCell(bool val);
+		void EnsureVirtualMode(bool val);
+		void EnsureWysiwygPrinting(bool val);
+		void EnsureColHide(bool val);
+		void EnsureFixedRowSelection(bool val);
+		void EnsureHiddenColUnhide(bool val);
+		void EnsureLMouseButtonDown(bool val);
+		void EnsureDragRowMode(bool val);
+
 
 };
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- container 的app_identify 属性用于标识唯一的面板实例 -->
+<!-- container 的neighbor_identify 属性用于指定放置时的依赖面板或容器，用于定位，比如输出窗口可以在全局的最下面，也可以靠着项目窗口放在下方，同样是下方，依赖的对象不一样位置就不一样，如果不指定或为空表示全局的不依赖，注意：依赖关系最好只有向前依赖，否则创建出来的结果可能不是用户想要的 -->
+<!-- pane 的app_identify 属性用于标识特殊的面板窗口实例，程序中不允许有任何两个窗口实例的标识一样，而child_window_class则用于设置面板窗口创建时所使用的窗口类，程序中允许存在窗口类相同的多个实例 -->
+<!-- no_close_button属性用于设置有关闭按钮 -->
+<!-- no_caption属性用于设置有无标题栏 -->
+<!-- no_dockable属性用于设置能否停靠 -->
+<!-- no_hideable属性用于设置有无隐藏按钮 -->
+<!-- 停靠面板的布局一般通过两种方式配合使用：一是container的先后顺序，另一个是neighbor_identify属性，例如两个面板一左一下，则下方面板会把左边面板往上挤，反过来一下一左，则左边面板会把下方面板往右挤，即后创建的会挤先创建的，而neighbor_identify属性如果为上或者下，则可以实现一个面板从中心分成上下两部分的效果 -->
+<!-- auto_create_by_frame为true表示停靠窗口由框架在启动时创建，为false表示启动时不创建，由用户在需要的时候手动调用框架提供的接口创建 -->
+<!-- db_docking_panes的属性auto_layout为true表示停靠窗口布局第一次由本xml配置决定，之后会自动使用上一次的状态，否则总是强制按本xml的布局来创建 -->
+<!-- db_docking_panes的属性config_version表示停靠窗口布局配置xml文件的版本号，主要用于配置文件版本控制，确保旧的布局数据加载时能正确匹配当前xml中的窗口id，如果程序保存的配置版本号与此相同则优先按上次保存的布局加载，否则强制按xml创建，每当xml的窗口顺序和个数以及类型有改动时请递增版本号 -->
+
+
+<app_docking_panes auto_create_by_frame="false" auto_layout="true" config_version="4.1">
+  <container direction_by_frame="bottom" width="300" height="120" show="true" app_identify="bottom" neighbor_identify="left">
+    <pane pane_title="输出窗口" tab_title="命令" app_identify="app_console_wnd" child_window_class="app_console_wnd" no_close_button="true" no_caption ="false" no_hideable="false" no_dockable="false" selected="true" start_load="true" icon_file="pane_project.png" />
+  </container>
+  <container direction_by_frame="left" width="300" height="120" show="true" app_identify="left">
+    <pane pane_title="图纸" tab_title="项目" child_window_class="graph_tree_view" no_close_button="true" app_identify="graph_tree_view" selected="true" start_load="true" icon_file="pane_project.png" />
+  </container>
+</app_docking_panes>

@@ -393,7 +393,7 @@ void HMCheckComboBox::RecalcText()
 			}
 		}
 
-		// Set the text
+		// Reset the text
 		m_strText = strText;
 
 		m_bTextUpdated = TRUE;

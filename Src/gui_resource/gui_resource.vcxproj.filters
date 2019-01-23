@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="xml">
+      <UniqueIdentifier>{ef36156a-63a5-4e43-a302-70cf7e963fee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page">
+      <UniqueIdentifier>{a3d72bb7-cf86-42d8-b826-37e4d80e297c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links">
+      <UniqueIdentifier>{7c5d8190-d54d-4bf3-af02-fc553598d49f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\000_files">
+      <UniqueIdentifier>{79d16b28-6b29-4a65-8094-b1a53f087899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\001_files">
+      <UniqueIdentifier>{439233c6-e086-4596-a2c1-022060a3d9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\002_files">
+      <UniqueIdentifier>{ff656347-75a8-46e9-92ec-7a0bc39b6420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\003_files">
+      <UniqueIdentifier>{8e83e51c-bf97-4956-9152-660c72ca48f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\004_files">
+      <UniqueIdentifier>{d5ca9f5c-d46a-4718-825f-f7f1913916d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\links\005_files">
+      <UniqueIdentifier>{3aacedf9-0b5f-4f1b-9dfd-b2349658ad37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="styles">
+      <UniqueIdentifier>{3c98af39-4bfa-4a68-8057-08b68e025650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="help">
+      <UniqueIdentifier>{278bb0bb-2ed8-4df8-ba44-b72724e68f29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\sample_videos">
+      <UniqueIdentifier>{7de43829-91b6-43dd-9147-4b2738ca3be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="start_page\sample_projects">
+      <UniqueIdentifier>{7ad84879-4788-4bbb-9f07-5ddc53da6b75}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gui_resource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="xml\app_auto_load_module.xml">
+      <Filter>xml</Filter>
+    </Xml>
+    <Xml Include="xml\app_accelerator_map.xml">
+      <Filter>xml</Filter>
+    </Xml>
+    <Xml Include="xml\app_docking_panes.xml">
+      <Filter>xml</Filter>
+    </Xml>
+    <Xml Include="xml\app_ribbon.xml">
+      <Filter>xml</Filter>
+    </Xml>
+    <Xml Include="help\app_help_config.xml">
+      <Filter>help</Filter>
+    </Xml>
+    <Xml Include="xml\app_graph_register_info.xml">
+      <Filter>xml</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="xml\start_page_black.xaml">
+      <Filter>start_page</Filter>
+    </Page>
+    <Page Include="xml\start_page_blue.xaml">
+      <Filter>start_page</Filter>
+    </Page>
+    <Page Include="xml\start_page_dark.xaml">
+      <Filter>start_page</Filter>
+    </Page>
+    <Page Include="xml\start_page_white.xaml">
+      <Filter>start_page</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="xml\video_icon.png">
+      <Filter>start_page</Filter>
+    </Image>
+    <Image Include="xml\start_page\000_files\image001.jpg">
+      <Filter>start_page\links\000_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\000_files\image002.png">
+      <Filter>start_page\links\000_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\000_files\image003.jpg">
+      <Filter>start_page\links\000_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\000_files\image004.jpg">
+      <Filter>start_page\links\000_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\000_files\image005.png">
+      <Filter>start_page\links\000_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image001.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image002.gif">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image003.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image004.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image005.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image006.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image007.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\001_files\image008.jpg">
+      <Filter>start_page\links\001_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\002_files\image001.jpg">
+      <Filter>start_page\links\002_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\002_files\image002.jpg">
+      <Filter>start_page\links\002_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\002_files\image003.jpg">
+      <Filter>start_page\links\002_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\002_files\image004.jpg">
+      <Filter>start_page\links\002_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\004_files\image001.jpg">
+      <Filter>start_page\links\004_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\004_files\image002.jpg">
+      <Filter>start_page\links\004_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image001.gif">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image002.gif">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image003.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image004.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image005.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image006.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image007.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="xml\start_page\005_files\image008.jpg">
+      <Filter>start_page\links\005_files</Filter>
+    </Image>
+    <Image Include="sample_projects\001.bmp">
+      <Filter>start_page\sample_projects</Filter>
+    </Image>
+    <Image Include="sample_projects\002.bmp">
+      <Filter>start_page\sample_projects</Filter>
+    </Image>
+    <Image Include="sample_projects\003.bmp">
+      <Filter>start_page\sample_projects</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\start_page\000.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="xml\start_page\001.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="xml\start_page\002.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="xml\start_page\003.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="xml\start_page\004.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="xml\start_page\005.htm">
+      <Filter>start_page\links</Filter>
+    </None>
+    <None Include="styles\black_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\blue_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\dark_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2007.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2007.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2010.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2010.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2013.cjstyles">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\Office2013.dll">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="styles\white_grid_settings.ini">
+      <Filter>styles</Filter>
+    </None>
+    <None Include="help\app_help.chm">
+      <Filter>help</Filter>
+    </None>
+  </ItemGroup>
+</Project>
