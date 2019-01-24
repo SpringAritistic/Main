@@ -1,0 +1,60 @@
+<html>
+<head>
+	<link href="fileuploader.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="fileuploader.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var uploader = new qq.FileUploader({
+				'element': $('#inputFile')[0],
+				'action': 'fileuploader.php',
+				'params': { 'outputFormat': $('#outputFormat option:selected').attr('value') },
+				'onComplete': function(id, file, response) {
+					if (!response.success) return;
+					// Please Wait
+					$('#postLoader').hide()
+					$('#postLoader').html('<img src="clock.png" height="210" width="210"><br /><b>Please Wait...</b>');
+					$('#postLoader').slideDown();
+
+					// for IE compatibility, don't use anonymous function in setTimeout
+					setTimeout("showDownload('" + file.replace(".dwg", "").replace(".dxf", "") + "');", 5000);
+					return true;
+				}
+			});
+
+			$('#outputFormat').change(function() {
+				uploader.setParams({
+					'outputFormat': $('#outputFormat option:selected').attr('value')
+				});
+			});
+		});
+
+		function showDownload(file) {
+			$('#postLoader').slideUp('slow', function() { $('#postLoader').html('<img src="download.png" height="48" width="48" align="absmiddle"> <a href="outputs/' + file + '.zip">Download Ouptut</a>').slideDown(); });
+		}
+	</script>
+</head>
+<body>
+	<div style="text-align: center; margin-left: auto; margin-right: auto; width: 80%; border: 0px;">
+		<h3>AutoCAD File Converter</h3>
+		<h4>Converts AutoCAD file formats (DXF and DWG) to ESRI Shapefile, KML, or plain text.</h4>
+		<p>
+			Desired Output Format:<br />
+			<select name="outputFormat" id="outputFormat">
+				<option value="Polyline">ESRI Shapefile - POLYLINE</option>
+				<option value="Point">ESRI Shapefile - POINT</option>
+				<option value="Polygon">ESRI Shapefile - POLYGON</option>
+				<option value="KML">Keyhole Markup Language (KML)</option>
+				<option value="Text">Plain Text</option>
+			</select><br />
+			<center>
+				<div id="inputFile">
+					<noscript>JavaScript is required to use this tool</noscript>
+				</div>
+				<div id="postLoader">
+				</div>
+			</center>
+		</p>
+	</div>
+</body>
+</html>
