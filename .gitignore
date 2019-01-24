@@ -17,6 +17,35 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+/CADConverterTest/*
+/COMClient/*
+/COMServer/*
+/ConverterDwgDfx/*
+/ConverterWebsite/*
+/CSharpApp/*
+/DialogTest/*
+/Frame/*
+/FrameTest/*
+/GetMacAdress/*
+/HMCAD/*
+/HMDesign/*
+/HMDrawCell/*
+/HMExportTool/*
+/HMGridControl1/*
+/HMGridControl2/*
+/HMStringTool/*
+/HMTestCom/*
+/HMToSoft/*
+/MainFrame/*
+/sharpDll/*
+/TestStream/*
+/TestConsoleC/*
+/test/*
+/TestConsole/*
+
+
+
+
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/

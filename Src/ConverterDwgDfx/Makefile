@@ -1,2 +1,0 @@
-AutoCADConverter: AutoCADConverter.cpp OutputFormatText.cpp OutputFormatKML.cpp OutputFormatTypes.cpp InputFormatDXF.cpp GetInsertions.cpp OutputFormatSHP.cpp InputFormatDWG.cpp
-	g++ -ggdb -o AutoCADConverter OutputFormatText.cpp OutputFormatKML.cpp OutputFormatTypes.cpp OutputFormatSHP.cpp InputFormatDXF.cpp GetInsertions.cpp InputFormatDWG.cpp AutoCADConverter.cpp -ldxflib -I/usr/include/gdal -lgdal1.7.0 -lredwg
