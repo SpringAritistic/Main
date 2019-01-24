@@ -1,6 +1,8 @@
 //11/22/2018  4:37:13 PM
 #include "stdafx.h"
 #include "CheckComboBox.h"
+#include "..\tools\StrTool.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -184,6 +186,12 @@ LRESULT HMCheckComboBox::OnCtlColorListBox(WPARAM wParam, LPARAM lParam)
 
 			// Do the subclassing
 			m_pWndProc = (WNDPROC)GetWindowLong(m_hListBox, GWL_WNDPROC);
+			//添加选择项
+			for (int item : m_vecSelect)
+				SetItemData(item, TRUE);
+			if (m_vecSelect.size() > 0)
+				m_bTextUpdated = FALSE;
+
 			SetWindowLong(m_hListBox, GWL_WNDPROC, (LONG)ComboBoxListBoxProc);
 		}
 	}
@@ -351,6 +359,45 @@ LRESULT HMCheckComboBox::OnGetTextLength(WPARAM, LPARAM)
 	return m_strText.GetLength();
 }
 
+CString HMCheckComboBox::GetSeperatorStr()const
+{
+	// Get the list separator
+	TCHAR szBuffer[10] = { 0 };
+	GetLocaleInfo(LOCALE_USER_DEFAULT, LOCALE_SLIST, szBuffer, sizeof(szBuffer));
+	CString strSeparator = szBuffer;
+
+	// If none found, the the ';'
+	if (strSeparator.GetLength() == 0)
+		strSeparator = ',';
+
+	// Trim extra spaces
+	strSeparator.TrimRight();
+
+	// And one...
+	//strSeparator += ' ';
+	return strSeparator;
+}
+
+void HMCheckComboBox::InitSelec(const CString& str)
+{
+	if (str.IsEmpty())
+		return;
+	std::vector<CString>vecStr;
+	split_string(vecStr, str, GetSeperatorStr());
+	m_vecSelect = FindIndexs(vecStr,GetOptionTitles());
+}
+vector<CString>HMCheckComboBox::GetOptionTitles() const
+{
+	vector<CString>vec;
+	for (INT i = 0; i < GetCount(); i++) {
+		CString strItem;
+		GetLBText(i, strItem);
+		//一般情况下，不会为空，判断应该放到外部
+		//if (!strItem.IsEmpty())
+			vec.push_back(strItem);
+	}
+	return vec;
+}
 
 //
 // This routine steps thru all the items and builds
@@ -364,21 +411,9 @@ void HMCheckComboBox::RecalcText()
 		// Get the list count
 		INT nCount = GetCount();
 
-		// Get the list separator
-		TCHAR szBuffer[10] = { 0 };
-		GetLocaleInfo(LOCALE_USER_DEFAULT, LOCALE_SLIST, szBuffer, sizeof(szBuffer));
 
-		CString strSeparator = szBuffer;
 
-		// If none found, the the ';'
-		if (strSeparator.GetLength() == 0)
-			strSeparator = ';';
-
-		// Trim extra spaces
-		strSeparator.TrimRight();
-
-		// And one...
-		strSeparator += ' ';
+		CString strSeparator = GetSeperatorStr();
 
 		for (INT i = 0; i < nCount; i++) {
 

@@ -19,6 +19,9 @@
     <Filter Include="GridControl">
       <UniqueIdentifier>{28ed09db-e6d5-494e-a847-a983b2f19999}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{115e6f81-faa1-4e2e-8d1e-dc1b49d954ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -77,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="GridCtrl_src\MemDC.cpp">
       <Filter>GridControl</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\StrTool.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools\Tool.cpp">
+      <Filter>Tools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +156,12 @@
     </ClInclude>
     <ClInclude Include="HMGridControlInc.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\StrTool.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Tool.h">
+      <Filter>Tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

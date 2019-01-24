@@ -7,6 +7,8 @@
 // OLE stuff for clipboard operations
 #include <afxadv.h>            // For CSharedFile
 #include <afxconv.h>           // For LPTSTR -> LPSTR macros
+#include "..\Tools\Tool.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -6141,7 +6143,7 @@ void HMGridCtrl::OnMouseMove(UINT /*nFlags*/, CPoint point)
 			}
 
 			// Titletips anyone? anyone?
-			if (IsTitleTips())
+			if (IsTitleTips()&& false)
 			{
 				CRect TextRect, CellRect;
 				if (pCell)
@@ -8492,13 +8494,8 @@ bool HMGridCtrl::IsDragRowMode() const
 }
 bool HMGridCtrl::EnsureProChange(GRIDSTATE PRO, bool val)
 {
-	if (bool(m_state & PRO) == val)
-		return false;
-	if (val)
-		m_state |= PRO;
-	else
-		m_state &= ~PRO;
-	return true;
+	return SetProEnable(m_state, PRO, val);
+
 }
 void HMGridCtrl::EnsureRowResize(bool val)
 {
@@ -8751,6 +8748,18 @@ void HMGridCtrl::EnsureDragRowMode(bool val) // to change row order
 			EnsureDragAndDrop(val);
 	}
 }
+bool HMGridCtrl::IsItemExitVScroll(int nRow, int nCol) const
+{
+	if (!IsValid(nRow, nCol))
+		return false;
+	HMGridCellBase* pCell = GetCell(nRow, nCol);
+	//
+	return pCell->IsExistVScroll();
+}
 
+bool HMGridCtrl::IsItemExitVScroll(const HMCellID& cell) const
+{
+	return IsItemExitVScroll(cell.row, cell.col);
 
+}
 _HM_GridControl_END

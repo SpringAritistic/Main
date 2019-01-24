@@ -51,9 +51,14 @@ protected:
 	// The string containing the text to display
 	CString m_strText;
 	BOOL m_bTextUpdated;
-
 	// A flag used in MeasureItem, see comments there
 	BOOL m_bItemHeightSet;
+	//已选择项目
+	vector<size_t>m_vecSelect;//
+	CString GetSeperatorStr()const;
+	void InitSelec(const CString& str);
+	vector<CString>GetOptionTitles() const;
 };
+
 _HM_GridControl_END
 #endif

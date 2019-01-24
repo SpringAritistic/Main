@@ -138,7 +138,6 @@ private:
 	BOOL	 m_bExitOnArrows; 
     COLORREF m_crForeClr, m_crBackClr;
 };
-void split_string(std::vector<CString>& result, const CString& text, const CString& split = _T(" ,;"));
-vector<size_t>FindIndexs(const std::vector<CString>& inStr, const std::vector<CString>& findStr);
+
 _HM_GridControl_END
 #endif

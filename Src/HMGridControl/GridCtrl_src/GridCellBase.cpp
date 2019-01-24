@@ -4,6 +4,7 @@
 #include "GridCtrl.h"
 #include "CellRange.h"
 #include "GridCellBase.h"
+#include "..\Tools\Tool.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -477,6 +478,7 @@ BOOL HMGridCellBase::GetTextRect( LPRECT pRect)  // i/o:  i=dims of cell rect; o
 
     return TRUE;
 }
+ BOOL HMGridCellBase::GetTipTextRect(LPRECT pRect) { return GetTextRect(pRect); }  // may override for btns, etc.
 
 // By default this uses the selected font (which is a bigger font)
 CSize HMGridCellBase::GetTextExtent(LPCTSTR szText, CDC* pDC /*= NULL*/)
@@ -859,6 +861,10 @@ BOOL HMGridCellBase::IsDropHighlighted()   const                { return (m_nSta
 
 void HMGridCellBase::EndEdit() {}
 
-
+ BOOL HMGridCellBase::IsExistVScroll()   const { return (m_nState & GVIS_EXSITVSCROLL); }
+ void HMGridCellBase::EnsureExistVScroll(bool isExist)
+{
+	SetProEnable(m_nState, GVIS_EXSITVSCROLL, isExist);
+}
 
 _HM_GridControl_END

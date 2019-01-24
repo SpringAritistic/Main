@@ -807,6 +807,9 @@ private:
 		void EnsureLMouseButtonDown(bool val);
 		void EnsureDragRowMode(bool val);
 
+public:
+	bool IsItemExitVScroll(const HMCellID& cell) const;
+	bool IsItemExitVScroll(int row,int col) const;
 
 };
 

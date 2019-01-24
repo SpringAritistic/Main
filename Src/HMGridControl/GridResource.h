@@ -20,6 +20,7 @@ _HM_GridControl_BEGIN
 #define GVIS_FIXEDROW           0x0020					//  32
 #define GVIS_FIXEDCOL           0x0040					//  64
 #define GVIS_MODIFIED           0x0080					//  128
+#define GVIS_EXSITVSCROLL       0x0100					//  256
 // Cell data mask										
 #define GVIF_TEXT               LVIF_TEXT				//  1
 #define GVIF_IMAGE              LVIF_IMAGE				//  2

@@ -74,7 +74,11 @@ public:
     virtual BOOL IsSelected()          const;
     virtual BOOL IsReadOnly()          const;
     virtual BOOL IsModified()          const;
-    virtual BOOL IsDropHighlighted()   const;
+	virtual BOOL IsDropHighlighted()   const;
+	//
+	virtual BOOL IsExistVScroll()   const;
+	virtual void EnsureExistVScroll(bool isExist = false);
+
 
 // Operators
 public:
@@ -89,7 +93,7 @@ public:
 
     virtual BOOL Draw(CDC* pDC, int nRow, int nCol, CRect rect, BOOL bEraseBkgnd = TRUE);
     virtual BOOL GetTextRect( LPRECT pRect);    // i/o:  i=dims of cell rect; o=dims of text rect
-    virtual BOOL GetTipTextRect( LPRECT pRect) { return GetTextRect( pRect); }  // may override for btns, etc.
+	virtual BOOL GetTipTextRect(LPRECT pRect);  // may override for btns, etc.
     virtual CSize GetTextExtent(LPCTSTR str, CDC* pDC = NULL);
     virtual CSize GetCellExtent(CDC* pDC);
 
@@ -125,12 +129,14 @@ public:
 	virtual HMCellID GetMergeCellID()const;
 	virtual void SetMergeCellID(HMCellID cell);
 protected:
-    DWORD    m_nState;      // Cell state (selected/focus etc)
+   mutable DWORD    m_nState;      // Cell state (selected/focus etc)
 private:
 	HMCellRange m_MergeRange;//针对 合并中的 第一个单元格来说，也就是 合并其他的单元格
 	//bool m_IsMergeWithOthers; //废掉
 	HMCellID m_MergeCellID;//针对 合并中的 不是第一个单元格来说，也就是 被合并的单元格
 	bool m_Hide;
+
+	//
 };
 
 
