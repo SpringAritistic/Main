@@ -1,0 +1,12 @@
+#pragma once
+#include "HMCADMacro.h"
+#include "dxflib/dl_attributes.h"
+#include "dxflib/dl_codes.h"
+#include "dxflib/dl_creationadapter.h"
+#include "dxflib/dl_creationinterface.h"
+#include "dxflib/dl_dxf.h"
+#include "dxflib/dl_exception.h"
+#include "dxflib/dl_extrusion.h"
+#include "dxflib/dl_writer.h"
+#include "dxflib/dl_writer_ascii.h"
+#include "dxflib/dl_entities.h"
