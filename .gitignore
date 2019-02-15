@@ -26,6 +26,8 @@
 /Src/test/*
 /Src/TestConsole/*
 
+/Src/BCGDialogTest/CTest.h
+
 
 # User-specific files
 *.suo

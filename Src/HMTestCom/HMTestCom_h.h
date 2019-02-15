@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Fri Jan 25 13:15:33 2019
+/* at Fri Feb 15 22:12:26 2019
  */
 /* Compiler settings for HMTestCom.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
