@@ -4,6 +4,7 @@
 #include "InPlaceEdit.h"
 #include "GridCtrl.h"
 #include "..\Tools\Tool.h"
+#include "..\Tools\StrTool.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -24,7 +25,12 @@ UINT nFirstChar)
 	// If mouse click brought us here,
 	// then no exit on arrows
 	SetExitOnArrows(nFirstChar != VK_LBUTTON);
-
+	//CClientDC dc(this);
+	//CSize size= GetTextExtent(dc, m_sInitText);
+	//if (rect.Height() < size.cy)
+	//{
+	//	rect.bottom = rect.top + size.cy;
+	//}
 	m_Rect = rect;  // For bizarre CE bug.
 
 	DWORD dwEditStyle =// WS_BORDER | WS_CHILD | WS_VISIBLE | ES_AUTOVSCROLL /*| ES_AUTOHSCROLL*/ | ES_MULTILINE /*| ES_WANTRETURN*/
@@ -36,6 +42,7 @@ UINT nFirstChar)
 
 	SetWindowText(sInitText);
 	SetFocus();
+	Refresh(sInitText);
 
 	switch (nFirstChar){
 	case VK_LBUTTON:
@@ -129,31 +136,33 @@ void HMInPlaceEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 	// Get text extent
 	CString str;
 	GetWindowText(str);
+	if (!IsFit(str))
+	{
+		Refresh(str);
+		
+	}
 
 	// add some extra buffer
 	//str += _T("  ");
 
-	CWindowDC dc(this);
-	CFont *pFontDC = dc.SelectObject(GetFont());
-	CSize size = dc.GetTextExtent(str);
-	dc.SelectObject(pFontDC);
+	//CWindowDC dc(this);
+	//CFont *pFontDC = dc.SelectObject(GetFont());
+	//CSize size = GetTextExtent(dc,str);
+	//dc.SelectObject(pFontDC);
 
 
 
-	// Check whether control needs to be resized
-	// and whether there is space to grow
-	if (size.cx > m_Rect.Width())
-	{
-		// Get client rect
-		CRect ParentRect;
-		GetParent()->GetClientRect(&ParentRect);
-
-		if (size.cx + m_Rect.left < ParentRect.right)
-			m_Rect.right = m_Rect.left + size.cx;
-		else
-			m_Rect.right = ParentRect.right;
-		MoveWindow(&m_Rect);
-	}
+	//// Check whether control needs to be resized
+	//// and whether there is space to grow
+	//if (size.cx > m_Rect.Width() || size.cy>m_Rect.Height())
+	//{
+	//	// Get client rect
+	//	CRect ParentRect;
+	//	GetParent()->GetClientRect(&ParentRect);
+	//	m_Rect.right = max(m_Rect.right, m_Rect.left + size.cx);
+	//	m_Rect.bottom = max(m_Rect.bottom, size.cy + m_Rect.top);
+	//	MoveWindow(&m_Rect);
+	//}
 	//
 	SetForce(false);
 }
@@ -334,6 +343,28 @@ bool HMInPlaceEdit::IsExitOnArrows()const
 {
 	return m_pro & EXITONARROW;
 
+}
+void HMInPlaceEdit::Refresh(const CString &str)
+{
+	if (IsFit(str))
+		return;
+	CSize& size = FitSize(str);
+	m_Rect.right = max(m_Rect.right, m_Rect.left + size.cx);
+	m_Rect.bottom = max(m_Rect.bottom, m_Rect.top + size.cy);
+	MoveWindow(&m_Rect);
+}
+bool HMInPlaceEdit::IsFit(const CString &str) const
+{
+	CSize& size = FitSize(str);
+	return m_Rect.Height() > size.cy && m_Rect.Width() > size.cx;
+}
+CSize HMInPlaceEdit::FitSize(const CString &str) const
+{
+	CClientDC dc((HMInPlaceEdit*) this);
+	CFont *pFontDC = dc.SelectObject(GetFont());
+	CSize size = GetTextExtent(dc, str);
+	dc.SelectObject(pFontDC);
+	return size + CSize(2, 2);
 }
 
 _HM_GridControl_END

@@ -108,6 +108,7 @@ protected:
     CSize m_Size;       // Default Size
     CFont m_Font;       // Cached font
     DWORD m_dwStyle;    // Cell Style - unused
+
 };
 
 

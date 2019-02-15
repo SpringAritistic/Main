@@ -8,8 +8,8 @@ void split_string(std::vector<CString>& result, const CString& text, const CStri
 vector<size_t>FindIndexs(const std::vector<CString>& inStr, const std::vector<CString>& findStr);
 
 //允许多行显示
-CSize GetTextExtent(CClientDC& dc,const CString& str);
-void ShowText(CClientDC& dc, const CString& str,int EachHeight);//
+CSize GetTextExtent(CDC& dc, const CString& str=_T(" "),bool ExtX=true,bool ExtY=true);
+void ShowText(CDC& dc, const CString& str, int EachHeight);//
 //多行文字
 vector<CString>GetMutiStr(const CString& text);
 

@@ -80,7 +80,7 @@ vector<CString>GetMutiStr(const CString& strSource)
 	return vecStr; 
 }
 
-CSize GetTextExtent(CClientDC& dc, const CString& strSource)
+CSize GetTextExtent(CDC& dc, const CString& strSource, bool ExtX , bool ExtY)
 {
 	vector<CString>&vecStr = GetMutiStr(strSource);
 	CSize size;
@@ -90,9 +90,11 @@ CSize GetTextExtent(CClientDC& dc, const CString& strSource)
 		size.cx = max(size.cx, item.cx);
 		size.cy += item.cy;
 	}
-	return size;
+	TEXTMETRIC tm;
+	dc.GetTextMetrics(&tm);
+	return size + CSize((ExtX ? (tm.tmAveCharWidth + tm.tmMaxCharWidth) / 2 : 0), (ExtY? tm.tmOverhang:0));//适当增加扩展
 }
-void ShowText(CClientDC& dc, const CString& str, int EachHeight)
+void ShowText(CDC& dc, const CString& str, int EachHeight)
 {
 	vector<CString>&vecStr = GetMutiStr(str);
 	for (size_t i = 0; i < vecStr.size();++i)

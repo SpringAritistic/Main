@@ -59,6 +59,13 @@ private:
 	bool IsForce()const;
 	bool IsAltEnter() const;
 	bool IsExitOnArrows()const;
+
+
+
+	//重新计算窗口大小
+	void Refresh(const CString &str);
+	bool IsFit(const CString &str) const;
+	CSize FitSize(const CString &str) const;
 };
  
 /////////////////////////////////////////////////////////////////////////////
