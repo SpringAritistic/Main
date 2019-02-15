@@ -71,8 +71,36 @@ vector<size_t> FindIndexs(const std::vector<CString>& inStr, const std::vector<C
 	return vec;
 }
 
+vector<CString>GetMutiStr(const CString& strSource)
+{
+	vector<CString>vecStr;
+	CString str = strSource;
+	str.Replace("\r\n", "\n");
+	split_string(vecStr, str, "\n");
+	return vecStr; 
+}
 
+CSize GetTextExtent(CClientDC& dc, const CString& strSource)
+{
+	vector<CString>&vecStr = GetMutiStr(strSource);
+	CSize size;
+	for (CString &strTitle : vecStr)
+	{
+		CSize item= dc.GetTextExtent(strTitle);
+		size.cx = max(size.cx, item.cx);
+		size.cy += item.cy;
+	}
+	return size;
+}
+void ShowText(CClientDC& dc, const CString& str, int EachHeight)
+{
+	vector<CString>&vecStr = GetMutiStr(str);
+	for (size_t i = 0; i < vecStr.size();++i)
+	{
+		dc.TextOut(0, i*EachHeight, vecStr[i]);
+	}
 
+}
 
 
 

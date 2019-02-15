@@ -248,6 +248,14 @@ void GridTab::InitTab(size_t index)
 
 				Item.strText.Format(_T("%d行%d列\r\n(%d,%d)"), row, col, row, col);
 			}
+			if (row == 2 && col == 2)
+			{
+				for (CString& str:options)
+				{
+					Item.strText+="\r\n"+str;
+				}
+
+			}
 			grid.SetItem(&Item);
 
 

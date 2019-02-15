@@ -6149,7 +6149,7 @@ void HMGridCtrl::OnMouseMove(UINT /*nFlags*/, CPoint point)
 			}
 
 			// Titletips anyone? anyone?
-			if (IsTitleTips() && false)
+			if (IsTitleTips() )
 			{
 				CRect TextRect, CellRect;
 				if (pCell)
@@ -6162,7 +6162,10 @@ void HMGridCtrl::OnMouseMove(UINT /*nFlags*/, CPoint point)
 						&& pCell->GetTipTextRect(&TextRect)
 						&& GetCellRect(idCurrentCell.row, idCurrentCell.col, CellRect))
 					{
-
+						if (idCurrentCell.row == 2 && idCurrentCell.col == 2)
+						{
+							int a(0);
+						}
 						//						TRACE0("Showing TitleTip\n");
 						m_TitleTip.Show(TextRect, pCell->GetTipText(), 0, CellRect,
 							pCell->GetFont(), GetTitleTipTextClr(), GetTitleTipBackClr());

@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "gridctrl.h"
 #include "TitleTip.h"
+#include "..\Tools\StrTool.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -86,12 +87,14 @@ BOOL HMTitleTip::DestroyWindow()
 // lpszTitleText - The text to be displayed
 // xoffset		 - Number of pixel that the text is offset from
 //				   left border of the cell
-void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, int xoffset /*=0*/,
+void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, CSize off /*= CSize(0, 0)*/,
                      LPRECT lpHoverRect /*=NULL*/,
                      const LOGFONT* lpLogFont /*=NULL*/,
                      COLORREF crTextClr /* CLR_DEFAULT */,
                      COLORREF crBackClr /* CLR_DEFAULT */)
 {
+	int xoffset = off.cx;
+	int yoffset = off.cy;
     if (!IsWindow(m_hWnd))
         Create(m_pParentWnd);
 
@@ -125,10 +128,6 @@ void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, int xoffset /*=0*/
 	m_pParentWnd->ClientToScreen( rectTitle );
 
 	CClientDC dc(this);
-	CString strTitle = _T("");
-    strTitle += _T(" ");
-    strTitle += lpszTitleText; 
-    strTitle += _T(" ");
 
 	CFont font, *pOldFont = NULL;
     if (lpLogFont)
@@ -142,19 +141,22 @@ void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, int xoffset /*=0*/
 	    pOldFont = dc.SelectObject( m_pParentWnd->GetFont() );
     }
 
-	CSize size = dc.GetTextExtent( strTitle );
+	CSize size = GetTextExtent(dc, lpszTitleText);// dc.GetTextExtent(strTitle);
 
     TEXTMETRIC tm;
     dc.GetTextMetrics(&tm);
     size.cx += tm.tmOverhang;
 
 	CRect rectDisplay = rectTitle;
-	rectDisplay.left += xoffset;
+	rectDisplay.left = rectDisplay.right+ xoffset;
 	rectDisplay.right = rectDisplay.left + size.cx + xoffset;
+	rectDisplay.bottom = rectDisplay.top + size.cy + yoffset;
     
     // Do not display if the text fits within available space
-    if ( rectDisplay.right > rectTitle.right-xoffset )
+	//if (rectDisplay.right > rectTitle.right - xoffset)
+	if (rectDisplay.Width()>rectTitle.Width() || rectDisplay.Height()>rectTitle.Height())
     {
+		rectDisplay.right = rectDisplay.left + max(rectDisplay.Width(), rectTitle.Width());
 		// Show the titletip
         SetWindowPos( &wndTop, rectDisplay.left, rectDisplay.top, 
             rectDisplay.Width(), rectDisplay.Height(), 
@@ -176,7 +178,8 @@ void HMTitleTip::Show(CRect rectTitle, LPCTSTR lpszTitleText, int xoffset /*=0*/
             dc.SetTextColor(crTextClr);//FA
 
         dc.SetBkMode( TRANSPARENT );
-        dc.TextOut( 0, 0, strTitle );
+        //dc.TextOut( 0, 0, strTitle );
+		ShowText(dc, lpszTitleText, tm.tmExternalLeading + tm.tmHeight);
         SetCapture();
     }
     
