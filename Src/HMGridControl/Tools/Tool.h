@@ -5,19 +5,28 @@
 _HM_GridControl_BEGIN
 //针对枚举类型
 template<class T,class U>
-bool SetProEnable(T& state, U PRO, bool val)
+bool IsProChange(T& state, U PRO, bool val)
 {
-	if (bool(state & PRO) == val)
-		return false;
+	return bool(state & PRO) == val;
+}
+
+template<class T, class U>
+void SetProEnable(T& state, U PRO, bool val)
+{
 	if (val)
 		state |= PRO;
 	else
 		state &= ~PRO;
-	return true;
+
 }
 
-
-
+template<class T, class U>
+bool EnsureProChange(T& state, U PRO, bool val)
+{
+	bool change = IsProChange(state, PRO, val);
+	SetProEnable(state, PRO, val);
+	return change;
+}
 
 
 

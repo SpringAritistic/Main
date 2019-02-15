@@ -46,6 +46,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration)\Bin\</OutDir>
     <TargetName>$(ProjectName)D</TargetName>
+    <IntDir>$(OutDir)..\MidOutput\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -57,17 +58,17 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;__HMGridControl__;GRIDCTRL_MINSIZE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;__HMGridControl__;GRIDCTRL_MINSIZE;NO_WARN_MBCS_MFC_DEPRECATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>false</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\3rd\Include\;..\..\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include\;$(SolutionDir)\3rd\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>..\..\..\3rd\Lib;..\..\Release\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(ProjectName)D.lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\Lib;$(SolutionDir)3rd\Lib;$(SolutionDir)3rd\$(Configuration)\Lib</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -79,20 +80,12 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PreBuildEvent>
-      <Command>md       ..\..\include\HMGridControl
-::md      ..\..\include\HMGridControl\GridCtrl_src\
-::md      ..\..\include\HMGridControl\NewCellTypes\
+      <Command>md  $(SolutionDir)include
+md  $(SolutionDir)include\$(ProjectName)\
+del /f /q /s $(SolutionDir)include\$(ProjectName)\
 
-del        ..\..\include\HMGridControl\*.* /q
-::del        ..\..\include\HMGridControl\GridCtrl_src\*.* /q
-::del        ..\..\include\HMGridControl\NewCellTypes\*.* /q
 
-copy *.h   ..\..\include\HMGridControl\
-copy GridCtrl_src\*.h   ..\..\include\HMGridControl\
-copy NewCellTypes\*.h   ..\..\include\HMGridControl\
-
-::copy "GridCtrl_src\Experimental Upgrades\*.h"   ..\..\include\HMGridControl\
-::copy NewCellTypes\*.h   ..\..\include\HMGridControl\</Command>
+xcopy /s /c /q /r /y *.h $(SolutionDir)include\$(ProjectName)\</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -116,7 +109,7 @@ copy NewCellTypes\*.h   ..\..\include\HMGridControl\
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\Lib;$(SolutionDir)3rd\$(Configuration)\Lib</AdditionalLibraryDirectories>
-      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(ProjectName).lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>

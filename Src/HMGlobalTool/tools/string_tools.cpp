@@ -91,9 +91,10 @@ tm string_tools::convert_time(const TCHAR* format, const TCHAR* t)
 
 tm string_tools::convert_time(time_t t)
 {
-	tm* loc_tm_pt = localtime(&t);
-	tm loc_tm = *loc_tm_pt;
-	safe_delete(loc_tm_pt);
+	//tm* loc_tm_pt = localtime_s(&t);
+	tm loc_tm;
+	localtime_s(&loc_tm,&t);
+	//safe_delete(loc_tm_pt);
 	return loc_tm;
 }
 

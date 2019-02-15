@@ -151,6 +151,12 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
     if ((dwStyle & CBS_DROPDOWNLIST) != CBS_DROPDOWNLIST)
     {
         m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
+		if (false)
+		{
+			UINT id=m_edit.GetDlgCtrlID();
+			int a(10);
+		}
+
  	    SetFocus();
         switch (nFirstChar)
         {

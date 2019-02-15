@@ -810,6 +810,9 @@ private:
 public:
 	bool IsItemExitVScroll(const HMCellID& cell) const;
 	bool IsItemExitVScroll(int row,int col) const;
+	//
+	int GetRowCount(HMCellID cell) const;
+	int GetColCount(HMCellID cell) const;
 
 };
 

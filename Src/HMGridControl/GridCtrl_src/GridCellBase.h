@@ -136,7 +136,10 @@ private:
 	HMCellID m_MergeCellID;//针对 合并中的 不是第一个单元格来说，也就是 被合并的单元格
 	bool m_Hide;
 
+	int GetRowCount() const;
+	int GetColCount() const;
 	//
+
 };
 
 

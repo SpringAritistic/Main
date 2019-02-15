@@ -47,8 +47,18 @@ private:
     int     m_nColumn;
     CString m_sInitText;
     UINT    m_nLastChar;
-    BOOL    m_bExitOnArrows;
     CRect   m_Rect;
+
+	enum PRO { FORCE = 1, ALTENTER = FORCE << 1, EXITONARROW = ALTENTER<<1 };
+	UINT m_pro;
+	
+	//
+	void SetForce(bool isTrue);
+	void SetAltEnter(bool isTrue);
+	void SetExitOnArrows(bool isTrue);
+	bool IsForce()const;
+	bool IsAltEnter() const;
+	bool IsExitOnArrows()const;
 };
  
 /////////////////////////////////////////////////////////////////////////////

@@ -384,9 +384,9 @@ void HMCheckComboBox::InitSelec(const CString& str)
 		return;
 	std::vector<CString>vecStr;
 	split_string(vecStr, str, GetSeperatorStr());
-	m_vecSelect = FindIndexs(vecStr,GetOptionTitles());
+	m_vecSelect = FindIndexs(vecStr,GetOptions());
 }
-vector<CString>HMCheckComboBox::GetOptionTitles() const
+vector<CString>HMCheckComboBox::GetOptions() const
 {
 	vector<CString>vec;
 	for (INT i = 0; i < GetCount(); i++) {
@@ -403,6 +403,26 @@ vector<CString>HMCheckComboBox::GetOptionTitles() const
 // This routine steps thru all the items and builds
 // a string containing the checked items
 //
+CString HMCheckComboBox::GetTitle() const
+{
+	CString strText;
+
+	// Get the list count
+	INT nCount = GetCount();
+	CString strSeparator = GetSeperatorStr();
+	for (size_t i : m_vecSelect)
+	{
+		CString strItem;
+		GetLBText(i, strItem);
+
+		if (!strText.IsEmpty())
+			strText += strSeparator;
+
+		strText += strItem;
+	}
+	return strText;
+}
+
 void HMCheckComboBox::RecalcText()
 {
 	if (!m_bTextUpdated) {

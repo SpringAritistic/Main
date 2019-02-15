@@ -116,11 +116,12 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
     m_crBackClr = crBack;
 
 	m_nNumLines = 4;
-	m_sInitText = sInitText;
+	//m_sInitText = sInitText;
  	m_nRow		= nRow;
  	m_nCol      = nColumn;
  	m_nLastChar = 0; 
 	m_bExitOnArrows = FALSE; //(nFirstChar != VK_LBUTTON);	// If mouse click brought us here,
+
 
 	// Create the combobox
  	DWORD dwComboStyle = WS_BORDER|WS_CHILD|WS_VISIBLE|WS_VSCROLL|
@@ -131,9 +132,6 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
 
 	SetMe();
 	// Add the strings
-	vector<CString>vecFindIndex;
-	split_string(vecFindIndex, sInitText, ",");
-	vector<size_t>vecIndex = FindIndexs(Items,vecFindIndex);
 	for (auto & item:Items) 
 	{
 		AddString(item);
@@ -154,10 +152,16 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
 	SetHorizontalExtent(0); // no horz scrolling
 
 	// Reset the initial text to m_sInitText
-    if (::IsWindow(m_hWnd) && SelectString(-1, m_sInitText) == CB_ERR) 
-		SetWindowText(m_sInitText);		// No text selected, so restore what was there before
-
-
+	if (::IsWindow(m_hWnd))
+	{
+		//if (SelectString(-1, m_sInitText) == CB_ERR)
+		//	SetWindowText(m_sInitText);		// No text selected, so restore what was there before
+		InitSelec(sInitText);
+		m_sInitText = GetTitle();
+		if (m_sInitText.IsEmpty())
+			m_sInitText = sInitText;
+		SetWindowText(m_sInitText);
+	}
 
     ShowDropDown();
 
@@ -185,14 +189,18 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
     //}
     //else
  	    SetFocus();
+		//m_isAlreadyEndEdit = false;
 }
 
 CInPlaceCheckList::~CInPlaceCheckList()
 {
+	//m_isAlreadyEndEdit = true;
 }
 
 void CInPlaceCheckList::EndEdit()
 {
+	//if (m_isAlreadyEndEdit)
+	//	return;
     CString str;
     if (::IsWindow(m_hWnd))
         GetWindowText(str);
@@ -209,7 +217,12 @@ void CInPlaceCheckList::EndEdit()
     dispinfo.item.col     = m_nCol;
     dispinfo.item.strText = str;
     dispinfo.item.lParam  = (LPARAM) m_nLastChar; 
- 
+	if (false)
+	{
+		UINT id = GetDlgCtrlID();
+		int a(0);
+	}
+
     CWnd* pOwner = GetOwner();
     if (IsWindow(pOwner->GetSafeHwnd()))
         pOwner->SendMessage(WM_NOTIFY, GetDlgCtrlID(), (LPARAM)&dispinfo );
@@ -317,6 +330,7 @@ void CInPlaceCheckList::OnKillFocus(CWnd* pNewWnd)
     // Only end editing on change of focus if we're using the CBS_DROPDOWNLIST style
     if ((GetStyle() & CBS_DROPDOWNLIST) == CBS_DROPDOWNLIST)
         EndEdit();
+
 }
 
 // If an arrow key (or associated) is pressed, then exit if
@@ -382,11 +396,11 @@ HMGridCellCheckCombo::HMGridCellCheckCombo() : HMGridCell()
 BOOL HMGridCellCheckCombo::Edit(int nRow, int nCol, CRect rect, CPoint /* point */, UINT nID, UINT nChar)
 {
     m_bEditing = TRUE;
-    
+
     // CInPlaceCheckList auto-deletes itself
-    m_pEditWnd = new CInPlaceCheckList(GetGrid(), rect, GetStyle(), nID, nRow, nCol, 
-                                  GetTextClr(), GetBackClr(), m_strOpts, GetText(), nChar);
-	
+	CInPlaceCheckList* wnd = new CInPlaceCheckList(GetGrid(), rect, GetStyle(), nID, nRow, nCol,
+		GetTextClr(), GetBackClr(), m_strOpts, GetText(), nChar);
+	m_pEditWnd = wnd;
     return TRUE;
 }
 
@@ -432,6 +446,7 @@ BOOL HMGridCellCheckCombo::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL 
         // enough room to draw?
         if (sizeScroll.cy < rect.Width() && sizeScroll.cy < rect.Height())
         {
+			EnsureExistVScroll(true);
             // Draw control at RHS of cell
             CRect ScrollRect = rect;
             ScrollRect.left   = rect.right - sizeScroll.cx;

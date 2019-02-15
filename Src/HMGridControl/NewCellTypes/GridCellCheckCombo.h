@@ -137,6 +137,10 @@ private:
  	UINT     m_nLastChar; 
 	BOOL	 m_bExitOnArrows; 
     COLORREF m_crForeClr, m_crBackClr;
+	//
+	//bool m_isAlreadyEndEdit;
+
+	//
 };
 
 _HM_GridControl_END

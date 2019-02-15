@@ -112,9 +112,11 @@ BOOL CGridCellCheck::GetCheck()
 CRect CGridCellCheck::GetCheckPlacement()
 {
 	int nWidth = GetSystemMetrics(SM_CXHSCROLL);
-	CRect place = m_Rect + CSize(GetMargin(), GetMargin());
+	CRect place = m_Rect;
+	place.DeflateRect (GetMargin(), GetMargin());
     place.right = place.left + nWidth;
     place.bottom = place.top + nWidth;
+
 
 	/* for centering
 	int nDiff = (place.Width() - nWidth)/2;
@@ -131,7 +133,7 @@ CRect CGridCellCheck::GetCheckPlacement()
 	}
     */
 
-    if (m_Rect.Height() < nWidth + 2 * static_cast<int> (GetMargin())) 
+    if (m_Rect.Height() > nWidth + 2 * static_cast<int> (GetMargin())) 
     {		
         place.top = m_Rect.top + (m_Rect.Height() - nWidth) / 2;	    
         place.bottom = place.top + nWidth;	

@@ -878,7 +878,8 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		// don't let user go to a hidden row
 		bFoundVisible = FALSE;
 		iOrig = next.row;
-		next.row++;
+		next.row +=max(1, GetRowCount(next));
+		//next.row ++;
 		while (next.row < GetRowCount())
 		{
 			if (GetRowHeight(next.row) > 0)
@@ -886,7 +887,8 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				bFoundVisible = TRUE;
 				break;
 			}
-			next.row++;
+			next.row += max(1, GetRowCount(next));
+			//next.row++;
 		}
 		if (!bFoundVisible)
 			next.row = iOrig;
@@ -896,7 +898,8 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		// don't let user go to a hidden row
 		bFoundVisible = FALSE;
 		iOrig = next.row;
-		next.row--;
+
+		next = GetMergeCellID(next.row-1, next.col);
 		while (next.row >= m_nFixedRows)
 		{
 			if (GetRowHeight(next.row) > 0)
@@ -904,7 +907,9 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				bFoundVisible = TRUE;
 				break;
 			}
-			next.row--;
+			next = GetMergeCellID(next.row - 1, next.col);
+			if (GetCell(next) && GetCell(next)->IsMergeSub())
+				next = GetCell(next)->m_MergeCellID;
 		}
 		if (!bFoundVisible)
 			next.row = iOrig;
@@ -921,14 +926,14 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		// don't let user go to a hidden column
 		bFoundVisible = FALSE;
 		iOrig = next.col;
-		next.col++;
+		next.col += max(1, GetColCount(next));
 
 		if (nChar == VK_TAB)
 		{
 			// If we're at the end of a row, go down a row till we find a non-hidden row
 			if (next.col == (GetColumnCount()) && next.row < (GetRowCount() - 1))
 			{
-				next.row++;
+				next.row += GetRowCount(next);
 				while (next.row < GetRowCount())
 				{
 					if (GetRowHeight(next.row) > 0)
@@ -936,7 +941,7 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 						bFoundVisible = TRUE;
 						break;
 					}
-					next.row++;
+					next.row += max(1, GetRowCount(next));
 				}
 
 				next.col = m_nFixedCols;	// Place focus on first non-fixed column
@@ -954,7 +959,7 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				bFoundVisible = TRUE;
 				break;
 			}
-			next.col++;
+			next.col +=max(1, GetColCount(next));
 		}
 
 		// If nothing worked then don't bother
@@ -966,13 +971,13 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		// don't let user go to a hidden column
 		bFoundVisible = FALSE;
 		iOrig = next.col;
-		next.col--;
-
+		next = GetMergeCellID(next.row, next.col - 1);
+		
 		if (nChar == VK_TAB)
 		{
 			if (next.col == (GetFixedColumnCount() - 1) && next.row > GetFixedRowCount())
 			{
-				next.row--;
+				next = GetMergeCellID(next.row - 1, next.col);
 				while (next.row > GetFixedRowCount())
 				{
 					if (GetRowHeight(next.row) > 0)
@@ -980,7 +985,7 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 						bFoundVisible = TRUE;
 						break;
 					}
-					next.row--;
+					next = GetMergeCellID(next.row - 1, next.col);
 				}
 
 				next.col = GetColumnCount() - 1;
@@ -997,7 +1002,7 @@ void HMGridCtrl::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				bFoundVisible = TRUE;
 				break;
 			}
-			next.col--;
+			next = GetMergeCellID(next.row, next.col - 1);
 		}
 		if (!bFoundVisible)
 			next.col = iOrig;
@@ -2567,6 +2572,7 @@ COleDataSource* HMGridCtrl::CopyTextFromGrid()
 
 						}
 					}
+					if (col < Selection.GetMaxCol())
 					str += _T("\t");
 				}
 
@@ -6143,7 +6149,7 @@ void HMGridCtrl::OnMouseMove(UINT /*nFlags*/, CPoint point)
 			}
 
 			// Titletips anyone? anyone?
-			if (IsTitleTips()&& false)
+			if (IsTitleTips() && false)
 			{
 				CRect TextRect, CellRect;
 				if (pCell)
@@ -8254,7 +8260,7 @@ HMGridCellBase* HMGridCtrl::GetDefaultCell(BOOL bFixedRow, BOOL bFixedCol) const
 
 HMGridCellBase* HMGridCtrl::GetCell(int nRow, int nCol, bool isReal) const
 {
-	if (!IsValid(nRow,nCol))
+	if (!IsValid(nRow, nCol))
 		return NULL;
 
 	if (IsVirtualMode())
@@ -8494,7 +8500,7 @@ bool HMGridCtrl::IsDragRowMode() const
 }
 bool HMGridCtrl::EnsureProChange(GRIDSTATE PRO, bool val)
 {
-	return SetProEnable(m_state, PRO, val);
+	return HM_GridControl::EnsureProChange(m_state, PRO, val);
 
 }
 void HMGridCtrl::EnsureRowResize(bool val)
@@ -8761,5 +8767,21 @@ bool HMGridCtrl::IsItemExitVScroll(const HMCellID& cell) const
 {
 	return IsItemExitVScroll(cell.row, cell.col);
 
+}
+int HMGridCtrl::GetRowCount(HMCellID cell) const
+{
+	HMGridCellBase* pCell = GetCell(cell);
+	if (pCell)
+		return pCell->GetRowCount();
+	else
+		return 0;
+}
+int HMGridCtrl::GetColCount(HMCellID cell) const
+{
+	HMGridCellBase* pCell = GetCell(cell);
+	if (pCell)
+		return pCell->GetColCount();
+	else
+		return 0;
 }
 _HM_GridControl_END

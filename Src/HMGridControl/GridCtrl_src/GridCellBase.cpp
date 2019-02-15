@@ -379,7 +379,7 @@ BOOL HMGridCellBase::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bErase
     rect.right++;    
     rect.bottom++;
 
-    DrawText(pDC->m_hDC, GetText(), -1, rect, GetFormat() | DT_NOPREFIX);
+	DrawText(pDC->m_hDC, GetText(), -1, rect, GetFormat() | DT_NOPREFIX );
 
     pDC->RestoreDC(nSavedDC);
 
@@ -866,5 +866,14 @@ void HMGridCellBase::EndEdit() {}
 {
 	SetProEnable(m_nState, GVIS_EXSITVSCROLL, isExist);
 }
+ int HMGridCellBase::GetRowCount() const
+ {
+		 return IsMergeOrg()?m_MergeRange.GetRowSpan():1;
+ }
+ int HMGridCellBase::GetColCount() const
+ {
+	 return IsMergeOrg() ? m_MergeRange.GetColSpan() : 1;
+
+ }
 
 _HM_GridControl_END

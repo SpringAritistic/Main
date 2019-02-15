@@ -174,7 +174,7 @@ void GridTab::InitTab(size_t index)
 			}
 			else if (col == 1)
 			{
-				Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
+				Item.nFormat = DT_CENTER /*| DT_VCENTER | DT_SINGLELINE*/ | DT_END_ELLIPSIS;
 				switch (row)
 				{
 				case 1:
@@ -235,7 +235,7 @@ void GridTab::InitTab(size_t index)
 
 				default:
 				{
-					Item.strText.Format(_T("%d行%d列"), row, col);
+					Item.strText.Format(_T("%d行%d列\r\n(%d,%d)"), row, col, row, col);
 					break;
 				}
 				}
@@ -244,9 +244,9 @@ void GridTab::InitTab(size_t index)
 			}
 			else
 			{
-				Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
+				//Item.nFormat = DT_CENTER /*| DT_VCENTER | DT_SINGLELINE*/ | DT_END_ELLIPSIS;
 
-				Item.strText.Format(_T("%d行%d列"), row, col);
+				Item.strText.Format(_T("%d行%d列\r\n(%d,%d)"), row, col, row, col);
 			}
 			grid.SetItem(&Item);
 

@@ -57,7 +57,8 @@ protected:
 	vector<size_t>m_vecSelect;//
 	CString GetSeperatorStr()const;
 	void InitSelec(const CString& str);
-	vector<CString>GetOptionTitles() const;
+	vector<CString>GetOptions() const;
+	CString GetTitle() const;
 };
 
 _HM_GridControl_END
