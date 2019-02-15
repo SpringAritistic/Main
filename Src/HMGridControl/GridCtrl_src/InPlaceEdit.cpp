@@ -136,11 +136,9 @@ void HMInPlaceEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 	// Get text extent
 	CString str;
 	GetWindowText(str);
-	if (!IsFit(str))
-	{
-		Refresh(str);
-		
-	}
+
+	Refresh(str);
+
 
 	// add some extra buffer
 	//str += _T("  ");

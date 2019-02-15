@@ -123,12 +123,19 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	if (!Create(dwComboStyle, rect, pParent, nID)) return;
 
 	// Add the strings
-	for (auto &item: Items) 
-		AddString(item);
+	for (size_t i = 0; i < Items.size(); ++i)
+	{
+		AddString(Items[i]);
+		SetItemHeight(i, nHeight);
+	}
 
 	SetFont(pParent->GetFont());
 	SetItemHeight(-1, nHeight);
-
+	if (false)
+	{
+		vector<int> height{ GetItemHeight(-1), GetItemHeight(0), GetItemHeight(1), GetItemHeight(2) };
+		int a(0);
+	}
     int nMaxLength = GetCorrectDropWidth();
     /*
     if (nMaxLength > rect.Width())
@@ -154,6 +161,10 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 		if (false)
 		{
 			UINT id=m_edit.GetDlgCtrlID();
+			CString str;
+			m_edit.GetWindowText(str);
+			CRect rect;
+			m_edit.GetClientRect(rect);
 			int a(10);
 		}
 
@@ -177,6 +188,13 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
     }
     else
  	    SetFocus();
+
+
+	if (false)
+	{
+		vector<int> height{ GetItemHeight(-1), GetItemHeight(0), GetItemHeight(1), GetItemHeight(2) };
+		int a(0);
+	}
 }
 
 CInPlaceList::~CInPlaceList()
@@ -185,6 +203,12 @@ CInPlaceList::~CInPlaceList()
 
 void CInPlaceList::EndEdit()
 {
+	if (false)
+	{
+		vector<int> height{ GetItemHeight(-1), GetItemHeight(0), GetItemHeight(1), GetItemHeight(2) };
+		int a(0);
+	}
+
     CString str;
     if (::IsWindow(m_hWnd))
         GetWindowText(str);
@@ -421,7 +445,7 @@ BOOL HMGridCellCombo::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL bEras
             // Draw control at RHS of cell
             CRect ScrollRect = rect;
             ScrollRect.left   = rect.right - sizeScroll.cx;
-            ScrollRect.bottom = rect.top + sizeScroll.cy;
+            ScrollRect.top = rect.bottom - sizeScroll.cy;
 
             // Do the draw 
             pDC->DrawFrameControl(ScrollRect, DFC_SCROLL, DFCS_SCROLLDOWN);

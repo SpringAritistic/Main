@@ -450,7 +450,7 @@ BOOL HMGridCellCheckCombo::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL 
             // Draw control at RHS of cell
             CRect ScrollRect = rect;
             ScrollRect.left   = rect.right - sizeScroll.cx;
-            ScrollRect.bottom = rect.top + sizeScroll.cy;
+            ScrollRect.top = rect.bottom - sizeScroll.cy;
 
             // Do the draw 
             pDC->DrawFrameControl(ScrollRect, DFC_SCROLL, DFCS_SCROLLDOWN);
@@ -461,14 +461,15 @@ BOOL HMGridCellCheckCombo::Draw(CDC* pDC, int nRow, int nCol, CRect rect,  BOOL 
     }
 
     CString strTempText = GetText();
-    if (IsEditing())
-        SetText(_T(""));
-
+    //if (IsEditing())
+    //    SetText(_T(""));
+	if (IsEditing())
+		SetText(strTempText);
     // drop through and complete the cell drawing using the base class' method
 	BOOL bResult = HMGridCell::Draw(pDC, nRow, nCol, rect, bEraseBkgnd);
 
-    if (IsEditing())
-        SetText(strTempText);
+    //if (IsEditing())
+    //    SetText(strTempText);
 
 	return bResult;
 #endif

@@ -1545,7 +1545,7 @@ void HMGridCtrl::OnDraw(CDC* pDC)
 	int minVisibleRow = idTopLeft.row,
 		minVisibleCol = idTopLeft.col;
 
-	CRect VisRect;
+CRect VisRect;
 	HMCellRange VisCellRange = GetVisibleNonFixedCellRange(VisRect);
 	int maxVisibleRow = VisCellRange.GetMaxRow(),
 		maxVisibleCol = VisCellRange.GetMaxCol();
@@ -6162,11 +6162,9 @@ void HMGridCtrl::OnMouseMove(UINT /*nFlags*/, CPoint point)
 						&& pCell->GetTipTextRect(&TextRect)
 						&& GetCellRect(idCurrentCell.row, idCurrentCell.col, CellRect))
 					{
-						if (idCurrentCell.row == 2 && idCurrentCell.col == 2)
-						{
-							int a(0);
-						}
+
 						//						TRACE0("Showing TitleTip\n");
+						//TextRectÐèÒªËõ¼õ£¬Õë¶Ô
 						m_TitleTip.Show(TextRect, pCell->GetTipText(), 0, CellRect,
 							pCell->GetFont(), GetTitleTipTextClr(), GetTitleTipBackClr());
 					}
