@@ -154,6 +154,8 @@ HMCheckComboBox::HMCheckComboBox()
 
 HMCheckComboBox::~HMCheckComboBox()
 {
+	if (m_pComboBox==this)
+	m_pComboBox = 0;//
 }
 
 

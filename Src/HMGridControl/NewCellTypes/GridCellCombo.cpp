@@ -126,7 +126,6 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	for (size_t i = 0; i < Items.size(); ++i)
 	{
 		AddString(Items[i]);
-		SetItemHeight(i, nHeight);
 	}
 
 	SetFont(pParent->GetFont());
@@ -157,7 +156,17 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
     // Subclass the combobox edit control if style includes CBS_DROPDOWN
     if ((dwStyle & CBS_DROPDOWNLIST) != CBS_DROPDOWNLIST)
     {
-        m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
+       BOOL isSub= m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
+	   SetItemHeight(-1, nHeight);
+
+		if (false)
+		{
+			CRect rect;
+			m_edit.GetClientRect(rect);
+			rect.bottom = rect.top + nHeight;
+			m_edit.MoveWindow(rect);
+			GetClientRect(rect);
+		}
 		if (false)
 		{
 			UINT id=m_edit.GetDlgCtrlID();
@@ -190,11 +199,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
  	    SetFocus();
 
 
-	if (false)
-	{
-		vector<int> height{ GetItemHeight(-1), GetItemHeight(0), GetItemHeight(1), GetItemHeight(2) };
-		int a(0);
-	}
+
 }
 
 CInPlaceList::~CInPlaceList()

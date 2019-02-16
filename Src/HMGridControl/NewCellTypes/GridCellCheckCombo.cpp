@@ -138,7 +138,11 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
 	}
 	SetFont(pParent->GetFont());
 	SetItemHeight(-1, nHeight);
-
+	if (false)
+	{
+		vector<int> height{ GetItemHeight(-1), GetItemHeight(0), GetItemHeight(1), GetItemHeight(2) };
+		int a(0);
+	}
     int nMaxLength = GetCorrectDropWidth();
     /*
     if (nMaxLength > rect.Width())
