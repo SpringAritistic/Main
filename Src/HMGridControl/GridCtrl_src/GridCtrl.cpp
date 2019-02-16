@@ -8,6 +8,7 @@
 #include <afxadv.h>            // For CSharedFile
 #include <afxconv.h>           // For LPTSTR -> LPSTR macros
 #include "..\Tools\Tool.h"
+#include "..\Tools\StrTool.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -2636,7 +2637,8 @@ BOOL HMGridCtrl::PasteTextToGrid(HMCellID cell, COleDataObject* pDataObject,
 	strText.LockBuffer();
 	CString strLine = strText;
 	int nLine = 0;
-
+	vector<CString>vecStr;
+	split_string(vecStr, strLine);
 	// Find the end of the first line
 	HMCellRange PasteRange(cell.row, cell.col, -1, -1);
 	int nIndex;

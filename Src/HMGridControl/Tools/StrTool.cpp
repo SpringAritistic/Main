@@ -56,6 +56,75 @@ void split_string(std::vector<CString>& result, const CString& text, const CStri
 	// 最后一个字符为分隔符认为后面有一个空串，也会插入一个空串
 	result.push_back(tmp_str);
 }
+std::vector<CString> split_string(const CString& text, const CString& split/* = _T(" ,;") */)
+{
+	std::vector<CString> result;
+	split_string(result, text, split);
+	return result;
+}
+void split_matrix_string(std::vector<std::vector<CString>>& result,
+	const CString& text, TCHAR row_split /*= _T('\n')*/, TCHAR column_split /*= _T('\t')*/)
+{
+	result.clear();
+	CString r_split_text;
+	r_split_text.AppendChar(row_split);
+	CString c_split_text;
+	c_split_text.AppendChar(column_split);
+
+	vector<CString> rows;
+	split_string(rows, text, r_split_text);
+	for (CString& row : rows)
+	{
+		vector<CString> columns;
+		split_string(columns, row, c_split_text);
+		result.push_back(columns);
+	}
+}
+
+void merge_string(CString& result, const std::vector<CString>& all_strings,
+	const CString& split /*= _T(",")*/, bool end_with_split/* = false*/)
+{
+	result = _T("");
+
+	if (all_strings.empty()) return;
+	if (split.IsEmpty()) return;
+
+	result = all_strings[0];
+	for (size_t i = 1; i < all_strings.size(); ++i)
+		result = result + split + all_strings[i];
+
+	if (!result.IsEmpty() && end_with_split) result += split;
+}
+
+CString merge_string(const std::vector<CString>& all_strings,
+	const CString& split /*= _T(",")*/, bool end_with_split/* = false*/)
+{
+	CString result;
+	merge_string(result, all_strings, split, end_with_split);
+	return result;
+}
+
+void merge_matrix_string(CString& result, const std::vector<std::vector<CString>>& all_strings,
+	TCHAR row_split /*= _T('\n')*/, TCHAR column_split /*= _T('\t')*/, bool end_with_split/* = false*/)
+{
+	result = _T("");
+
+	for (size_t row = 0; row < all_strings.size(); ++row)
+	{
+		for (size_t col = 0; col < all_strings[row].size(); ++col)
+		{
+			result += all_strings[row][col];
+			if (col + 1 < all_strings[row].size()) result.AppendChar(column_split);
+		}
+
+		if (row + 1 < all_strings.size()) result.AppendChar(row_split);
+	}
+
+	if (!result.IsEmpty() && end_with_split) result.AppendChar(row_split);
+}
+
+
+
 vector<size_t> FindIndexs(const std::vector<CString>& inStr, const std::vector<CString>& findStr)
 {
 	vector<size_t>vec;
@@ -71,11 +140,20 @@ vector<size_t> FindIndexs(const std::vector<CString>& inStr, const std::vector<C
 	return vec;
 }
 
+void SelfRepalceToNormReturn(CString &str)
+{
+	str.Replace("\r\n", "\n");
+}
+CString RepalceToNormReturn(const CString &strOri)
+{
+	CString str(strOri);
+	SelfRepalceToNormReturn(str);
+	return str;
+}
 vector<CString>GetMutiStr(const CString& strSource)
 {
 	vector<CString>vecStr;
-	CString str = strSource;
-	str.Replace("\r\n", "\n");
+	CString str = RepalceToNormReturn( strSource);
 	split_string(vecStr, str, "\n");
 	return vecStr; 
 }
