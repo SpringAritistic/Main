@@ -847,17 +847,17 @@ void HMGridCellBase::UnMerge()
 	//m_MergeCellID.row=-1;
 	//m_MergeCellID.col=-1;
 }
-void HMGridCellBase::SetState(DWORD nState)                     { m_nState = nState; }
-LPCTSTR    HMGridCellBase::GetTipText()    const                { return GetText(); } // may override TitleTip return
-DWORD      HMGridCellBase::GetState()      const                { return m_nState; }
-BOOL HMGridCellBase::IsFocused()           const                { return (m_nState & GVIS_FOCUSED); }
-BOOL HMGridCellBase::IsFixed()             const                { return (m_nState & GVIS_FIXED); }
-BOOL HMGridCellBase::IsFixedCol()          const                { return (m_nState & GVIS_FIXEDCOL); }
-BOOL HMGridCellBase::IsFixedRow()          const                { return (m_nState & GVIS_FIXEDROW); }
-BOOL HMGridCellBase::IsSelected()          const                { return (m_nState & GVIS_SELECTED); }
-BOOL HMGridCellBase::IsReadOnly()          const                { return (m_nState & GVIS_READONLY); }
-BOOL HMGridCellBase::IsModified()          const                { return (m_nState & GVIS_MODIFIED); }
-BOOL HMGridCellBase::IsDropHighlighted()   const                { return (m_nState & GVIS_DROPHILITED); }
+void HMGridCellBase::SetState(DWORD nState)      { m_nState = nState; }
+LPCTSTR    HMGridCellBase::GetTipText()    const { return GetText(); } // may override TitleTip return
+DWORD      HMGridCellBase::GetState()      const { return m_nState; }
+BOOL HMGridCellBase::IsFocused()           const { return (m_nState & GVIS_FOCUSED); }
+BOOL HMGridCellBase::IsFixed()             const { return (m_nState & GVIS_FIXED); }
+BOOL HMGridCellBase::IsFixedCol()          const { return (m_nState & GVIS_FIXEDCOL); }
+BOOL HMGridCellBase::IsFixedRow()          const { return (m_nState & GVIS_FIXEDROW); }
+BOOL HMGridCellBase::IsSelected()          const { return (m_nState & GVIS_SELECTED); }
+BOOL HMGridCellBase::IsReadOnly()          const { return (m_nState & GVIS_READONLY); }
+BOOL HMGridCellBase::IsModified()          const { return (m_nState & GVIS_MODIFIED); }
+BOOL HMGridCellBase::IsDropHighlighted()   const { return (m_nState & GVIS_DROPHILITED); }
 
 void HMGridCellBase::EndEdit() {}
 

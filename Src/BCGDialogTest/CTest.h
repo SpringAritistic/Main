@@ -1,6 +1,6 @@
 // Machine generated IDispatch wrapper class(es) created with Add Class from Typelib Wizard
 
-#import "F:\\练习集\\C++\\工程—练习\\Main\\Release\\Bin\\HMTestCom.dll" no_namespace
+#import "G:\\练习集\\C++\\工程\\Main\\Release\\Bin\\HMTestCom.dll" no_namespace
 // CTest wrapper class
 
 class CTest : public COleDispatchDriver

@@ -119,7 +119,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
  	DWORD dwComboStyle = WS_BORDER|WS_CHILD|WS_VISIBLE|WS_VSCROLL|
  					     CBS_AUTOHSCROLL | dwStyle;
 	int nHeight = rect.Height();
-	rect.bottom = rect.bottom + m_nNumLines*nHeight + ::GetSystemMetrics(SM_CYHSCROLL);
+	rect.bottom +=  m_nNumLines*nHeight + ::GetSystemMetrics(SM_CYHSCROLL);
 	if (!Create(dwComboStyle, rect, pParent, nID)) return;
 
 	// Add the strings
@@ -127,6 +127,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	{
 		AddString(Items[i]);
 	}
+	//SetMinVisibleItems(10);
 
 	SetFont(pParent->GetFont());
 	SetItemHeight(-1, nHeight);
@@ -157,8 +158,8 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
     if ((dwStyle & CBS_DROPDOWNLIST) != CBS_DROPDOWNLIST)
     {
        BOOL isSub= m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
-	   SetItemHeight(-1, nHeight);
-
+	   //SetItemHeight(0, nHeight);
+	   //Invalidate();
 		if (false)
 		{
 			CRect rect;
