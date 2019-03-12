@@ -199,6 +199,8 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
 CInPlaceCheckList::~CInPlaceCheckList()
 {
 	//m_isAlreadyEndEdit = true;
+	//if (m_pComboBox == this)
+	//	m_pComboBox = 0;//
 }
 
 void CInPlaceCheckList::EndEdit()
