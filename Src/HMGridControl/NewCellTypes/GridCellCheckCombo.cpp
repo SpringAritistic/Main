@@ -170,28 +170,28 @@ CInPlaceCheckList::CInPlaceCheckList(CWnd* pParent, CRect& rect, DWORD dwStyle, 
     ShowDropDown();
 
     // Subclass the combobox edit control if style includes CBS_DROPDOWN
-    //if ((dwStyle & CBS_DROPDOWNLIST) != CBS_DROPDOWNLIST)
-    //{
-    //    m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
- 	  //  SetFocus();
-    //    switch (nFirstChar)
-    //    {
-    //        case VK_LBUTTON: 
-    //        case VK_RETURN:   m_edit.SetSel((int)_tcslen(m_sInitText), -1); return;
-    //        case VK_BACK:     m_edit.SetSel((int)_tcslen(m_sInitText), -1); break;
-    //        case VK_DOWN: 
-    //        case VK_UP:   
-    //        case VK_RIGHT:
-    //        case VK_LEFT:  
-    //        case VK_NEXT:  
-    //        case VK_PRIOR: 
-    //        case VK_HOME:  
-    //        case VK_END:      m_edit.SetSel(0,-1); return;
-    //        default:          m_edit.SetSel(0,-1);
-    //    }
-    //    SendMessage(WM_CHAR, nFirstChar);
-    //}
-    //else
+    if ((dwStyle & CBS_DROPDOWNLIST) != CBS_DROPDOWNLIST)
+    {
+        m_edit.SubclassDlgItem(IDC_COMBOEDIT, this);
+ 	    SetFocus();
+        switch (nFirstChar)
+        {
+            case VK_LBUTTON: 
+            case VK_RETURN:   m_edit.SetSel((int)_tcslen(m_sInitText), -1); return;
+            case VK_BACK:     m_edit.SetSel((int)_tcslen(m_sInitText), -1); break;
+            case VK_DOWN: 
+            case VK_UP:   
+            case VK_RIGHT:
+            case VK_LEFT:  
+            case VK_NEXT:  
+            case VK_PRIOR: 
+            case VK_HOME:  
+            case VK_END:      m_edit.SetSel(0,-1); return;
+            default:          m_edit.SetSel(0,-1);
+        }
+        SendMessage(WM_CHAR, nFirstChar);
+    }
+    else
  	    SetFocus();
 		//m_isAlreadyEndEdit = false;
 }

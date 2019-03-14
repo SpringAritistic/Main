@@ -198,4 +198,9 @@ xcopy /s /c /q /r /y *.h $(SolutionDir)include\$(ProjectName)\</Command>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="HMGridControl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

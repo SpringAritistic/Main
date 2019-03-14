@@ -78,7 +78,7 @@ protected:
 // CInPlaceCheckList window
 
 class CInPlaceCheckList : public HMCheckComboBox
-¡¢{
+{
     friend class CCheckComboEdit;
 
 // Construction

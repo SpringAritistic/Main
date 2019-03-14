@@ -24,6 +24,9 @@ public:
 	// Selects all/unselects all
 	void SelectAll(BOOL bCheck = TRUE);
 
+
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+
 protected:
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(HMCheckComboBox)
@@ -59,6 +62,11 @@ protected:
 	void InitSelec(const CString& str);
 	vector<CString>GetOptions() const;
 	CString GetTitle() const;
+public:
+	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+	afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
 };
 
 _HM_GridControl_END

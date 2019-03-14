@@ -25,6 +25,10 @@ BEGIN_MESSAGE_MAP(HMCheckComboBox, CComboBox)
 	ON_MESSAGE(WM_GETTEXTLENGTH, OnGetTextLength)
 	ON_CONTROL_REFLECT(CBN_DROPDOWN, OnDropDown)
 	//}}AFX_MSG_MAP
+	ON_WM_LBUTTONUP()
+	ON_WM_RBUTTONDOWN()
+	ON_WM_CHAR()
+	ON_WM_LBUTTONDOWN()
 END_MESSAGE_MAP()
 
 
@@ -332,7 +336,23 @@ void HMCheckComboBox::SelectAll(BOOL bCheck)
 		SetCheck(i, bCheck);
 
 }
+// Stoopid win95 accelerator key problem workaround - Matt Weagle.
+BOOL HMCheckComboBox::PreTranslateMessage(MSG* pMsg)
+{
+	// Make sure that the keystrokes continue to the appropriate handlers
+	if (pMsg->message == WM_KEYDOWN || pMsg->message == WM_KEYUP)
+	{
+		::TranslateMessage(pMsg);
+		::DispatchMessage(pMsg);
+		return TRUE;
+	}
 
+	// Catch the Alt key so we don't choke if focus is going to an owner drawn button
+	if (pMsg->message == WM_SYSCHAR)
+		return TRUE;
+
+	return CComboBox::PreTranslateMessage(pMsg);
+}
 
 //
 // By adding this message handler, we may use CWnd::GetText()
@@ -476,5 +496,109 @@ INT HMCheckComboBox::SetCheck(INT nIndex, BOOL bFlag)
 BOOL HMCheckComboBox::GetCheck(INT nIndex)
 {
 	return GetItemData(nIndex);
+}
+
+
+void HMCheckComboBox::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	// Don't do anything here. This causes the combobox popup
+	// windows to remain open after a selection has been made
+
+
+	CComboBox::OnLButtonUp(nFlags, point);
+}
+
+
+void HMCheckComboBox::OnRButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO:  在此添加消息处理程序代码和/或调用默认值
+
+	// If you want to select all/unselect all using the
+	// right button, remove this ifdef. Personally, I don't really like it
+#if FALSE
+
+
+		INT nCount =GetCount();
+		INT nSelCount = 0;
+
+		for (INT i = 0; i < nCount; i++) {
+			if (GetCheck(i))
+				nSelCount++;
+
+
+
+		SelectAll(nSelCount != nCount);
+
+		// Make sure to invalidate this window as well
+		InvalidateRect( 0, FALSE);
+		GetParent()->SendMessage(WM_COMMAND, MAKELONG(GetWindowLong(m_hWnd, GWL_ID), CBN_SELCHANGE), (LPARAM)m_hWnd);
+
+	}
+#endif
+
+
+
+	CComboBox::OnRButtonDown(nFlags, point);
+}
+
+
+void HMCheckComboBox::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	// TODO:  在此添加消息处理程序代码和/或调用默认值
+	if(nChar == VK_SPACE) {
+		// Get the current selection
+		//INT nIndex = SendMessage(LB_GETCURSEL, nChar, nFlags);
+		INT nIndex = GetCurSel();
+
+		//CRect rcItem;
+		//SendMessage(LB_GETITEMRECT, nIndex, (LONG)(VOID *)&rcItem);
+		//GetItemRect(nIndex);
+
+		//InvalidateRect( rcItem, FALSE);
+
+		// Invert the check mark
+		SetCheck(nIndex, !GetCheck(nIndex));
+
+		// Notify that selection has changed
+		GetParent()->SendMessage(WM_COMMAND, MAKELONG(GetWindowLong(m_hWnd, GWL_ID), CBN_SELCHANGE), (LPARAM)m_hWnd);
+	}
+	CComboBox::OnChar(nChar, nRepCnt, nFlags);
+}
+
+
+void HMCheckComboBox::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO:  在此添加消息处理程序代码和/或调用默认值
+
+	//CRect rcClient;
+	//GetClientRect( rcClient);
+
+	//CPoint point;
+
+	//if (PtInRect(rcClient, point)) {
+	//	INT nItemHeight = GetItemHeight(0);
+	//	INT nTopIndex = GetTopIndex();
+	//	
+	//	// Compute which index to check/uncheck
+	//	INT nIndex = nTopIndex + point.y / nItemHeight;
+
+	//	CRect rcItem;
+	//	SendMessage(hWnd, LB_GETITEMRECT, nIndex, (LONG)(VOID *)&rcItem);
+	//	GetItemData(nIndex);
+	//	if (PtInRect(rcItem, point)) {
+	//		// Invalidate this window
+	//		InvalidateRect(hWnd, rcItem, FALSE);
+	//		m_pComboBox->SetCheck(nIndex, !m_pComboBox->GetCheck(nIndex));
+
+	//		// Notify that selection has changed
+	//		m_pComboBox->GetParent()->SendMessage(WM_COMMAND, MAKELONG(GetWindowLong(m_pComboBox->m_hWnd, GWL_ID), CBN_SELCHANGE), (LPARAM)m_pComboBox->m_hWnd);
+
+
+	//	}
+	//}
+	// Do the default handling now (such as close the popup
+	// window when clicked outside)
+	CComboBox::OnLButtonDown(nFlags, point);
 }
 _HM_GridControl_END
