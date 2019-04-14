@@ -329,7 +329,7 @@ void TestSerial()
 
 	//if (false)
 		TestBin(vecPerson, isLoad);
-	//if (false)
+	if (false)
 		TestXml(vecPerson, isLoad);
 	//if (false)
 		TestJson(vecPerson, isLoad);

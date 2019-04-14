@@ -648,7 +648,7 @@ private:
 	Json::Value* m_json = nullptr; // 不能存为引用，jsoncpp库赋值的时候内部使用了swap，无法正常记住原对象
 	int m_json_array_reading_index = 0; // 为json数组的时候用于记住当前读取的元素下标
 	bool m_is_storing = false;
-	
+
 	// 仅临时标记对象，内存由外部处理，first为父json对象，second为父json对象的现场array_index（仅当为数组对象才有用）
 	std::stack<std::pair<Json::Value*, int>> m_parent_nodes;
 };

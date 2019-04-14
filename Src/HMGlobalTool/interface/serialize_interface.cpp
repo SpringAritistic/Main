@@ -569,6 +569,7 @@ void json_archive::read_impl(const CString& name, const serialize_flag& data)
 			Json::Value* tmp_json = m_json;
 			m_json = &((*m_json)[m_json_array_reading_index++]);
 			m_parent_nodes.push(make_pair(tmp_json, m_json_array_reading_index));
+			//
 		}
 		//else
 		{
@@ -584,7 +585,8 @@ void json_archive::read_impl(const CString& name, const serialize_flag& data)
 	{
 		if (!m_parent_nodes.empty())
 		{
-			for (int i = 0; i < 2;++i)
+			int count =2;
+			for (int i = 0; i < count; ++i)
 			{
 				pair<Json::Value *, int> top_item = m_parent_nodes.top();
 				m_json = top_item.first;
