@@ -261,9 +261,9 @@ void member_rw_interface::write_impl(const CString& name, const std::vector<bool
 {
 	write_impl(name, serialize_flag::array_bg);
 
-	write_impl(_T("count"), (int) (val.size())); // name没有意义，只用于保持原型统一
+	write_impl(_T("count"), (int)(val.size())); // name没有意义，只用于保持原型统一
 	for (size_t i = 0; i < val.size(); ++i)
-		write_impl(_T("item_") + string_tools::num_to_string(i), (const bool&) val[i]); // tinyxml2解析时不支持节点名为数字开头,不允许带点号
+		write_impl(_T("item_") + string_tools::num_to_string(i), (const bool&)val[i]); // tinyxml2解析时不支持节点名为数字开头,不允许带点号
 
 	write_impl(name, serialize_flag::array_ed);
 }
@@ -521,7 +521,7 @@ void bin_archive::write_impl(const CString& name, const double& data)
 void bin_archive::write_impl(const CString& name, const long double& data)
 {
 	UNUSED_ALWAYS(name);
-	
+
 	// 微软编译器为了兼容以前的DOS程序，限定了long double与double一样宽为64bit，与gcc,clang的128bit并不一样
 	double tmp = (double)data;
 	m_ar << tmp;
@@ -570,7 +570,7 @@ void json_archive::read_impl(const CString& name, const serialize_flag& data)
 			m_json = &((*m_json)[m_json_array_reading_index++]);
 			m_parent_nodes.push(make_pair(tmp_json, m_json_array_reading_index));
 		}
-		else
+		//else
 		{
 			// 没有相应的成员会崩溃
 			if (!m_json->isMember(string_tools::CString_to_string(name))) return;
@@ -584,10 +584,13 @@ void json_archive::read_impl(const CString& name, const serialize_flag& data)
 	{
 		if (!m_parent_nodes.empty())
 		{
-			pair<Json::Value *, int> top_item = m_parent_nodes.top();
-			m_json = top_item.first;
-			m_json_array_reading_index = top_item.second;
-			m_parent_nodes.pop();
+			for (int i = 0; i < 2;++i)
+			{
+				pair<Json::Value *, int> top_item = m_parent_nodes.top();
+				m_json = top_item.first;
+				m_json_array_reading_index = top_item.second;
+				m_parent_nodes.pop();
+			}
 		}
 	}
 	else if (serialize_flag::array_bg == data)
@@ -751,7 +754,7 @@ void json_archive::read_impl(const CString& name, CString& data)
 		str_utf_8 = (*m_json)[m_json_array_reading_index++].asCString();
 	else
 		str_utf_8 = (*m_json)[string_tools::CString_to_string(name).c_str()].asCString();
-	
+
 	data = string_tools::utf8_to_CString(str_utf_8);
 }
 
@@ -787,8 +790,10 @@ void json_archive::write_impl(const CString& name, const serialize_flag& data)
 			m_parent_nodes.push(make_pair(m_json, 0)); // 写入时不需要索引，直接给0
 			m_json = &tmp_json;
 		}
-		else
+		//else
 		{
+			Json::Value new_item(Json::objectValue);
+
 			m_parent_nodes.push(make_pair(m_json, 0)); // 写入时不需要索引，直接给0
 			(*m_json)[name] = new_item;
 			m_json = &((*m_json)[name]);
@@ -797,12 +802,18 @@ void json_archive::write_impl(const CString& name, const serialize_flag& data)
 	else if (serialize_flag::sub_obj_ed == data)
 	{
 		// 数组时也压入元素了，因此也要弹出
-		if (!m_parent_nodes.empty()/* && !m_json->isArray()*/) 
+		if (!m_parent_nodes.empty()/* && !m_json->isArray()*/)
 		{
-			pair<Json::Value *, int> top_item = m_parent_nodes.top();
-			m_json = top_item.first;
-			m_json_array_reading_index = top_item.second;
-			m_parent_nodes.pop();
+			int count = 2;
+			for (int i = 0; i < count;++i)
+			{
+				pair<Json::Value *, int> top_item = m_parent_nodes.top();
+				m_json = top_item.first;
+				m_json_array_reading_index = top_item.second;
+				m_parent_nodes.pop();
+			}
+
+
 		}
 	}
 	else if (serialize_flag::array_bg == data)
@@ -860,7 +871,7 @@ void json_archive::write_impl(const CString& name, const char& data)
 
 void json_archive::write_impl(const CString& name, const unsigned char& data)
 {
-	Json::Value new_item((unsigned int) data);
+	Json::Value new_item((unsigned int)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -869,7 +880,7 @@ void json_archive::write_impl(const CString& name, const unsigned char& data)
 
 void json_archive::write_impl(const CString& name, const wchar_t& data)
 {
-	Json::Value new_item((int) data);
+	Json::Value new_item((int)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -878,7 +889,7 @@ void json_archive::write_impl(const CString& name, const wchar_t& data)
 
 void json_archive::write_impl(const CString& name, const short& data)
 {
-	Json::Value new_item((int) data);
+	Json::Value new_item((int)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -887,7 +898,7 @@ void json_archive::write_impl(const CString& name, const short& data)
 
 void json_archive::write_impl(const CString& name, const unsigned short& data)
 {
-	Json::Value new_item((unsigned int) data);
+	Json::Value new_item((unsigned int)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -914,7 +925,7 @@ void json_archive::write_impl(const CString& name, const unsigned int& data)
 
 void json_archive::write_impl(const CString& name, const long& data)
 {
-	Json::Value new_item((long long) data);
+	Json::Value new_item((long long)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -968,7 +979,7 @@ void json_archive::write_impl(const CString& name, const double& data)
 
 void json_archive::write_impl(const CString& name, const long double& data)
 {
-	Json::Value new_item((double) data);
+	Json::Value new_item((double)data);
 	if (m_json->isArray())
 		m_json->append(new_item);
 	else
@@ -995,7 +1006,7 @@ void json_archive::write_impl(const CString& name, char* buffer, long byte_count
 void json_archive::clear_parent_nodes_cache()
 {
 	m_json_array_reading_index = 0;
-	while(!m_parent_nodes.empty()) m_parent_nodes.pop();
+	while (!m_parent_nodes.empty()) m_parent_nodes.pop();
 }
 
 

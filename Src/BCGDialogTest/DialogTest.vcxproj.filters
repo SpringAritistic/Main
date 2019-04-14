@@ -78,6 +78,9 @@
     <ClInclude Include="CTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestSerialise.h">
+      <Filter>Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DialogTest.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="GridTab.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSerialise.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

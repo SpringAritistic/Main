@@ -36,7 +36,7 @@ END_MESSAGE_MAP()
 
 //
 // The subclassed COMBOLBOX message handler
-//
+//实质上是 针对 ListBox的
 extern "C" LRESULT FAR PASCAL ComboBoxListBoxProc(HWND hWnd, UINT nMsg, WPARAM wParam, LPARAM lParam)
 {
 

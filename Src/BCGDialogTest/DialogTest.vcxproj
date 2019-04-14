@@ -125,6 +125,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="test6_29.h" />
+    <ClInclude Include="TestSerialise.h" />
     <ClInclude Include="Test\test6-27.h" />
     <ClInclude Include="Test\test6-28.h" />
     <ClInclude Include="Test\test7_4.h" />
@@ -144,6 +145,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="test6_29.cpp" />
+    <ClCompile Include="TestSerialise.cpp" />
     <ClCompile Include="Test\test6-27.cpp" />
     <ClCompile Include="Test\test6-28.cpp" />
     <ClCompile Include="Test\test7_4.cpp" />

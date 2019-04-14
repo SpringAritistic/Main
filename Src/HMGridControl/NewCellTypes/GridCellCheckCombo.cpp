@@ -395,7 +395,7 @@ IMPLEMENT_DYNCREATE(HMGridCellCheckCombo, HMGridCell)
 
 HMGridCellCheckCombo::HMGridCellCheckCombo() : HMGridCell()
 {
-    SetStyle(CBS_DROPDOWN);  // CBS_DROPDOWN, CBS_DROPDOWNLIST, CBS_SIMPLE, CBS_SORT
+	SetStyle(CBS_DROPDOWN);  // CBS_DROPDOWN, CBS_DROPDOWNLIST, CBS_SIMPLE, CBS_SORT
 }
 
 // Create a control to do the editing
@@ -491,4 +491,18 @@ void HMGridCellCheckCombo::SetOptions(std::vector<CString>& ar)
 
 
 
+
+
+BOOL CInPlaceCheckList::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO:  在此添加专用代码和/或调用基类
+	// Make sure that the keystrokes continue to the appropriate handlers
+	//if (pMsg->message == WM_KEYDOWN || pMsg->message == WM_KEYUP)
+	//{
+	//	::TranslateMessage(pMsg);
+	//	::DispatchMessage(pMsg);
+	//	return TRUE;
+	//}
+	return HMCheckComboBox::PreTranslateMessage(pMsg);
+}
 _HM_GridControl_END
