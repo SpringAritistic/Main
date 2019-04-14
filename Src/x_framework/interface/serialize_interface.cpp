@@ -784,6 +784,7 @@ void json_archive::write_impl(const CString& name, const serialize_flag& data)
 		{
 			// 数据中放对象时也要记住前一个数组对象
 			Json::Value& tmp_json = m_json->append(new_item);
+			int count = m_json->size();
 			m_parent_nodes.push(make_pair(m_json, 0)); // 写入时不需要索引，直接给0
 			m_json = &tmp_json;
 		}

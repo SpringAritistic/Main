@@ -388,7 +388,7 @@ void FastWriter::writeValue(const Value& value) {
          ++it) {
       const JSONCPP_STRING& name = *it;
       if (it != members.begin())
-        document_ += ',';
+        document_ += ',\n';
       document_ += valueToQuotedStringN(name.data(), static_cast<unsigned>(name.length()));
       document_ += yamlCompatiblityEnabled_ ? ": " : ":";
       writeValue(value[name]);

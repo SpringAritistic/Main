@@ -12,6 +12,10 @@
 #include "Test/TestAll.h"
 #include "GridTab.h"
 #include "CTest.h"
+
+#include "TestSerialise.h"
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -183,6 +187,8 @@ void CMainFrame::OnTestExcel()
 
 void CMainFrame::OnTestTab()
 {
+	TestSerial();
+
 	// TODO: Add your command handler code here
 	GridTab tab(this);
 	tab.DoModal();

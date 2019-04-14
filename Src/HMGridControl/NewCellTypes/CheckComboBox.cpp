@@ -175,6 +175,7 @@ BOOL HMCheckComboBox::Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, 
 
 	// Use default strings. We need the itemdata to store checkmarks
 	dwStyle |= CBS_HASSTRINGS;
+	//BOOL result = CComboBox::Create(dwStyle, rect, pParentWnd, nID);
 
 	return CComboBox::Create(dwStyle, rect, pParentWnd, nID);
 }
@@ -182,6 +183,8 @@ BOOL HMCheckComboBox::Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, 
 
 LRESULT HMCheckComboBox::OnCtlColorListBox(WPARAM wParam, LPARAM lParam)
 {
+
+
 	// If the listbox hasn't been subclassed yet, do so...
 	if (m_hListBox == 0) {
 		HWND hWnd = (HWND)lParam;
@@ -551,15 +554,14 @@ void HMCheckComboBox::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 		//INT nIndex = SendMessage(LB_GETCURSEL, nChar, nFlags);
 		INT nIndex = GetCurSel();
 
-		//CRect rcItem;
+		CRect rcItem;
 		//SendMessage(LB_GETITEMRECT, nIndex, (LONG)(VOID *)&rcItem);
 		//GetItemRect(nIndex);
-
-		//InvalidateRect( rcItem, FALSE);
+		((CListBox*)GetWindow(GW_CHILD))->GetItemRect(nIndex,&rcItem);
+		InvalidateRect( rcItem, FALSE);
 
 		// Invert the check mark
 		SetCheck(nIndex, !GetCheck(nIndex));
-
 		// Notify that selection has changed
 		GetParent()->SendMessage(WM_COMMAND, MAKELONG(GetWindowLong(m_hWnd, GWL_ID), CBN_SELCHANGE), (LPARAM)m_hWnd);
 	}

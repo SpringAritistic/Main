@@ -141,6 +141,8 @@ private:
 	//bool m_isAlreadyEndEdit;
 
 	//
+public:
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
 
 _HM_GridControl_END

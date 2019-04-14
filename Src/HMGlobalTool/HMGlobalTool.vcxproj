@@ -64,7 +64,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>.\HMGlobalTool.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\Lib;$(SolutionDir)3rd\Lib;$(SolutionDir)3rd\$(Configuration)\Lib</AdditionalLibraryDirectories>
       <ImportLibrary>$(SolutionDir)$(Configuration)\Lib\$(TargetName).lib</ImportLibrary>
     </Link>
